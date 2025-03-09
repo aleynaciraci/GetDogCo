@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ dog.name }}</h1>
+    <p>Irk: {{ dog.breed }}</p>
+    <p>Yaş: {{ dog.age }}</p>
+    <p>Açıklama: {{ dog.description }}</p>
+    <img src="{{ dog.image.url }}" alt="{{ dog.name }}">
+{% endblock %}
