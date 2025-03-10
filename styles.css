@@ -1,0 +1,203 @@
+/* Genel Stiller */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Header (Üst Kısım) */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Ana Bölüm */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #ffcc00;
+}
+
+.hero h2 {
+    font-size: 36px;
+}
+
+.hero .btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.hero .btn:hover {
+    background-color: #222;
+}
+
+/* Köpek Listesi */
+.dogs {
+    padding: 30px;
+    text-align: center;
+}
+
+.dog-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dog {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.dog img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dog h3 {
+    margin: 10px 0;
+}
+
+/* Footer (Alt Bilgi) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+.dog-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dog {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.dog img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.dog h3 {
+    margin: 10px 0;
+}
+/* Sayfa Arka Planı */
+body {
+    background-color: #f8f9fa; /* Daha açık ve modern bir arka plan */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Başlık Stili */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ana Bölüm */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-image: url('images/background.jpg'); /* Arka plana resim ekleyebilirsin */
+    background-size: cover;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 36px;
+}
+
+/* Buton Stili */
+.hero .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Köpek Kartları */
+.dog-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dog {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.dog img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dog h3 {
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
