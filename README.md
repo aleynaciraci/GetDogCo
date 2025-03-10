@@ -8,8 +8,12 @@ GetDogCo, sahiplendirilmeyi bekleyen köpekleri listeleyen ve kullanıcıların 
 -  Favori köpekleri kaydedin.
 -  Sahiplendirme için başvuruda bulunun.
 
-## 📸 Ekran Görüntüleri
-📌 *Buraya ekran görüntüleri ekleyebilirsin!*
+## Yol Haritamız:
+- authentication sayfalarımız (kayıt ol, giriş yap, şifremi unuttum)
+- 
+
+
+
 
 ## 🛠️ Kullandığımız Teknolojiler
 - **Frontend:** HTML, CSS  
