@@ -28,5 +28,7 @@ urlpatterns = [
     path('delete/<int:id>/', views.deletePost, name="delete_post"),  # İlan silme
     path('', views.listPosts, name="list_posts"),  # Tüm ilanları listeleme
     path('comment/<int:id>/', views.addComment, name="add_comment"),  # Yorum ekleme
-]
-
+    path('user/register/', views.register, name='register'),
+    path('user/login/', views.user_login (name='registration/login.html'), name='login'),
+    path('user/logout/', views.user_logout (next_page='/'), name='logout'),
+]  

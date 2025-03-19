@@ -31,6 +31,10 @@ INSTALLED_APPS = [
     "django_cleanup",
 ]
 
+# Crispy Forms için Bootstrap 4 desteği
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4" 
+
 # Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -41,6 +45,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 # URL Yapılandırması
 ROOT_URLCONF = 'getdogco.urls'
