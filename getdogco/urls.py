@@ -14,21 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.contrib import admin
 from django.urls import path
-from .views import (
-    home, signup, custom_login, logout_view, welcome, profile, 
-    forgot_password, adopted_dogs, dog_list, dog_detail
-)
+from . import views
+
+app_name = "getdogco"
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('signup/', signup, name='signup'),
-    path('login/', custom_login, name='login'),
-    path('logout/', logout_view, name='logout'),
-    path('welcome/', welcome, name='welcome'),
-    path('profile/', profile, name='profile'),
-    path('forgot-password/', forgot_password, name='forgot_password'),
-    path('adopted/', adopted_dogs, name='adopted'),
-    path('dogs/', dog_list, name='dog_list'),
-    path('dogs/<int:dog_id>/', dog_detail, name='dog_detail'),
+    path('dashboard/', views.dashboard, name="dashboard"),  # Kullanıcı paneli
+    path('add/', views.addDogAdoptionPost, name="add_post"),  # Yeni ilan ekleme
+    path('post/<int:id>/', views.postDetail, name="post_detail"),  # İlan detay sayfası
+    path('update/<int:id>/', views.updatePost, name="update_post"),  # İlan güncelleme
+    path('delete/<int:id>/', views.deletePost, name="delete_post"),  # İlan silme
+    path('', views.listPosts, name="list_posts"),  # Tüm ilanları listeleme
+    path('comment/<int:id>/', views.addComment, name="add_comment"),  # Yorum ekleme
 ]
+

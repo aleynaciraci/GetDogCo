@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-10 offset-md-3">
+        <div class="col-lg-8">
+            <h3>Köpek Sahiplendirme İlanları</h3>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<!-- Arama Kutusu -->
+<div class="row">
+    <div class="col-md-10 offset-md-3">
+        <div class="col-lg-8">
+            <form method="GET">
+                {% csrf_token %} 
+                <input type="text" name="keyword" class="input-sm form-control" maxlength="64" placeholder="İlan ara...">
+                <button type="submit" class="btn btn-success mt-2">Ara</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if posts %}
+
+{% for post in posts %}
+<div class="row">
+    <div class="col-md-10 offset-md-3">
+
+        <!-- İlan İçeriği -->
+        <div class="col-lg-8">
+
+            <!-- Başlık -->
+            <a href="{% url 'getdogco:post_detail' post.id %}">
+                <h2 class="mt-4">{{ post.title }}</h2>
+            </a> 
+        
+            <!-- Sahip Bilgisi -->
+            <p class="lead">
+                {{ post.owner.username }} tarafından yayınlandı
+            </p>
+
+            <hr>
+
+            <!-- Tarih -->
+            <p>{{ post.created_date }}</p>
+            <hr>
+
+            <!-- Köpek Fotoğrafı -->
+            {% if post.dog_image %}
+            <a href="{% url 'getdogco:post_detail' post.id %}">
+                <img class="img-fluid rounded" src="{{ post.dog_image.url }}" alt="">
+            </a>
+            {% endif %}
+
+            <hr>
+
+            <!-- Açıklama -->
+            <p class="lead">
+                {{ post.description|safe|truncatewords:50 }}
+            </p>
+
+            <a style="float: right;" href="{% url 'getdogco:post_detail' post.id %}" class="btn btn-success">İlanı Gör</a>
+            <hr>
+
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% else %}
+<div class="row">
+    <div class="col-md-10 offset-md-3">
+        <div class="col-lg-8">
+            <div class="alert alert-warning">
+                Henüz bir ilan bulunamadı.
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock body %}

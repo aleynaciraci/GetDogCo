@@ -1,71 +1,88 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
+from .forms import DogAdoptionPostForm
+from .models import DogAdoptionPost, AdoptionComment
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Dog
 
-# Ana sayfa  
-def home(request):
-    return render(request, 'home.html')
+# Tüm köpek sahiplendirme ilanlarını listeleme
+def listPosts(request):
+    keyword = request.GET.get("keyword")
 
-# Kayıt olma (signup)
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('welcome')  # Kayıttan sonra hoş geldin sayfasına yönlendir
-    else:
-        form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    if keyword:
+        posts = DogAdoptionPost.objects.filter(title__icontains=keyword)
+        return render(request, "list_posts.html", {"posts": posts})
+    
+    posts = DogAdoptionPost.objects.all()
+    return render(request, "list_posts.html", {"posts": posts})
 
-# Kullanıcı girişi
-def custom_login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('welcome')  # Girişten sonra hoş geldin sayfasına yönlendir
-    else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+# Ana sayfa
+def index(request):
+    return render(request, "index.html")
 
-# Kullanıcı çıkışı
-@login_required
-def logout_view(request):
-    logout(request)
-    return redirect('home')
+# Hakkımızda sayfası
+def about(request):
+    return render(request, "about.html")
 
-# Hoş geldin sayfası (Giriş yapan kullanıcılar için)
-@login_required
-def welcome(request):
-    return render(request, 'welcome.html')
+# Kullanıcının kendi ilanlarını yönetebileceği panel
+@login_required(login_url="user:login")
+def dashboard(request):
+    posts = DogAdoptionPost.objects.filter(owner=request.user)
+    context = {"posts": posts}
+    return render(request, "dashboard.html", context)
 
-# Kullanıcı profili (Giriş gereklidir)
-@login_required
-def profile(request):
-    return render(request, 'profile.html')
+# Yeni köpek sahiplendirme ilanı ekleme
+@login_required(login_url="user:login")
+def addDogAdoptionPost(request):
+    form = DogAdoptionPostForm(request.POST or None, request.FILES or None)
 
-# Şifre sıfırlama sayfası
-def forgot_password(request):
-    return render(request, 'forgot-password.html')
+    if form.is_valid():
+        post = form.save(commit=False)
+        post.owner = request.user
+        post.save()
+        messages.success(request, "İlan başarıyla oluşturuldu")
+        return redirect("getdogco:dashboard")
+    
+    return render(request, "add_post.html", {"form": form})
 
-# Sahiplenilmiş köpeklerin listesi (Giriş yapmış kullanıcılar görebilir)
-@login_required
-def adopted_dogs(request):
-    return render(request, 'adopted.html')
+# İlan detay sayfası
+def postDetail(request, id):
+    post = get_object_or_404(DogAdoptionPost, id=id)
+    comments = post.comments.all()
+    return render(request, "post_detail.html", {"post": post, "comments": comments})
 
-# Tüm köpeklerin listesi
-def dog_list(request):
-    dogs = Dog.objects.all()  # Veritabanındaki tüm köpekleri al
-    return render(request, 'dog-list.html', {'dogs': dogs})
+# İlan güncelleme
+@login_required(login_url="user:login")
+def updatePost(request, id):
+    post = get_object_or_404(DogAdoptionPost, id=id)
+    form = DogAdoptionPostForm(request.POST or None, request.FILES or None, instance=post)
+    
+    if form.is_valid():
+        post = form.save(commit=False)
+        post.owner = request.user
+        post.save()
+        messages.success(request, "İlan başarıyla güncellendi")
+        return redirect("getdogco:dashboard")
 
-# Köpek detay sayfası
-def dog_detail(request, dog_id):
-    dog = get_object_or_404(Dog, id=dog_id)
-    return render(request, 'dog-detail.html', {'dog': dog})
+    return render(request, "update_post.html", {"form": form})
+
+# İlan silme
+@login_required(login_url="user:login")
+def deletePost(request, id):
+    post = get_object_or_404(DogAdoptionPost, id=id)
+    post.delete()
+    messages.success(request, "İlan başarıyla silindi")
+    return redirect("getdogco:dashboard")
+
+# Yoruma ekleme fonksiyonu
+def addComment(request, id):
+    post = get_object_or_404(DogAdoptionPost, id=id)
+
+    if request.method == "POST":
+        comment_author = request.POST.get("comment_author")
+        comment_content = request.POST.get("comment_content")
+
+        newComment = AdoptionComment(comment_author=comment_author, comment_content=comment_content)
+        newComment.post = post
+        newComment.save()
+        
+    return redirect(reverse("getdogco:post_detail", kwargs={"id": id}))

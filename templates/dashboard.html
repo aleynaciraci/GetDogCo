@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Kontrol Paneli</h3>
+<hr>
+<p>
+    Hoş geldiniz, <small>{{ request.user.username }}</small>
+</p>
+<hr>
+<a class="btn btn-success" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a>
+<hr>
+
+{% if posts %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Sahip</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <th scope="row">{{ post.id }}</th>
+            <td><a href="{% url 'getdogco:post_detail' post.id %}">{{ post.title }}</a></td>
+            <td>{{ post.owner.username }}</td>
+            <td>{{ post.created_date }}</td>
+            <td><a href="{% url 'getdogco:update_post' post.id %}" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="{% url 'getdogco:delete_post' post.id %}" class="btn btn-danger">Sil</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-warning">
+    Henüz bir ilanınız bulunmuyor...
+</div>
+{% endif %}
+
+{% endblock body %}
