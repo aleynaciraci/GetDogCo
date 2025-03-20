@@ -32,13 +32,13 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Hesap oluşturuldu! {username} olarak giriş yapabilirsiniz.')
-            return redirect('login')
+            return redirect('getdogco:login')
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
 # Kullanıcı giriş işlemi
-def user_login(request):
+def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -48,7 +48,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f'Hoş geldiniz, {username}!')
-                return redirect('dashboard')
+                return redirect('getdogco:dashboard')
             else:
                 messages.error(request, 'Geçersiz kullanıcı adı veya şifre.')
     else:
@@ -56,20 +56,20 @@ def user_login(request):
     return render(request, 'registration/login.html', {'form': form})
 
 # Kullanıcı çıkış işlemi
-def user_logout(request):
+def logout(request):
     logout(request)
     messages.success(request, 'Başarıyla çıkış yaptınız.')
-    return redirect('index')
+    return redirect('getdogco:list_posts')
 
 # Kullanıcının kendi ilanlarını yönetebileceği panel
-@login_required(login_url="login")
+@login_required(login_url="getdogco:login")
 def dashboard(request):
     posts = DogAdoptionPost.objects.filter(owner=request.user)
     context = {"posts": posts}
     return render(request, "dashboard.html", context)
 
 # Yeni köpek sahiplendirme ilanı ekleme
-@login_required(login_url="login")
+@login_required(login_url="getdogco:login")
 def addDogAdoptionPost(request):
     form = DogAdoptionPostForm(request.POST or None, request.FILES or None)
     if form.is_valid():
@@ -77,7 +77,7 @@ def addDogAdoptionPost(request):
         post.owner = request.user
         post.save()
         messages.success(request, "İlan başarıyla oluşturuldu")
-        return redirect("dashboard")
+        return redirect("getdogco:dashboard")
     return render(request, "add_post.html", {"form": form})
 
 # İlan detay sayfası
@@ -87,7 +87,7 @@ def postDetail(request, id):
     return render(request, "post_detail.html", {"post": post, "comments": comments})
 
 # İlan güncelleme
-@login_required(login_url="login")
+@login_required(login_url="getdogco:login")
 def updatePost(request, id):
     post = get_object_or_404(DogAdoptionPost, id=id)
     form = DogAdoptionPostForm(request.POST or None, request.FILES or None, instance=post)
@@ -96,16 +96,16 @@ def updatePost(request, id):
         post.owner = request.user
         post.save()
         messages.success(request, "İlan başarıyla güncellendi")
-        return redirect("dashboard")
+        return redirect("getdogco:dashboard")
     return render(request, "update_post.html", {"form": form})
 
 # İlan silme
-@login_required(login_url="login")
+@login_required(login_url="getdogco:login")
 def deletePost(request, id):
     post = get_object_or_404(DogAdoptionPost, id=id)
     post.delete()
     messages.success(request, "İlan başarıyla silindi")
-    return redirect("dashboard")
+    return redirect("getdogco:dashboard")
 
 # Yoruma ekleme fonksiyonu
 def addComment(request, id):
@@ -116,4 +116,4 @@ def addComment(request, id):
         newComment = AdoptionComment(comment_author=comment_author, comment_content=comment_content)
         newComment.post = post
         newComment.save()
-    return redirect(reverse("post_detail", kwargs={"id": id}))
+    return redirect(reverse("getdogco:post_detail", kwargs={"id": id}))

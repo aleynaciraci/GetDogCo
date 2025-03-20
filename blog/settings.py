@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8@fw=rhl1+7_a$@e+!5j6@ui2=28pqy+@%@j-gam8v9h@otn0d'
 
 # Debug modu (Prodüksiyon için False yapılmalı)
-DEBUG = True
+DEBUG = True   
 
 ALLOWED_HOSTS = []
 
@@ -104,13 +104,10 @@ USE_I18N = True
 USE_TZ = True
 
 # Statik dosya ayarları
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
 # Ortam (Medya) dosyaları
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
-app_name = "getdogco"
+app_name = "getdogco" 
 
 urlpatterns = [
     path('dashboard/', views.dashboard, name="dashboard"),  # Kullanıcı paneli
@@ -28,7 +28,8 @@ urlpatterns = [
     path('delete/<int:id>/', views.deletePost, name="delete_post"),  # İlan silme
     path('', views.listPosts, name="list_posts"),  # Tüm ilanları listeleme
     path('comment/<int:id>/', views.addComment, name="add_comment"),  # Yorum ekleme
-    path('user/register/', views.register, name='register'),
-    path('user/login/', views.user_login (name='registration/login.html'), name='login'),
-    path('user/logout/', views.user_logout (next_page='/'), name='logout'),
-]  
+    path('register/', views.register, name="register"),  # Kullanıcı kayıt
+    path('login/', views.login, name="login"),  # Kullanıcı girişi
+    path('logout/', views.logout, name="logout"),  # Kullanıcı çıkışı
+    path('about/', views.about, name="about"),  # Hakkımızda sayfası
+]
