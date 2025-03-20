@@ -28,23 +28,22 @@
 
         <ul class="navbar-nav ml-auto">
         {% if request.user.is_authenticated %}
-        <li class="nav-item active">
-            <a class="nav-link" href="/posts/dashboard">Kontrol Paneli</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="/posts/add">Yeni İlan Ekle</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="/user/logout">Çıkış Yap</a>
-        </li>
-                
+            <li class="nav-item active">
+                <a class="nav-link" href="/posts/dashboard">Kontrol Paneli</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/posts/add">Yeni İlan Ekle</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/user/logout">Çıkış Yap</a>
+            </li>
         {% else %}
-        <li class="nav-item active">
-            <a class="nav-link" href="/user/login">Giriş Yap</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="/user/register">Kayıt Ol</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/user/login">Giriş Yap</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/user/register">Kayıt Ol</a>
+            </li>
         {% endif %}
         </ul>
     </div>
@@ -55,3 +54,4 @@
 
 </body>
 </html>
+
