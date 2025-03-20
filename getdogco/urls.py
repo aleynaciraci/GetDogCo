@@ -26,10 +26,10 @@ urlpatterns = [
     path('post/<int:id>/', views.postDetail, name="post_detail"),  # İlan detay sayfası
     path('update/<int:id>/', views.updatePost, name="update_post"),  # İlan güncelleme
     path('delete/<int:id>/', views.deletePost, name="delete_post"),  # İlan silme
-    path('', views.listPosts, name="list_posts"),  # Tüm ilanları listeleme
+    path('', views.listPosts, name="list_posts"),  # Tüm ilanları listeleme 
     path('comment/<int:id>/', views.addComment, name="add_comment"),  # Yorum ekleme
-    path('register/', views.register, name="register"),  # Kullanıcı kayıt
-    path('login/', views.login, name="login"),  # Kullanıcı girişi
-    path('logout/', views.logout, name="logout"),  # Kullanıcı çıkışı
+    path('user/register/', views.register_view, name="register"),  # Kullanıcı kayıt
+    path('user/login/', views.login_view, name="login"),  # Kullanıcı girişi
+    path('user/logout/', views.logout_view, name="logout"),  # Kullanıcı çıkışı
     path('about/', views.about, name="about"),  # Hakkımızda sayfası
 ]

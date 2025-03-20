@@ -25,20 +25,20 @@ def about(request):
     return render(request, "about.html")
 
 # Kullanıcı kayıt işlemi
-def register(request):
+def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Hesap oluşturuldu! {username} olarak giriş yapabilirsiniz.')
-            return redirect('getdogco:login')
+            return redirect('/user/login')
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
 # Kullanıcı giriş işlemi
-def login(request):
+def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -56,10 +56,10 @@ def login(request):
     return render(request, 'registration/login.html', {'form': form})
 
 # Kullanıcı çıkış işlemi
-def logout(request):
+def logout_view(request):
     logout(request)
     messages.success(request, 'Başarıyla çıkış yaptınız.')
-    return redirect('getdogco:list_posts')
+    return redirect('/user/login/')
 
 # Kullanıcının kendi ilanlarını yönetebileceği panel
 @login_required(login_url="getdogco:login")

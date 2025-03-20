@@ -23,7 +23,6 @@ INSTALLED_APPS = [
     
     # GetDogCo uygulamaları
     'getdogco',
-    'user',
 
     # Ekstra kütüphaneler
     'crispy_forms',
