@@ -23,6 +23,7 @@ urlpatterns = [
     path('', views.listPosts, name='list_posts'),
     path('comment/<int:id>/', views.addComment, name='add_comment'),
     path('about/', views.about, name='about'),
+    path('', include('getdogco.urls', namespace='getdogco')),
 ] 
 
 # Statik ve medya dosyalarını dahil etme

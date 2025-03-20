@@ -48,7 +48,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f'Hoş geldiniz, {username}!')
-                return redirect('getdogco:dashboard')
+                return redirect('/dashboard/')
             else:
                 messages.error(request, 'Geçersiz kullanıcı adı veya şifre.')
     else:
