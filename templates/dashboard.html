@@ -7,7 +7,7 @@
     Hoş geldiniz, <small>{{ request.user.username }}</small>
 </p>
 <hr>
-<a class="btn btn-success" href="{% url 'add_post' %}">Yeni İlan Ekle</a>
+<a class="btn btn-success" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a>
 <hr>
 
 {% if posts %}

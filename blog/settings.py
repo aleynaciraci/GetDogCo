@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     "crispy_bootstrap4",
     "django_cleanup",
+    'ckeditor',
 ]
 
 # Crispy Forms için Bootstrap 4 desteği
@@ -47,7 +48,7 @@ MIDDLEWARE = [
 
 
 # URL Yapılandırması
-ROOT_URLCONF = 'getdogco.urls'
+ROOT_URLCONF = 'blog.urls'
 
 # Şablon ayarları
 TEMPLATES = [
@@ -107,6 +108,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    
+
 # Ortam (Medya) dosyaları
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

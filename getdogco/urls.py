@@ -22,7 +22,7 @@ app_name = "getdogco"
 
 urlpatterns = [
     path('dashboard/', views.dashboard, name="dashboard"),  # Kullanıcı paneli
-    path('add/', views.addDogAdoptionPost, name="add_post"),  # Yeni ilan ekleme
+    path('posts/add/', views.addDogAdoptionPost, name="add_post"),  # Yeni ilan ekleme
     path('post/<int:id>/', views.postDetail, name="post_detail"),  # İlan detay sayfası
     path('update/<int:id>/', views.updatePost, name="update_post"),  # İlan güncelleme
     path('delete/<int:id>/', views.deletePost, name="delete_post"),  # İlan silme
