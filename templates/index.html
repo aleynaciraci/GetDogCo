@@ -2,10 +2,12 @@
 
 {% block body %}
 
-<div class="jumbotron text-center">
-    <h1>GetDogCo - Köpek Sahiplendirme Platformu</h1>
-    <p>Sevimli dostlarımıza sıcak bir yuva bulmalarına yardımcı olun!</p>
-    <a href="{% url 'getdogco:list_posts' %}" class="btn btn-primary btn-lg">İlanları Gör</a>
+<div class="jumbotron text-center" style="background-color: #ffc0cb; color: #212529;">
+    <div class="container">
+        <h1 class="display-4">🐶 GetDogCo</h1>
+        <p class="lead">Sahipsiz dostlarımıza sıcak bir yuva bulmak için buradayız!</p>
+        <a href="{% url 'getdogco:list_posts' %}" class="btn btn-dark btn-lg mt-3">İlanlara Göz At</a>
+    </div>
 </div>
 
 <p>
