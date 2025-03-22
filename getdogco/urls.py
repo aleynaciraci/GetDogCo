@@ -21,15 +21,16 @@ from . import views
 app_name = "getdogco"  
 
 urlpatterns = [
-    path('dashboard/', views.dashboard, name="dashboard"),  # Kullanıcı paneli
+    path('', views.index, name="index"),  # Anasayfa
+    path('post/', views.listPosts, name='list_posts'), # Tüm ilanları listeleme
     path('posts/add/', views.addDogAdoptionPost, name="add_post"),  # Yeni ilan ekleme
+    path('dashboard/', views.dashboard, name="dashboard"),  # Kullanıcı paneli
     path('post/<int:id>/', views.postDetail, name="post_detail"),  # İlan detay sayfası
     path('update/<int:id>/', views.updatePost, name="update_post"),  # İlan güncelleme
     path('delete/<int:id>/', views.deletePost, name="delete_post"),  # İlan silme
-    path('', views.listPosts, name="list_posts"),  # Tüm ilanları listeleme 
     path('comment/<int:id>/', views.addComment, name="add_comment"),  # Yorum ekleme
+    path('about/', views.about, name="about"),  # Hakkımızda sayfası
     path('user/register/', views.register_view, name="register"),  # Kullanıcı kayıt
     path('user/login/', views.login_view, name="login"),  # Kullanıcı girişi
     path('user/logout/', views.logout_view, name="logout"),  # Kullanıcı çıkışı
-    path('about/', views.about, name="about"),  # Hakkımızda sayfası
 ]

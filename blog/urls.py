@@ -15,12 +15,13 @@ urlpatterns = [
     path('user/logout/', views.logout_view, name='logout'),
 
     # Ana sayfa ve diğer sayfalar
+    path('', views.index, name='index'),
+    path('post/', views.listPosts, name='list_posts'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('add/', views.addDogAdoptionPost, name='add_post'),
     path('post/<int:id>/', views.postDetail, name='post_detail'),
     path('update/<int:id>/', views.updatePost, name='update_post'),
     path('delete/<int:id>/', views.deletePost, name='delete_post'),
-    path('', views.listPosts, name='list_posts'),
     path('comment/<int:id>/', views.addComment, name='add_comment'),
     path('about/', views.about, name='about'),
     path('', include('getdogco.urls', namespace='getdogco')),
