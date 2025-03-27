@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include 
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,7 +24,6 @@ urlpatterns = [
     path('delete/<int:id>/', views.deletePost, name='delete_post'),
     path('comment/<int:id>/', views.addComment, name='add_comment'),
     path('about/', views.about, name='about'),
-    path('contact/', views.contact_view, name='contact'),
     path('', include('getdogco.urls', namespace='getdogco')),
 ] 
 

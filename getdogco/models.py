@@ -18,6 +18,16 @@ class DogAdoptionPost(models.Model):
     class Meta:
         ordering = ['-created_date']
 
+# İletişim Mesajı Modeli
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.email})"
+
 # Yorum Modeli
 class AdoptionComment(models.Model):
     post = models.ForeignKey(DogAdoptionPost, on_delete=models.CASCADE, verbose_name="İlan", related_name="comments")

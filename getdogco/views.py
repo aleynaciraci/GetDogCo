@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
-from .forms import DogAdoptionPostForm
+from .forms import DogAdoptionPostForm, ContactForm 
 from .models import DogAdoptionPost, AdoptionComment
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -26,7 +26,13 @@ def about(request):
 
 # İletişim sayfası
 def contact_view(request):
-    return render(request, "contact.html")
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        messages.success(request, "Mesajınız başarıyla gönderildi!")
+        return redirect("getdogco:contact")
+    
+    return render(request, 'contact.html', {"form": form})
 
 # Kullanıcı kayıt işlemi
 def register_view(request):

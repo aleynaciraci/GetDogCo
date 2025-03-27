@@ -1,8 +1,11 @@
 from django.contrib import admin
-from .models import DogAdoptionPost, AdoptionComment
+from .models import DogAdoptionPost, AdoptionComment, ContactMessage # Models'dan ilgili sınıfları import ettim
 
 # Yorumları admin paneline kaydetme
 admin.site.register(AdoptionComment)
+
+# İletişim mesajlarını admin paneline kaydetme
+admin.site.register(ContactMessage)
 
 # Köpek İlanları İçin Özelleştirilmiş Admin Paneli
 @admin.register(DogAdoptionPost)
