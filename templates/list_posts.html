@@ -1,86 +1,52 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-<div class="row">
-    <div class="col-md-10 offset-md-3">
-        <div class="col-lg-8">
-            <h3>Köpek Sahiplendirme İlanları</h3>
-            <hr>
-        </div>
+<div class="container mt-5">
+    <!-- Sayfa Başlığı -->
+    <div class="text-center mb-4">
+        <h2 class="font-weight-bold">🐾 Köpek Sahiplendirme İlanları</h2>
+        <p class="lead text-muted">Yeni bir dost edinmek ister misiniz? Aşağıdaki ilanlara göz atabilirsiniz.</p>
     </div>
-</div>
 
-<!-- Arama Kutusu -->
-<div class="row">
-    <div class="col-md-10 offset-md-3">
-        <div class="col-lg-8">
-            <form method="GET">
-                {% csrf_token %} 
-                <input type="text" name="keyword" class="input-sm form-control" maxlength="64" placeholder="İlan ara...">
-                <button type="submit" class="btn btn-success mt-2">Ara</button>
+    <!-- Arama Kutusu -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            <form method="GET" class="form-inline justify-content-center">
+                {% csrf_token %}
+                <input type="text" name="keyword" class="form-control form-control-lg w-75 mr-2" placeholder="Köpek ara...">
+                <button type="submit" class="btn btn-success btn-lg">Ara</button>
             </form>
         </div>
     </div>
-</div>
 
-{% if posts %}
-
-{% for post in posts %}
-<div class="row">
-    <div class="col-md-10 offset-md-3">
-
-        <!-- İlan İçeriği -->
-        <div class="col-lg-8">
-
-            <!-- Başlık -->
-            <a href="{% url 'getdogco:post_detail' post.id %}">
-                <h2 class="mt-4">{{ post.title }}</h2>
-            </a> 
-        
-            <!-- Sahip Bilgisi -->
-            <p class="lead">
-                {{ post.owner.username }} tarafından yayınlandı
-            </p>
-
-            <hr>
-
-            <!-- Tarih -->
-            <p>{{ post.created_date }}</p>
-            <hr>
-
-            <!-- Köpek Fotoğrafı -->
-            {% if post.dog_image %}
-            <a href="{% url 'getdogco:post_detail' post.id %}">
-                <img class="img-fluid rounded" src="{{ post.dog_image.url }}" alt="">
-            </a>
-            {% endif %}
-
-            <hr>
-
-            <!-- Açıklama -->
-            <p class="lead">
-                {{ post.description|safe|truncatewords:50 }}
-            </p>
-
-            <a style="float: right;" href="{% url 'getdogco:post_detail' post.id %}" class="btn btn-success">İlanı Gör</a>
-            <hr>
-
+    {% if posts %}
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    {% if post.dog_image %}
+                    <a href="{% url 'getdogco:post_detail' post.id %}">
+                        <img src="{{ post.dog_image.url }}" class="card-img-top" alt="{{ post.title }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text text-muted small">👤 {{ post.owner.username }} | 🗓️ {{ post.created_date }}</p>
+                        <p class="card-text">{{ post.description|safe|truncatewords:25 }}</p>
+                        <a href="{% url 'getdogco:post_detail' post.id %}" class="btn btn-outline-success btn-sm float-right">İlanı Gör</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    </div>
-</div>
-{% endfor %}
-
-{% else %}
-<div class="row">
-    <div class="col-md-10 offset-md-3">
-        <div class="col-lg-8">
-            <div class="alert alert-warning">
-                Henüz bir ilan bulunamadı.
+    {% else %}
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="alert alert-warning text-center">
+                    Henüz bir ilan bulunamadı.
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 </div>
-{% endif %}
-
-{% endblock body %}
+{% endblock body %} 
