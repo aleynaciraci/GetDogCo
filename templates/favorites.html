@@ -1,11 +1,31 @@
 {% extends "layout.html" %}
+
 {% block body %}
+<div class="container mt-4">
   <h2>Favori İlanlarım</h2>
-  <ul>
-    {% for fav in favorites %}
-      <li><a href="{% url 'getdogco:post_detail' fav.post.id %}">{{ fav.post.title }}</a></li>
-    {% empty %}
-      <li>Henüz favori ilanınız yok.</li>
-    {% endfor %}
-  </ul>
+  <hr>
+  {% if favorites %}
+    <div class="row">
+      {% for fav in favorites %}
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            {% if fav.post.dog_image %}
+              <img src="{{ fav.post.dog_image.url }}" class="card-img-top" alt="{{ fav.post.title }}">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ fav.post.title }}</h5>
+              <p class="card-text">{{ fav.post.description|truncatewords:20 }}</p>
+              <a href="{% url 'getdogco:post_detail' fav.post.id %}" class="btn btn-primary">İlana Git</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-info">
+      Henüz favori ilanınız yok.
+    </div>
+  {% endif %}
+</div>
 {% endblock %}
+

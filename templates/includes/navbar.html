@@ -35,6 +35,9 @@
                 <a class="nav-link" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a> 
             </li>
             <li class="nav-item active">
+                <a class="nav-link" href="{% url 'getdogco:my_favorites' %}">Favorilerim</a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link" href="{% url 'getdogco:logout' %}">Çıkış Yap</a>
             </li>
         {% else %}
@@ -54,4 +57,3 @@
 
 </body>
 </html>
-
