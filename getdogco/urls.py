@@ -30,6 +30,7 @@ urlpatterns = [
     path('delete/<int:id>/', views.deletePost, name="delete_post"),  # İlan silme
     path('comment/<int:id>/', views.addComment, name="add_comment"),  # Yorum ekleme
     path('about/', views.about, name="about"),  # Hakkımızda sayfası
+    path('contact/', views.contact_view, name="contact"), # İletişim sayfası
     path('user/register/', views.register_view, name="register"),  # Kullanıcı kayıt
     path('user/login/', views.login_view, name="login"),  # Kullanıcı girişi
     path('user/logout/', views.logout_view, name="logout"),  # Kullanıcı çıkışı

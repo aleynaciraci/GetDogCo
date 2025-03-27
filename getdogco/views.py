@@ -24,6 +24,10 @@ def index(request):
 def about(request):
     return render(request, "about.html")
 
+# İletişim sayfası
+def contact_view(request):
+    return render(request, "contact.html")
+
 # Kullanıcı kayıt işlemi
 def register_view(request):
     if request.method == 'POST':
