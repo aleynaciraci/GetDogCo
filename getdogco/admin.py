@@ -1,11 +1,18 @@
 from django.contrib import admin
-from .models import DogAdoptionPost, AdoptionComment, ContactMessage # Models'dan ilgili sınıfları import ettim
+from .models import DogAdoptionPost, AdoptionComment, ContactMessage, Favorite # Models'dan ilgili sınıfları import ettim
 
 # Yorumları admin paneline kaydetme
 admin.site.register(AdoptionComment)
 
 # İletişim mesajlarını admin paneline kaydetme
 admin.site.register(ContactMessage)
+
+# Favorilere Ekleme Modeli
+@admin.register(Favorite)
+class FavoriteAdmin(admin.ModelAdmin):
+    list_display = ('user', 'post', 'created_at')
+    list_filter = ('created_at',)
+    search_fields = ('user__username', 'post__title')  # post modelinde 'title' varsa
 
 # Köpek İlanları İçin Özelleştirilmiş Admin Paneli
 @admin.register(DogAdoptionPost)

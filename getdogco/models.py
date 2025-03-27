@@ -27,6 +27,21 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.email})"
+    
+# Favorilere Ekleme Modeli
+class Favorite(models.Model):
+    user = models.ForeignKey("auth.User", on_delete=models.CASCADE, verbose_name="Kullanıcı")
+    post = models.ForeignKey("DogAdoptionPost", on_delete=models.CASCADE, verbose_name="İlan")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user} - {self.post}" # Favoriye ekleyen kullanıcı ve ilan
+    
+    class Meta:
+        unique_together = ('user', 'post') 
+
+    
+
 
 # Yorum Modeli
 class AdoptionComment(models.Model):

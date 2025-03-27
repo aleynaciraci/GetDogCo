@@ -9,6 +9,23 @@
       <!-- Başlık -->
       <h3 class="mt-4">{{ post.title }}</h3>
 
+      <!-- Favori Butonu -->
+      {% if user.is_authenticated %}
+  {% if is_favorited %}
+    <form method="POST" action="{% url 'getdogco:remove_favorite' post.id %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger mb-3">❤️ Favorilerden Çıkar</button>
+    </form>
+  {% else %}
+    <form method="POST" action="{% url 'getdogco:add_favorite' post.id %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-danger mb-3">🤍 Favorilere Ekle</button>
+    </form>
+  {% endif %}
+{% else %}
+  <p><a href="{% url 'login' %}">Favorilere eklemek için giriş yapın.</a></p>
+{% endif %}
+
       <!-- Sahip -->
       <p class="lead">
         {{ post.owner.username }} tarafından yayınlandı
@@ -75,3 +92,4 @@
 
 </div>
 {% endblock body %}
+

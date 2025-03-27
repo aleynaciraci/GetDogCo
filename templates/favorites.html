@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Favori İlanlarım</h2>
+  <ul>
+    {% for fav in favorites %}
+      <li><a href="{% url 'getdogco:post_detail' fav.post.id %}">{{ fav.post.title }}</a></li>
+    {% empty %}
+      <li>Henüz favori ilanınız yok.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

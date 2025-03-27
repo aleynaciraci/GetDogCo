@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
 from .forms import DogAdoptionPostForm, ContactForm 
-from .models import DogAdoptionPost, AdoptionComment
+from .models import DogAdoptionPost, AdoptionComment, Favorite 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -71,6 +71,28 @@ def logout_view(request):
     messages.success(request, 'Başarıyla çıkış yaptınız.')
     return redirect('/user/login/')
 
+# Favorilere ekleme ve çıkarma
+@login_required
+def add_favorite(request, post_id):
+    post = get_object_or_404(DogAdoptionPost, id=post_id)
+    Favorite.objects.get_or_create(user=request.user, post=post)
+    return redirect('post_detail', id=post.id)
+
+@login_required
+def remove_favorite(request, post_id):
+    post = get_object_or_404(DogAdoptionPost, id=post_id)
+    Favorite.objects.filter(user=request.user, post=post).delete()
+    return redirect('post_detail', id=post.id)
+
+@login_required
+def my_favorites(request):
+    favorites = Favorite.objects.filter(user=request.user).select_related('post')
+    return render(request, 'favorites.html', {'favorites': favorites})
+
+def post_detail(request, post_id):
+    post = get_object_or_404(DogAdoptionPost, id=post_id)
+    return render(request, 'post_detail.html', {'post': post})
+
 # Kullanıcının kendi ilanlarını yönetebileceği panel
 @login_required(login_url="getdogco:login")
 def dashboard(request):
@@ -93,8 +115,17 @@ def addDogAdoptionPost(request):
 # İlan detay sayfası
 def postDetail(request, id):
     post = get_object_or_404(DogAdoptionPost, id=id)
-    comments = post.comments.all()
-    return render(request, "post_detail.html", {"post": post, "comments": comments})
+    comments = AdoptionComment.objects.filter(post=post)
+
+    is_favorited = False
+    if request.user.is_authenticated:
+        is_favorited = Favorite.objects.filter(user=request.user, post=post).exists()
+
+    return render(request, "post_detail.html", {
+        "post": post,
+        "comments": comments,
+        "is_favorited": is_favorited
+    })
 
 # İlan güncelleme
 @login_required(login_url="getdogco:login")
