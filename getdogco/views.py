@@ -93,6 +93,10 @@ def post_detail(request, post_id):
     post = get_object_or_404(DogAdoptionPost, id=post_id)
     return render(request, 'post_detail.html', {'post': post})
 
+# Sahiplendirme rehberi 
+def adoption_guide(request):
+    return render(request, 'adoption_guide.html')
+
 # Kullanıcının kendi ilanlarını yönetebileceği panel
 @login_required(login_url="getdogco:login")
 def dashboard(request):

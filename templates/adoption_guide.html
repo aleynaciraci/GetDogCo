@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+<div class="container mt-5">
+  <h2 class="mb-4">🐶 Sahiplenme Rehberi</h2>
+
+  <div class="card mb-3">
+    <div class="card-header font-weight-bold">1. Beslenme</div>
+    <div class="card-body">
+      <p>Köpeğinizin yaşına, cinsine ve sağlık durumuna göre uygun mama seçimi çok önemlidir. Günde 2-3 öğün mama verilmelidir.</p>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-header font-weight-bold">2. Eğitim</div>
+    <div class="card-body">
+      <p>Temel itaat komutları (otur, bekle, gel) ile başlanmalı. Pozitif pekiştirme yöntemleri önerilir.</p>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-header font-weight-bold">3. Aşı Takvimi</div>
+    <div class="card-body">
+      <ul>
+        <li>6-8 hafta: Karma aşı 1</li>
+        <li>9-11 hafta: Karma aşı 2, Parazit uygulamaları</li>
+        <li>12-14 hafta: Kuduz aşısı</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-header font-weight-bold">4. Veteriner Kontrolleri</div>
+    <div class="card-body">
+      <p>İlk sahiplenme sonrası 1 hafta içinde veteriner kontrolü yapılmalıdır. Yıllık kontroller düzenli yapılmalıdır.</p>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-header font-weight-bold">5. İndirilebilir Rehber</div>
+    <div class="card-body">
+      <p>PDF rehberimizi indirerek sahiplenme sürecinde başvuru, bakım ve eğitim hakkında daha fazlasını öğrenebilirsiniz.</p>
+      <a class="btn btn-success" href="/media/guides/sahiplenme_rehberi.pdf" download>📄 PDF Rehberi İndir</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
