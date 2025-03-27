@@ -1,19 +1,29 @@
 {% extends "layout.html" %}
-
-{% block body %}
 {% load crispy_forms_tags %}
 
-<div class="row">
-    <div class="col-md-6 offset-md-3">
-        <h3>Yeni Köpek Sahiplendirme İlanı Oluştur</h3>
-        <hr>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            
-            {{ form|crispy }}
-            <br>
-            <button type="submit" class="btn btn-success">İlanı Ekle</button>
-        </form>
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title text-center font-weight-bold mb-4">🐶 Yeni İlan Oluştur</h3>
+                    <p class="text-muted text-center mb-4">Köpeğiniz için güvenli ve sevgi dolu bir yuva arıyorsanız, aşağıdaki formu doldurun.</p>
+                    
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg px-5">
+                                ➕ İlanı Yayınla
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock body %}
