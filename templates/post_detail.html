@@ -1,63 +1,61 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="row">
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-10 col-sm-12">
 
-    <!-- İlan İçeriği -->
-    <div class="col-lg-8">
+    <!-- Başlık -->
+    <h3 class="mt-4">{{ post.title }}</h3>
 
-      <!-- Başlık -->
-      <h3 class="mt-4">{{ post.title }}</h3>
-
-      <!-- Favori Butonu -->
-      {% if user.is_authenticated %}
-  {% if is_favorited %}
-    <form method="POST" action="{% url 'getdogco:remove_favorite' post.id %}">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-danger mb-3">❤️ Favorilerden Çıkar</button>
-    </form>
-  {% else %}
-    <form method="POST" action="{% url 'getdogco:add_favorite' post.id %}">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-outline-danger mb-3">🤍 Favorilere Ekle</button>
-    </form>
-  {% endif %}
-{% else %}
-  <p><a href="{% url 'login' %}">Favorilere eklemek için giriş yapın.</a></p>
-{% endif %}
-
-      <!-- Sahip -->
-      <p class="lead">
-        {{ post.owner.username }} tarafından yayınlandı
-      </p>
-
-      <hr>
-
-      <!-- Tarih -->
-      <p>{{ post.created_date }}</p>
-
-      <hr>
-
-      <!-- Köpek Fotoğrafı -->
-      {% if post.dog_image %}
-      <img class="img-fluid rounded" src="{{ post.dog_image.url }}" alt="Köpek Fotoğrafı">
+    <!-- Favori Butonu -->
+    {% if user.is_authenticated %}
+      {% if is_favorited %}
+        <form method="POST" action="{% url 'getdogco:remove_favorite' post.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger mb-3">❤️ Favorilerden Çıkar</button>
+        </form>
+      {% else %}
+        <form method="POST" action="{% url 'getdogco:add_favorite' post.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-outline-danger mb-3">🤍 Favorilere Ekle</button>
+        </form>
       {% endif %}
+    {% else %}
+      <p><a href="{% url 'login' %}">Favorilere eklemek için giriş yapın.</a></p>
+    {% endif %}
 
-      <hr>
+    <!-- Sahip -->
+    <p class="lead">
+      {{ post.owner.username }} tarafından yayınlandı
+    </p>
 
-      <!-- Açıklama -->
-      <p class="lead">
-          {{ post.description|safe }}
-      </p>
+    <hr>
 
-      <hr>
+    <!-- Tarih -->
+    <p>{{ post.created_date }}</p>
 
-      <h4>Yorumlar</h4>
-      <hr>
-      {% if comments %}
+    <hr>
+
+    <!-- Köpek Fotoğrafı -->
+    {% if post.dog_image %}
+      <img class="img-fluid rounded" src="{{ post.dog_image.url }}" alt="Köpek Fotoğrafı">
+    {% endif %}
+
+    <hr>
+
+    <!-- Açıklama -->
+    <p class="lead">
+      {{ post.description|safe }}
+    </p>
+
+    <hr>
+
+    <h4>Yorumlar</h4>
+    <hr>
+    {% if comments %}
       {% for comment in comments %}
         <div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <img class="rounded-circle img-fluid mr-3" style="max-width: 50px;" src="http://placehold.it/50x50" alt="">
           <div class="media-body">
             <h5 class="mt-0">{{ comment.comment_author }}</h5>
             {{ comment.comment_date }} <br>
@@ -65,31 +63,29 @@
           </div>
         </div>
       {% endfor %}
-      {% else %}
+    {% else %}
       <div class="alert alert-warning">
         Bu ilana henüz yorum yazılmamış. İlk yorumu siz yapın!
       </div>
-      {% endif %}
+    {% endif %}
 
-      <div class="card my-4">
-          <h5 class="card-header">Yorum Ekle:</h5>
-          <div class="card-body">
-            <form method="post" action="{% url 'getdogco:add_comment' post.id %}">
-              {% csrf_token %}
-              <div class="form-group">
-                  <label for="formGroupExampleInput">İsim</label>
-                  <input name="comment_author" type="text" class="form-control" id="formGroupExampleInput" placeholder="İsminizi girin">
-                </div>
-              <div class="form-group">
-                  <label for="formGroupExampleInput">Yorum</label>
-                <textarea name="comment_content" class="form-control" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-success">Ekle</button>
-            </form>
+    <div class="card my-4">
+      <h5 class="card-header">Yorum Ekle:</h5>
+      <div class="card-body">
+        <form method="post" action="{% url 'getdogco:add_comment' post.id %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="formGroupExampleInput">İsim</label>
+            <input name="comment_author" type="text" class="form-control" id="formGroupExampleInput" placeholder="İsminizi girin">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Yorum</label>
+            <textarea name="comment_content" class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Ekle</button>
+        </form>
+      </div>
     </div>
-
+  </div>
 </div>
-{% endblock body %}
-
+{% endblock body %} 

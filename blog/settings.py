@@ -10,7 +10,9 @@ SECRET_KEY = 'django-insecure-8@fw=rhl1+7_a$@e+!5j6@ui2=28pqy+@%@j-gam8v9h@otn0d
 # Debug modu (Prodüksiyon için False yapılmalı)
 DEBUG = True   
 
-ALLOWED_HOSTS = []
+# İzin verilen hostlar
+# Bu ayar, hangi hostlardan gelen isteklere izin verileceğini belirler.
+ALLOWED_HOSTS = [ '127.0.0.1' , 'localhost', '192.168.1.35']
 
 # Uygulamalar
 INSTALLED_APPS = [
