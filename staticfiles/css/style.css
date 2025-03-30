@@ -1,3 +1,58 @@
-p {
+.dark-mode {
+    background-color: #15202b;
+    color: #e1e8ed;
+}
+
+.dark-mode .navbar {
+    background-color: #192734 !important;
+}
+
+.dark-mode .card {
+    background-color: #192734;
+    color: #e1e8ed;
+    border: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .btn {
+    border-color: #1da1f2;
+    color: #e1e8ed;
     background-color: transparent;
+}
+
+.dark-mode .btn:hover {
+    background-color: #1a91da;
+    color: white;
+}
+
+.dark-mode .table {
+    background-color: #192734;
+    color: #e1e8ed;
+}
+
+.dark-mode a {
+    color: #1da1f2;
+}
+
+.dark-mode .form-control {
+    background-color: #253341;
+    color: #e1e8ed;
+    border: 1px solid #3e4c59;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: #8899a6;
+}
+
+.dark-mode .alert {
+    background-color: #253341;
+    color: #e1e8ed;
+    border-color: #3e4c59;
+}
+
+.dark-mode .alert-success {
+    background-color: #253341;
+    color: #1da1f2;
+    border-color: #1da1f2;
 }

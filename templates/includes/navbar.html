@@ -1,67 +1,79 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetDogCo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-</head>
-<body>
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="/">GetDogCo</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" href="/">🐾 GetDogCo</a>
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menüyü Aç">
         <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+  
+        <!-- Sol Menü -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/about">Hakkımızda</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:list_posts' %}">İlanlar</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">Sahiplenme Rehberi</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'getdogco:list_posts' %}">İlanlar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">Sahiplenme Rehberi</a>
+          </li>
         </ul>
-
-        <ul class="navbar-nav ml-auto">
-        {% if request.user.is_authenticated %}
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:dashboard' %}">Kontrol Paneli</a>
+  
+        <!-- Arama Kutusu -->
+        <form method="GET" action="{% url 'getdogco:list_posts' %}" class="form-inline my-2 my-md-0 mr-md-3">
+          <input class="form-control form-control-sm mr-2" type="search" name="keyword" placeholder="Ara..." aria-label="Ara">
+          <button class="btn btn-outline-light btn-sm" type="submit">Ara</button>
+        </form>
+  
+        <!-- Sağ Menü -->
+        <ul class="navbar-nav">
+          {% if request.user.is_authenticated %}
+            <!-- Bildirim Simgesi -->
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#">
+                🛎️
+                <span class="badge badge-danger position-absolute" style="top: 5px; right: 5px; font-size: 0.6rem;">2</span>
+              </a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a> 
+  
+            <!-- Kullanıcı Dropdown Menüsü -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                👤 {{ request.user.username }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="{% url 'getdogco:dashboard' %}">Kontrol Paneli</a>
+                <a class="dropdown-item" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a>
+                <a class="dropdown-item" href="{% url 'getdogco:my_favorites' %}">Favorilerim</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger" href="{% url 'getdogco:logout' %}">Çıkış Yap</a>
+              </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:my_favorites' %}">Favorilerim</a>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'getdogco:login' %}">Giriş Yap</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:logout' %}">Çıkış Yap</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'getdogco:register' %}">Kayıt Ol</a>
             </li>
-        {% else %}
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:login' %}">Giriş Yap</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'getdogco:register' %}">Kayıt Ol</a>
-            </li>
-        {% endif %}
-            <li class="nav-item active">
-                <button onclick="toggleDarkMode()" class="btn btn-outline-light btn-sm ml-2">
-                    🌓 Tema
-                  </button>                                  
-            </li>
+          {% endif %}
         </ul>
+      </div>
     </div>
-</nav>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html> 
+  </nav>
+    <div class="container mt-5 pt-5 mb-5">
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        
+        {% block body %}
+        {% endblock body %}
+    </div>
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">© 2023 GetDogCo. Tüm Hakları Saklıdır.</p>
+        <p class="mb-0">Gizlilik Politikası | Kullanım Şartları</p>
