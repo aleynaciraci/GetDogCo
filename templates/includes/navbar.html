@@ -1,79 +1,78 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand font-weight-bold" href="/">🐾 GetDogCo</a>
-  
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menüyü Aç">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-  
-        <!-- Sol Menü -->
-        <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #1c7ed6;">
+  <div class="container">
+    <a class="navbar-brand font-weight-bold" href="/">🐾 GetDogCo</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menüyü Aç">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <!-- Sol Menü -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Hakkımızda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'getdogco:list_posts' %}">İlanlar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">Sahiplenme Rehberi</a>
+        </li>
+      </ul>
+
+      <!-- Arama Kutusu -->
+      <form method="GET" action="{% url 'getdogco:list_posts' %}" class="form-inline my-2 my-md-0 mr-md-3">
+        <input class="form-control form-control-sm mr-2" type="search" name="keyword" placeholder="Ara..." aria-label="Ara">
+        <button class="btn btn-warning btn-sm text-dark" type="submit">Ara</button>
+      </form>
+
+      <!-- Sağ Menü -->
+      <ul class="navbar-nav">
+        {% if request.user.is_authenticated %}
+          <!-- Bildirim Simgesi -->
           <li class="nav-item">
-            <a class="nav-link" href="/about">Hakkımızda</a>
+            <a class="nav-link position-relative" href="#">
+              🛎️
+              <span class="badge badge-danger position-absolute" style="top: 5px; right: 5px; font-size: 0.6rem;">2</span>
+            </a>
+          </li>
+
+          <!-- Kullanıcı Dropdown Menüsü -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+              👤 {{ request.user.username }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="{% url 'getdogco:dashboard' %}">Kontrol Paneli</a>
+              <a class="dropdown-item" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a>
+              <a class="dropdown-item" href="{% url 'getdogco:my_favorites' %}">Favorilerim</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger" href="{% url 'getdogco:logout' %}">Çıkış Yap</a>
+            </div>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'getdogco:login' %}">Giriş Yap</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:list_posts' %}">İlanlar</a>
+            <a class="nav-link" href="{% url 'getdogco:register' %}">Kayıt Ol</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">Sahiplenme Rehberi</a>
-          </li>
-        </ul>
-  
-        <!-- Arama Kutusu -->
-        <form method="GET" action="{% url 'getdogco:list_posts' %}" class="form-inline my-2 my-md-0 mr-md-3">
-          <input class="form-control form-control-sm mr-2" type="search" name="keyword" placeholder="Ara..." aria-label="Ara">
-          <button class="btn btn-outline-light btn-sm" type="submit">Ara</button>
-        </form>
-  
-        <!-- Sağ Menü -->
-        <ul class="navbar-nav">
-          {% if request.user.is_authenticated %}
-            <!-- Bildirim Simgesi -->
-            <li class="nav-item">
-              <a class="nav-link position-relative" href="#">
-                🛎️
-                <span class="badge badge-danger position-absolute" style="top: 5px; right: 5px; font-size: 0.6rem;">2</span>
-              </a>
-            </li>
-  
-            <!-- Kullanıcı Dropdown Menüsü -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
-                👤 {{ request.user.username }}
-              </a>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="{% url 'getdogco:dashboard' %}">Kontrol Paneli</a>
-                <a class="dropdown-item" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a>
-                <a class="dropdown-item" href="{% url 'getdogco:my_favorites' %}">Favorilerim</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger" href="{% url 'getdogco:logout' %}">Çıkış Yap</a>
-              </div>
-            </li>
-          {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'getdogco:login' %}">Giriş Yap</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'getdogco:register' %}">Kayıt Ol</a>
-            </li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-  </nav>
-    <div class="container mt-5 pt-5 mb-5">
-        {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-        {% endfor %}
         {% endif %}
-        
-        {% block body %}
-        {% endblock body %}
+      </ul>
     </div>
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">© 2023 GetDogCo. Tüm Hakları Saklıdır.</p>
-        <p class="mb-0">Gizlilik Politikası | Kullanım Şartları</p>
+  </div>
+</nav>
+
+<!-- İçerik -->
+<div class="container mt-5 pt-5 mb-5">
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  {% block body %}
+  {% endblock body %}
+</div>

@@ -1,18 +1,45 @@
 {% extends "layout.html" %}
-
+{% load static %} 
 {% block body %}
 
-<div class="jumbotron text-center" style="background-color: #fce4ec; color: #212121;">
-    <div class="container">
-        <h1 class="display-4">🐶 GetDogCo</h1>
-        <p class="lead">Sahipsiz dostlarımıza sıcak bir yuva bulmak için buradayız!</p>
-        <a href="{% url 'getdogco:list_posts' %}" class="btn btn-secondary btn-lg mt-3">İlanlara Göz At</a>
+<!-- Tüm ekranı kaplayan hero -->
+<div class="jumbotron jumbotron-fluid text-white d-flex align-items-center" 
+     style="background-image: url('{% static 'images/hero-dog.jpg' %}'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 500px; 
+            position: relative;
+            border-radius: 12px;
+            width: 100%;">
+
+    <!-- Overlay -->
+    <div style="position: absolute; 
+                top: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%; 
+                background-color: rgba(0, 0, 0, 0.3); 
+                border-radius: 12px;">
+    </div>
+
+    <!-- İçerik -->
+    <div class="container position-relative" style="z-index: 2; max-width: 100%;">
+        <h1 class="display-3 font-weight-bold text-center">🐶 GetDogCo</h1>
+        <p class="lead mb-4 text-center" style="font-size: 1.5rem;">Sadık dostlara sıcak yuvalar!</p>
+        <div class="text-center">
+            <a href="{% url 'getdogco:list_posts' %}" class="btn btn-lg text-dark"
+               style="background-color: #ffe066; border-radius: 8px;">
+                İlanlara Göz At
+            </a>
+        </div>
     </div>
 </div>
+<!-- HERO BÖLÜMÜ SONU -->
 
-<p>
+<!-- Giriş durumu -->
+<p class="text-center mt-4">
     {% if request.user.is_authenticated %}
-        Giriş Yapılmış, Hoşgeldiniz {{ request.user.username }}! 🐶
+        Giriş Yapılmış, Hoşgeldiniz <strong>{{ request.user.username }}</strong>! 🐶
     {% else %}
         Giriş Yapılmamış. <a href="{% url 'getdogco:login' %}">Giriş yapın</a> veya <a href="{% url 'getdogco:register' %}">kayıt olun</a> ve sahipsiz dostlarımız için bir fark yaratın!
     {% endif %}
