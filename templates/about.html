@@ -1,41 +1,162 @@
 {% extends "layout.html" %}
-
+{% load static %}   
 {% block body %}
-<div class="container mt-0">  
+
+<div class="container mt-3">
+  <!-- BAŞLIK -->
   <div class="text-center mb-5">
     <h2 class="font-weight-bold">🐾 GetDogCo Hakkında</h2>
     <p class="lead mt-3">Sahipsiz dostlarımıza sıcak bir yuva bulmak için buradayız.</p>
   </div>
 
-  <div class="row mb-5">
+  <!-- MİSYON -->
+  <div class="row align-items-center mb-5">
     <div class="col-md-6">
-      <h4 class="font-weight-bold">🎯 Misyonumuz</h4>
-      <p>
-        GetDogCo, barınaklardaki ve sokaklardaki köpeklerin sahiplendirilmesini kolaylaştırmak için kurulmuş bir platformdur.
-        Amacımız, her canlının hak ettiği sevgi dolu yuvaya ulaşmasını sağlamak.
-      </p>
+      <img src="{% static 'images/mission.jpg' %}" alt="Misyonumuz" class="img-fluid rounded shadow" style="max-width: 400px;">
+    </div>
+    <div class="col-md-6">
+      <div class="p-4 rounded dark-mode-bg">
+        <h4 class="font-weight-bold mb-3">🎯 Misyonumuz</h4>
+        <p>
+          GetDogCo olarak misyonumuz; sahipsiz köpeklerin hayatlarına umut olmak, onların güvenli ve kalıcı yuvalara ulaşmasını kolaylaştırmak ve bu süreci hem köpekler hem de sahip adayları için güvenli hale getirmektir.
+        </p>
+        <p>
+          Kullanıcı dostu arayüzümüz, filtreleme özelliklerimiz ve şeffaf iletişim süreçlerimizle sahiplendirmeyi dijital dünyaya taşıyoruz.
+        </p>
+      </div>
     </div>
   </div>
 
-  <div class="row mb-5">
+  <!-- VİZYON -->
+  <div class="row align-items-center mb-5">
     <div class="col-md-6 order-md-2">
-      <h4 class="font-weight-bold">💡 Nasıl Çalışır?</h4>
-      <ul class="list-unstyled">
-        <li>✅ Kayıt olarak ilan verebilir veya diğer ilanlara göz atabilirsiniz.</li>
-        <li>✅ Köpekler hakkında detaylı bilgi alabilir, filtreleyerek arama yapabilirsiniz.</li>
-        <li>✅ İlan sahibiyle doğrudan iletişime geçerek sahiplenme sürecini başlatabilirsiniz.</li>
-      </ul>
+      <img src="{% static 'images/vision.jpg' %}" alt="Vizyonumuz" class="img-fluid rounded shadow" style="max-width: 400px;">
     </div>
     <div class="col-md-6 order-md-1">
-        <img src="https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg" alt="Adopt Process" class="img-fluid rounded shadow">
+      <div class="p-4 rounded dark-mode-bg">
+        <h4 class="font-weight-bold mb-3">🔟 Vizyonumuz</h4>
+        <p>
+          Sadece bir barınak ilan sistemi değil, aynı zamanda hayvan haklarına duyarlı bir topluluk inşa etmeyi hedefliyoruz.
+        </p>
+        <p>
+          Uzun vadede daha bilinçli sahiplenmelerin yaygınlaşması, sahiplendirme oranlarının artması ve terkedilme oranlarının azaltılması için çalışıyoruz.
+        </p>
+        <p>
+          Bunun için bilinçlendirme içerikleri, sahiplenme rehberleri ve topluluk destekleri oluşturuyoruz.
+        </p>
       </div>
+    </div>
   </div>
 
+  <!-- RENKLER -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-10">
+      <div class="p-4 rounded shadow-sm border light-bg-gray dark-mode-bg">
+        <h5 class="font-weight-bold">🎨 Renklerin Anlamı</h5>
+        <p class="mb-0">
+          Web sitemizde ağırlıklı olarak kullanılan <strong>mavi ve sarı</strong> renkleri tesadüf değildir. Köpeklerin gözleri yalnızca bu iki ana rengi algılayabildiği için, GetDogCo arayüzünü onların dünyasına daha yakın bir tasarım anlayışıyla hazırladık. Her tasarım kararımızda dostlarımızı önceliklendiriyoruz.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEĞERLERİMİZ -->
+  <div class="row mb-5">
+    <div class="col">
+      <h4 class="text-center font-weight-bold mb-4"> 💙 Değerlerimiz</h4>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="p-3 rounded light-bg-blue dark-mode-bg h-100">
+            <h6 class="font-weight-bold value-title">Sorumluluk</h6>
+            <p>Köpeklere verilen her sözü tutmak için sorumluluk alırız.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="p-3 rounded light-bg-yellow dark-mode-bg h-100">
+            <h6 class="font-weight-bold value-title">Sevgi</h6>
+            <p>Her kararımızda dostlarımızın iyiliğini ön planda tutarız.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="p-3 rounded light-bg-gray dark-mode-bg h-100">
+            <h6 class="font-weight-bold value-title">Topluluk</h6>
+            <p>Birlikte daha güçlü bir sahiplenme kültürü yaratacağız.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EKİBİMİZ -->
+  <div class="row mb-5">
+    <div class="col">
+      <h4 class="text-center font-weight-bold mb-4">💼 Ekibimiz</h4>
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-4 mb-3">
+          <div class="card text-center h-100 dark-mode-bg">
+            <div class="card-body">
+              <h5 class="card-title">Zülal</h5>
+              <p class="card-text">Fikir Sahibi & Proje Yönlendiricisi</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-3">
+          <div class="card text-center h-100 dark-mode-bg">
+            <div class="card-body">
+              <h5 class="card-title">Aleyna</h5>
+              <p class="card-text">Baş Geliştirici & Teknik Sorumlu</p>
+            </div>
+          </div>
+        </div>
+        <!-- Daha fazla ekip arkadaşı eklenebilir -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SSS -->
+  <div class="row mb-5">
+    <div class="col">
+      <h4 class="text-center font-weight-bold mb-4">❓ Sık Sorulan Sorular</h4>
+      <div class="accordion" id="faqAccordion">
+        <div class="card dark-mode-bg">
+          <div class="card-header" id="faq1">
+            <h2 class="mb-0">
+              <button class="btn btn-link text-left w-100" type="button" data-toggle="collapse" data-target="#collapse1">
+                Sahiplenme ücretli mi?
+              </button>
+            </h2>
+          </div>
+          <div id="collapse1" class="collapse" data-parent="#faqAccordion">
+            <div class="card-body">
+              Hayır, sahiplenme tamamen ücretsizdir.
+            </div>
+          </div>
+        </div>
+        <div class="card dark-mode-bg">
+          <div class="card-header" id="faq2">
+            <h2 class="mb-0">
+              <button class="btn btn-link text-left w-100" type="button" data-toggle="collapse" data-target="#collapse2">
+                Nasıl başvuru yapabilirim?
+              </button>
+            </h2>
+          </div>
+          <div id="collapse2" class="collapse" data-parent="#faqAccordion">
+            <div class="card-body">
+              GetDogCo üzerinden ilanlara tıklayarak hemen başvuru yapabilirsiniz.
+            </div>
+          </div>
+        </div>
+        <!-- Daha fazla soru eklenebilir -->
+      </div>
+    </div>
+  </div>
+
+  <!-- İLETİŞİM -->
   <div class="text-center">
     <h5>Daha fazla bilgiye mi ihtiyacınız var?</h5>
     <p>Bize ulaşmak için <a href="{% url 'getdogco:contact' %}">iletişim sayfamızı</a> ziyaret edin.</p>
     <a href="{% url 'getdogco:adoption_guide' %}" class="btn btn-outline-success mt-2">📘 Sahiplenme Rehberini İncele</a>
   </div>
-
 </div>
+
 {% endblock %}
