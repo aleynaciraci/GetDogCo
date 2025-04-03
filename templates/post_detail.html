@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load i18n %}
 
 {% block body %}
 <div class="row justify-content-center">
@@ -12,21 +13,21 @@
       {% if is_favorited %}
         <form method="POST" action="{% url 'getdogco:remove_favorite' post.id %}">
           {% csrf_token %}
-          <button type="submit" class="btn btn-danger mb-3">❤️ Favorilerden Çıkar</button>
+          <button type="submit" class="btn btn-danger mb-3">❤️ {% trans "Favorilerden Çıkar" %}</button>
         </form>
       {% else %}
         <form method="POST" action="{% url 'getdogco:add_favorite' post.id %}">
           {% csrf_token %}
-          <button type="submit" class="btn btn-outline-danger mb-3">🤍 Favorilere Ekle</button>
+          <button type="submit" class="btn btn-outline-danger mb-3">🤍 {% trans "Favorilere Ekle" %}</button>
         </form>
       {% endif %}
     {% else %}
-      <p><a href="{% url 'login' %}">Favorilere eklemek için giriş yapın.</a></p>
+      <p><a href="{% url 'login' %}">{% trans "Favorilere eklemek için giriş yapın." %}</a></p>
     {% endif %}
 
-     <!-- Sahip -->
-     <p class="lead">
-      {{ post.owner.username }} tarafından yayınlandı
+    <!-- Sahip -->
+    <p class="lead">
+      {{ post.owner.username }} {% trans "tarafından yayınlandı" %}
     </p>
 
     <hr>
@@ -38,7 +39,7 @@
 
     <!-- Köpek Fotoğrafı -->
     {% if post.dog_image %}
-    <img class="img-fluid rounded" src="{{ post.dog_image.url }}" alt="Köpek Fotoğrafı">
+    <img class="img-fluid rounded" src="{{ post.dog_image.url }}" alt="{% trans 'Köpek Fotoğrafı' %}">
     {% endif %}
 
     <hr>
@@ -50,42 +51,43 @@
 
     <hr>
 
-    <h4>Yorumlar</h4>
-<hr>
-{% if comments %}
-  {% for comment in comments %}
-    <div class="media mb-4">
-      <img class="rounded-circle img-fluid mr-3" style="max-width: 50px;"
-           src="{% if comment.user.profile.image %}{{ comment.user.profile.image.url }}{% else %}/media/profile_pics/default.jpg{% endif %}"
-           alt="Profil Resmi"
-           onerror="this.onerror=null;this.src='/media/profile_pics/default.jpg';">
-      <div class="media-body">
-        <h5 class="mt-0">{{ comment.comment_author }}</h5>
-        <small class="text-muted">{{ comment.comment_date }}</small><br>
-        {{ comment.comment_content }}
+    <h4>{% trans "Yorumlar" %}</h4>
+    <hr>
+
+    {% if comments %}
+      {% for comment in comments %}
+        <div class="media mb-4">
+          <img class="rounded-circle img-fluid mr-3" style="max-width: 50px;"
+               src="{% if comment.user.profile.image %}{{ comment.user.profile.image.url }}{% else %}/media/profile_pics/default.jpg{% endif %}"
+               alt="{% trans 'Profil Resmi' %}"
+               onerror="this.onerror=null;this.src='/media/profile_pics/default.jpg';">
+          <div class="media-body">
+            <h5 class="mt-0">{{ comment.comment_author }}</h5>
+            <small class="text-muted">{{ comment.comment_date }}</small><br>
+            {{ comment.comment_content }}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="alert alert-warning">
+        {% trans "Bu ilana henüz yorum yazılmamış. İlk yorumu siz yapın!" %}
       </div>
-    </div>
-  {% endfor %}
-{% else %}
-  <div class="alert alert-warning">
-    Bu ilana henüz yorum yazılmamış. İlk yorumu siz yapın!
-  </div>
-{% endif %}
- 
-     <div class="card my-4">
-       <h5 class="card-header">Yorum Ekle:</h5>
-       <div class="card-body">
-         <form method="post" action="{% url 'getdogco:add_comment' post.id %}">
-           {% csrf_token %}
-           <div class="form-group">
-             <label for="formGroupExampleInput">İsim</label>
-             <input name="comment_author" type="text" class="form-control" id="formGroupExampleInput" placeholder="İsminizi girin">
-           </div>
-           <div class="form-group">
-            <label for="formGroupExampleInput">Yorum</label>
+    {% endif %}
+
+    <div class="card my-4">
+      <h5 class="card-header">{% trans "Yorum Ekle:" %}</h5>
+      <div class="card-body">
+        <form method="post" action="{% url 'getdogco:add_comment' post.id %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="formGroupExampleInput">{% trans "İsim" %}</label>
+            <input name="comment_author" type="text" class="form-control" id="formGroupExampleInput" placeholder="{% trans 'İsminizi girin' %}">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">{% trans "Yorum" %}</label>
             <textarea name="comment_content" class="form-control" rows="3"></textarea>
           </div>
-          <button type="submit" class="btn btn-success">Ekle</button>
+          <button type="submit" class="btn btn-success">{% trans "Ekle" %}</button>
         </form>
       </div>
     </div>

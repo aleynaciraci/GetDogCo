@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="tr">
+{% load static i18n %}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,20 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  <!-- Kendi stil dosyan -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-  <title>GetDogCo - Köpek Sahiplendirme</title>
+  <title>{% trans "GetDogCo - Köpek Sahiplendirme" %}</title>
 
   <style>
     html, body {
       height: 100%;
       margin: 0;
     }
-
     body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
-
     .content-wrapper {
       flex: 1;
     }
@@ -39,7 +35,7 @@
       <a class="navbar-brand font-weight-bold" href="/">🐾 GetDogCo</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menüyü Aç">
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="{% trans 'Menüyü Aç' %}">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -47,23 +43,21 @@
         <!-- Sol Menü -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/about">Hakkımızda</a>
+            <a class="nav-link" href="/about">{% trans "Hakkımızda" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:list_posts' %}">İlanlar</a>
+            <a class="nav-link" href="{% url 'getdogco:list_posts' %}">{% trans "İlanlar" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">Sahiplenme Rehberi</a>
+            <a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">{% trans "Sahiplenme Rehberi" %}</a>
           </li>
         </ul>
 
-      <!-- Arama Kutusu -->
-<form method="GET" action="{% url 'getdogco:list_posts' %}" class="form-inline my-2 my-md-0 mr-md-3">
-  <input class="form-control form-control-sm mr-2" type="search" name="keyword" placeholder="Ara..." aria-label="Ara">
-  <button class="btn btn-sm btn-yellow-custom" type="submit">
-    Ara
-  </button>
-</form> 
+        <!-- Arama Kutusu -->
+        <form method="GET" action="{% url 'getdogco:list_posts' %}" class="form-inline my-2 my-md-0 mr-md-3">
+          <input class="form-control form-control-sm mr-2" type="search" name="keyword" placeholder="{% trans 'Ara...' %}" aria-label="{% trans 'Ara' %}">
+          <button class="btn btn-sm btn-yellow-custom" type="submit">{% trans "Ara" %}</button>
+        </form>
 
         <!-- Sağ Menü -->
         <ul class="navbar-nav">
@@ -77,12 +71,12 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown" style="width: 300px; max-height: 300px; overflow-y: auto;">
-              <h6 class="dropdown-header">Bildirimler</h6>
-              <a class="dropdown-item" href="#">Yeni mesajın var</a>
-              <a class="dropdown-item" href="#">Profiline biri göz attı</a>
-              <a class="dropdown-item" href="#">İlanın onaylandı</a>
+              <h6 class="dropdown-header">{% trans "Bildirimler" %}</h6>
+              <a class="dropdown-item" href="#">{% trans "Yeni mesajın var" %}</a>
+              <a class="dropdown-item" href="#">{% trans "Profiline biri göz attı" %}</a>
+              <a class="dropdown-item" href="#">{% trans "İlanın onaylandı" %}</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center text-primary" href="#">Tüm Bildirimleri Gör</a>
+              <a class="dropdown-item text-center text-primary" href="#">{% trans "Tüm Bildirimleri Gör" %}</a>
             </div>
           </li>
 
@@ -92,29 +86,40 @@
               👤 {{ request.user.username }}
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="{% url 'getdogco:dashboard' %}">Kontrol Paneli</a>
-              <a class="dropdown-item" href="{% url 'getdogco:add_post' %}">Yeni İlan Ekle</a>
-              <a class="dropdown-item" href="{% url 'getdogco:my_favorites' %}">Favorilerim</a>
-              <a class="dropdown-item" href="{% url 'getdogco:profile' %}">Profil</a>
+              <a class="dropdown-item" href="{% url 'getdogco:dashboard' %}">{% trans "Kontrol Paneli" %}</a>
+              <a class="dropdown-item" href="{% url 'getdogco:add_post' %}">{% trans "Yeni İlan Ekle" %}</a>
+              <a class="dropdown-item" href="{% url 'getdogco:my_favorites' %}">{% trans "Favorilerim" %}</a>
+              <a class="dropdown-item" href="{% url 'getdogco:profile' %}">{% trans "Profil" %}</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger" href="{% url 'getdogco:logout' %}">Çıkış Yap</a>
+              <a class="dropdown-item text-danger" href="{% url 'getdogco:logout' %}">{% trans "Çıkış Yap" %}</a>
             </div>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:login' %}">Giriş Yap</a>
+            <a class="nav-link" href="{% url 'getdogco:login' %}">{% trans "Giriş Yap" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:register' %}">Kayıt Ol</a>
+            <a class="nav-link" href="{% url 'getdogco:register' %}">{% trans "Kayıt Ol" %}</a>
           </li>
           {% endif %}
 
           <!-- Tema Butonu -->
-<li class="nav-item">
-  <button onclick="toggleDarkMode()" id="darkModeBtn" class="btn btn-sm ml-2 btn-yellow-custom" style="margin-top: 4px;">
-    🌃 Tema
-  </button>
-</li>
+          <li class="nav-item">
+            <button onclick="toggleDarkMode()" id="darkModeBtn" class="btn btn-sm ml-2 btn-yellow-custom" style="margin-top: 4px;">
+              🌃 {% trans "Tema" %}
+            </button>
+          </li>
+
+          <!-- Dil Değiştir -->
+          <li class="nav-item ml-2" style="margin-top: 3px;">
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <select name="language" onchange="this.form.submit()" class="form-control form-control-sm">
+                <option value="tr" {% if LANGUAGE_CODE == 'tr' %}selected{% endif %}>🇹🇷</option>
+                <option value="fr" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>🇫🇷</option>
+              </select>
+            </form>
+          </li>          
         </ul>
       </div>
     </div>
@@ -134,8 +139,8 @@
 
   <!-- Sticky Footer -->
   <footer style="background-color: #ffffff; color: #212529;" class="text-center py-3">
-    <p class="mb-0 font-weight-bold">© 2025 GetDogCo. Tüm Hakları Saklıdır.</p>
-    <p class="mb-0">Gizlilik Politikası | Kullanım Şartları</p>
+    <p class="mb-0 font-weight-bold">© 2025 GetDogCo. {% trans "Tüm Hakları Saklıdır." %}</p>
+    <p class="mb-0">{% trans "Gizlilik Politikası" %} | {% trans "Kullanım Şartları" %}</p>
   </footer>
 
   <!-- JS dosyaları -->

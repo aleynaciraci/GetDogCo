@@ -1,25 +1,22 @@
 {% extends "layout.html" %}
-
-{% block body %}
-
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-<div class="row">
+{% block body %}
+<div class="row"> 
     <div class="col-md-6 offset-md-3">
-        <h3>Hesap Oluştur</h3>
-        <p>GetDogCo'ya katılarak sahipsiz dostlarımıza sıcak bir yuva bulmalarına yardımcı olabilirsiniz!</p>
+        <h3>{% trans "Hesap Oluştur" %}</h3>
+        <p>{% trans "GetDogCo'ya katılarak sahipsiz dostlarımıza sıcak bir yuva bulmalarına yardımcı olabilirsiniz!" %}</p>
         <hr>
         <form method="post">
             {% csrf_token %}
-            
             {{ form|crispy }}
             <br>
-            <button type="submit" class="btn btn-success">Kayıt Ol</button>
+            <button type="submit" class="btn btn-success">{% trans "Kayıt Ol" %}</button>
         </form>
 
         <hr>
-        <p>Zaten bir hesabınız var mı? <a href="{% url 'login' %}">Giriş yapın</a>.</p>
+        <p>{% trans "Zaten bir hesabınız var mı?" %} <a href="{% url 'login' %}">{% trans "Giriş yapın" %}</a>.</p>
     </div>
 </div>
-
-{% endblock body %}
+{% endblock body %} 

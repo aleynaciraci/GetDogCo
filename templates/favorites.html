@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
+{% load i18n %}
 
 {% block body %}
 <div class="container mt-5">
 
   <!-- Başlık -->
   <div class="text-center mb-5">
-    <h2 class="font-weight-bold">❤️ Favori İlanlarım</h2>
-    <p class="text-muted">Beğendiğiniz ilanlara buradan ulaşabilirsiniz.</p>
+    <h2 class="font-weight-bold">❤️ {% trans "Favori İlanlarım" %}</h2>
+    <p class="text-muted">{% trans "Beğendiğiniz ilanlara buradan ulaşabilirsiniz." %}</p>
   </div>
 
   {% if favorites %}
@@ -21,10 +22,14 @@
             {% endif %}
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{ fav.post.title }}</h5>
-              <p class="card-text text-muted small mb-1">👤 {{ fav.post.owner.username }} | 🗓️ {{ fav.post.created_date|date:"d.m.Y" }}</p>
+              <p class="card-text text-muted small mb-1">
+                👤 {{ fav.post.owner.username }} | 🗓️ {{ fav.post.created_date|date:"d.m.Y" }}
+              </p>
               <p class="card-text">{{ fav.post.description|truncatewords:25 }}</p>
               <div class="mt-auto text-right">
-                <a href="{% url 'getdogco:post_detail' fav.post.id %}" class="btn btn-outline-success btn-sm">Detayları Gör</a>
+                <a href="{% url 'getdogco:post_detail' fav.post.id %}" class="btn btn-outline-success btn-sm">
+                  {% trans "Detayları Gör" %}
+                </a>
               </div>
             </div>
           </div>
@@ -33,10 +38,11 @@
     </div>
   {% else %}
     <div class="alert alert-info text-center">
-      Henüz favori ilanınız yok. <a href="{% url 'getdogco:list_posts' %}" class="alert-link">İlanlara göz atın!</a>
+      {% trans "Henüz favori ilanınız yok." %}
+      <a href="{% url 'getdogco:list_posts' %}" class="alert-link">{% trans "İlanlara göz atın!" %}</a>
     </div>
   {% endif %}
 
 </div>
-{% endblock %}
+{% endblock %} 
 

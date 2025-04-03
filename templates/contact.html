@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
+{% load i18n %}
 
 {% block body %}
 <div class="container mt-5">
-    <h2 class="mb-4">İletişim</h2>
+    <h2 class="mb-4">{% trans "İletişim" %}</h2>
 
-    <p>Herhangi bir sorunuz ya da öneriniz varsa bizimle iletişime geçmekten çekinmeyin.</p>
+    <p>{% trans "Herhangi bir sorunuz ya da öneriniz varsa bizimle iletişime geçmekten çekinmeyin." %}</p>
 
     {% if messages %}
         {% for message in messages %}
@@ -15,8 +16,8 @@
     <form method="post" action="">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary mt-3">Gönder</button>
+        <button type="submit" class="btn btn-primary mt-3">{% trans "Gönder" %}</button>
     </form>
 </div>
-{% endblock %}
+{% endblock %} 
 

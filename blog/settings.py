@@ -12,7 +12,7 @@ DEBUG = True
 
 # İzin verilen hostlar
 # Bu ayar, hangi hostlardan gelen isteklere izin verileceğini belirler.
-ALLOWED_HOSTS = [ '127.0.0.1' , 'localhost', '192.168.1.35']
+ALLOWED_HOSTS = [ '127.0.0.1' , 'localhost', '192.168.1.123']
 
 # Uygulamalar
 INSTALLED_APPS = [
@@ -40,6 +40,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 # Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -64,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n', 
             ],
         },
     },
@@ -99,11 +101,20 @@ AUTH_PASSWORD_VALIDATORS = [
 # Dil ve Zaman Ayarları
 LANGUAGE_CODE = 'tr'
 
-TIME_ZONE = 'Europe/Istanbul'
+LANGUAGES = [
+    ('tr', 'Türkçe'),
+    ('fr', 'Français'),
+]
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
+TIME_ZONE = 'Europe/Istanbul'
 
 # Statik dosya ayarları
 STATIC_URL = '/static/'

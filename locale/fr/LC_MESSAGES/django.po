@@ -1,0 +1,2171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 21:08+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: templates/about.html:9
+msgid "Hakkında"
+msgstr "À propos"
+
+#: templates/about.html:10
+msgid "Sahipsiz dostlarımıza sıcak bir yuva bulmak için buradayız."
+msgstr "Nous sommes là pour trouver un foyer chaleureux aux chiens sans abri."
+
+#: templates/about.html:20
+msgid "Misyonumuz"
+msgstr "Notre Mission"
+
+#: templates/about.html:21
+msgid ""
+"GetDogCo olarak misyonumuz; sahipsiz köpeklerin hayatlarına umut olmak, "
+"onların güvenli ve kalıcı yuvalara ulaşmasını kolaylaştırmak ve bu süreci "
+"hem köpekler hem de sahip adayları için güvenli hale getirmektir."
+msgstr ""
+"Chez GetDogCo, notre mission est de donner de l'espoir aux chiens sans abri, "
+"de faciliter leur accès à des foyers sûrs et permanents, et de rendre ce "
+"processus sécurisé tant pour les chiens que pour les adoptants potentiels."
+
+#: templates/about.html:22
+msgid ""
+"Kullanıcı dostu arayüzümüz, filtreleme özelliklerimiz ve şeffaf iletişim "
+"süreçlerimizle sahiplendirmeyi dijital dünyaya taşıyoruz."
+msgstr ""
+"Grâce à notre interface conviviale, nos fonctionnalités de filtrage et nos "
+"procédures de communication transparentes, nous transférons l'adoption de "
+"chiens dans le monde numérique."
+
+#: templates/about.html:34
+msgid "Vizyonumuz"
+msgstr "Notre Vision"
+
+#: templates/about.html:35
+msgid ""
+"Sadece bir barınak ilan sistemi değil, aynı zamanda hayvan haklarına duyarlı "
+"bir topluluk inşa etmeyi hedefliyoruz."
+msgstr ""
+"Nous ne visons pas seulement à créer un système d’annonces pour refuges, "
+"mais aussi à construire une communauté sensible aux droits des animaux."
+
+#: templates/about.html:36
+msgid ""
+"Uzun vadede daha bilinçli sahiplenmelerin yaygınlaşması, sahiplendirme "
+"oranlarının artması ve terkedilme oranlarının azaltılması için çalışıyoruz."
+msgstr ""
+"À long terme, nous œuvrons pour une adoption plus responsable, une hausse du "
+"taux d’adoption et une diminution des abandons."
+
+#: templates/about.html:37
+msgid ""
+"Bunun için bilinçlendirme içerikleri, sahiplenme rehberleri ve topluluk "
+"destekleri oluşturuyoruz."
+msgstr ""
+"Pour cela, nous créons des contenus de sensibilisation, des guides d’adoption "
+"et des supports communautaires."
+
+#: templates/about.html:46
+msgid "Renklerin Anlamı"
+msgstr "La Signification des Couleurs"
+
+#: templates/about.html:47
+msgid ""
+"Web sitemizde ağırlıklı olarak kullanılan mavi ve sarı renkleri tesadüf "
+"değildir. Köpeklerin gözleri yalnızca bu iki ana rengi algılayabildiği için, "
+"GetDogCo arayüzünü onların dünyasına daha yakın bir tasarım anlayışıyla "
+"hazırladık. Her tasarım kararımızda dostlarımızı önceliklendiriyoruz."
+msgstr ""
+"Les couleurs bleu et jaune, dominantes sur notre site, ne sont pas choisies au hasard. "
+"Les chiens ne perçoivent que ces deux couleurs principales, c’est pourquoi l’interface de GetDogCo "
+"a été conçue pour être plus proche de leur perception du monde. Chaque décision de design prend en compte leur bien-être."
+
+#: templates/about.html:55
+msgid "Değerlerimiz"
+msgstr "Nos Valeurs"
+
+#: templates/about.html:59
+msgid "Sorumluluk"
+msgstr "Responsabilité"
+
+#: templates/about.html:60
+msgid "Köpeklere verilen her sözü tutmak için sorumluluk alırız."
+msgstr "Nous assumons la responsabilité de tenir chaque promesse faite aux chiens."
+
+#: templates/about.html:65
+msgid "Sevgi"
+msgstr "Amour"
+
+#: templates/about.html:66
+msgid "Her kararımızda dostlarımızın iyiliğini ön planda tutarız."
+msgstr "Dans chaque décision, nous plaçons le bien-être de nos amis à quatre pattes au premier plan."
+
+#: templates/about.html:71
+msgid "Topluluk"
+msgstr "Communauté"
+
+#: templates/about.html:72
+msgid "Birlikte daha güçlü bir sahiplenme kültürü yaratacağız."
+msgstr "Ensemble, nous construirons une culture d’adoption plus forte."
+
+#: templates/about.html:82
+msgid "Ekibimiz"
+msgstr "Notre équipe"
+
+#: templates/about.html:88
+msgid "Fikir Sahibi & Proje Yönlendiricisi"
+msgstr "Initiatrice de l'idée & Responsable de projet"
+
+#: templates/about.html:96
+msgid "Baş Geliştirici & Teknik Sorumlu"
+msgstr "Développeuse principale & Responsable technique"
+
+#: templates/about.html:107
+msgid "Sık Sorulan Sorular"
+msgstr "Questions Fréquemment Posées"
+
+#: templates/about.html:113
+msgid "Sahiplenme ücretli mi?"
+msgstr "L’adoption est-elle payante ?"
+
+#: templates/about.html:119
+msgid "Hayır, sahiplenme tamamen ücretsizdir."
+msgstr "Non, l’adoption est entièrement gratuite."
+
+#: templates/about.html:127
+msgid "Nasıl başvuru yapabilirim?"
+msgstr "Comment puis-je postuler ?"
+
+#: templates/about.html:133
+msgid "GetDogCo üzerinden ilanlara tıklayarak hemen başvuru yapabilirsiniz."
+msgstr "Vous pouvez postuler immédiatement en cliquant sur les annonces sur GetDogCo."
+
+#: templates/about.html:143
+msgid "Daha fazla bilgiye mi ihtiyacınız var?"
+msgstr "Vous avez besoin de plus d’informations? "
+
+#: templates/about.html:144
+msgid "Bize ulaşmak için"
+msgstr "Pour nous contacter,"
+
+#: templates/about.html:144
+msgid "iletişim sayfamızı"
+msgstr "visitez notre page de contact"
+
+#: templates/about.html:144
+msgid "ziyaret edin."
+msgstr "."
+
+#: templates/about.html:145
+msgid "Sahiplenme Rehberini İncele"
+msgstr "Consulter le Guide d’Adoption"
+
+#: templates/add_post.html:11
+msgid "Yeni İlan Oluştur"
+msgstr "Créer une Nouvelle Annonce"
+
+#: templates/add_post.html:13
+msgid ""
+"Köpeğiniz için güvenli ve sevgi dolu bir yuva arıyorsanız, aşağıdaki formu "
+"doldurun."
+msgstr "Si vous recherchez un foyer sûr et aimant pour votre chien, veuillez remplir le formulaire ci-dessous."
+
+#: templates/add_post.html:22
+msgid "İlanı Yayınla"
+msgstr "Publier l’annonce"
+
+#: templates/adoption_guide.html:6 templates/layout.html:52
+msgid "Sahiplenme Rehberi"
+msgstr "Guide d’Adoption"
+
+#: templates/adoption_guide.html:11
+msgid "Beslenme"
+msgstr "Alimentation"
+
+#: templates/adoption_guide.html:14
+msgid ""
+"Köpeğinizin yaşı, kilosu, cinsi ve sağlık durumu, beslenme programını "
+"belirlemede en önemli faktörlerdir."
+msgstr ""
+"L’âge, le poids, la race et l’état de santé de votre chien sont les facteurs "
+"les plus importants pour déterminer son programme alimentaire."
+
+#: templates/adoption_guide.html:17
+msgid "Yavru Köpekler (0-1 yaş):"
+msgstr "Chiots (0–1 an) :"
+
+#: templates/adoption_guide.html:17
+msgid ""
+"Günde 3-4 öğün; yüksek proteinli, DHA içeren yavru mamaları tercih "
+"edilmelidir."
+msgstr ""
+"3 à 4 repas par jour ; privilégier les croquettes pour chiots riches en protéines "
+"et contenant du DHA."
+
+#: templates/adoption_guide.html:18
+msgid "Yetişkin Köpekler (1-7 yaş):"
+msgstr "Chiens adultes (1–7 ans) :"
+
+#: templates/adoption_guide.html:18
+msgid ""
+"Günde 2 öğün yeterlidir. Irkına ve kilosuna uygun yetişkin maması "
+"kullanılmalıdır."
+msgstr ""
+"Deux repas par jour suffisent. Utiliser une alimentation adaptée à la race et au poids."
+
+#: templates/adoption_guide.html:19
+msgid "Yaşlı Köpekler (7+ yaş):"
+msgstr "Chiens âgés (7 ans et plus) :"
+
+#: templates/adoption_guide.html:19
+msgid ""
+"Sindirimi kolay, eklem destekli mamalar seçilmeli; günde 1-2 öğün "
+"verilebilir."
+msgstr ""
+"Privilégier des croquettes faciles à digérer et contenant un soutien articulaire ; "
+"1 à 2 repas par jour peuvent être donnés."
+
+#: templates/adoption_guide.html:22
+msgid ""
+"Su tüketimi de en az mama kadar önemlidir. Mama ile birlikte köpeğinizin "
+"önünde her zaman"
+msgstr ""
+"La consommation d’eau est tout aussi importante que la nourriture. Avec les croquettes, il faut toujours garder"
+
+
+#: templates/adoption_guide.html:22
+msgid "temiz ve taze su"
+msgstr "de l’eau propre et fraîche"
+
+#: templates/adoption_guide.html:22
+msgid "bulundurmalısınız."
+msgstr "à disposition de votre chien."
+
+#: templates/adoption_guide.html:25 templates/adoption_guide.html:101
+msgid "Not"
+msgstr "Remarque"
+
+#: templates/adoption_guide.html:25
+msgid ""
+"Kuru mamayı ev yemekleriyle karıştırmak bazı durumlarda sindirim sorunlarına "
+"yol açabilir. Veteriner önerisi olmadan mama değiştirmeyin."
+msgstr ""
+"Mélanger les croquettes avec de la nourriture maison peut parfois causer des troubles digestifs. Ne changez pas l’alimentation sans l’avis du vétérinaire."
+
+#: templates/adoption_guide.html:29
+msgid "Daha fazlası için:"
+msgstr "Pour en savoir plus :"
+
+#: templates/adoption_guide.html:30
+msgid "Detaylı Beslenme Rehberi"
+msgstr "Guide Alimentaire Détaillé"
+
+#: templates/adoption_guide.html:38
+msgid "Eğitim"
+msgstr "Éducation"
+
+#: templates/adoption_guide.html:41
+msgid ""
+"Köpek eğitimi, sağlıklı bir iletişim kurmanın temelidir. Eğitim süreci "
+"sabır, tutarlılık ve sevgi gerektirir."
+msgstr ""
+"L’éducation canine est la base d’une bonne communication. Elle demande de la patience, de la cohérence et beaucoup d’affection."
+
+#: templates/adoption_guide.html:43
+msgid "Temel İtaat Komutları"
+msgstr "Commandes d’Obéissance de Base"
+
+#: templates/adoption_guide.html:45
+msgid "Otur"
+msgstr "Assis"
+
+#: templates/adoption_guide.html:45
+msgid ""
+"En temel ve kolay öğretilebilecek komuttur. Öğünlerden önce uygulanabilir."
+msgstr ""
+"La commande la plus basique et facile à enseigner. Peut être utilisée avant les repas."
+
+#: templates/adoption_guide.html:46
+msgid "Bekle"
+msgstr "Attends"
+
+#: templates/adoption_guide.html:46
+msgid ""
+"Dikkatini toplamayı öğretir. Kapıdan çıkarken veya mama öncesi "
+"kullanılabilir."
+msgstr ""
+"Aide à enseigner la concentration. Utile avant les repas ou en sortant par la porte."
+
+#: templates/adoption_guide.html:47
+msgid "Gel"
+msgstr "Viens"
+
+#: templates/adoption_guide.html:47
+msgid ""
+"Açık alanlarda güvenliği sağlar. Mutlaka ödülle desteklenerek öğretilmelidir."
+msgstr ""
+"Assure la sécurité dans les espaces ouverts. Doit toujours être enseigné avec des récompenses."
+
+#: templates/adoption_guide.html:50
+msgid "Pozitif Pekiştirme Nedir?"
+msgstr "Qu’est-ce que le renforcement positif ?"
+
+#: templates/adoption_guide.html:51
+msgid ""
+"İstenilen davranış gerçekleştiğinde ödül (mama, sevgi, oyuncak) verilir. Bu "
+"yöntem köpeklerde güven duygusunu artırır ve öğrenmeyi hızlandırır."
+msgstr ""
+"Lorsque le comportement souhaité se produit, une récompense (nourriture, affection, jouet) est donnée. Cette méthode renforce la confiance du chien et accélère l’apprentissage."
+
+#: templates/adoption_guide.html:54
+msgid "İpucu"
+msgstr "Astuce"
+
+#: templates/adoption_guide.html:54
+msgid ""
+"Eğitim süresini kısa tut (5-10 dakika) ve günde 2-3 kez tekrar et. Uzun "
+"eğitimler köpeği sıkabilir."
+msgstr ""
+"Gardez les séances courtes (5 à 10 minutes) et répétez-les 2 à 3 fois par jour. Les longues séances peuvent ennuyer le chien."
+
+#: templates/adoption_guide.html:58
+msgid "Eğitim Rehberini İncele"
+msgstr "Consulter le guide d'éducation"
+
+#: templates/adoption_guide.html:66
+msgid "Aşı Takvimi"
+msgstr "Calendrier de Vaccination"
+
+#: templates/adoption_guide.html:69
+msgid ""
+"Aşılar, köpeğinizin bağışıklık sistemini güçlendiren ve ciddi hastalıklardan "
+"koruyan en temel sağlık uygulamalarıdır. Aşağıda standart yavru aşı takvimi "
+"yer almaktadır:"
+msgstr ""
+"Les vaccins renforcent le système immunitaire de votre chien et le protègent contre les maladies graves. Voici le calendrier standard des vaccins pour chiots :"
+
+#: templates/adoption_guide.html:75
+msgid "Hafta"
+msgstr "Semaine"
+
+#: templates/adoption_guide.html:76
+msgid "Uygulanan Aşı / İşlem"
+msgstr "Vaccin / Traitement appliqué"
+
+#: templates/adoption_guide.html:81 templates/adoption_guide.html:85
+#: templates/adoption_guide.html:89
+msgid "hafta"
+msgstr "semaine"
+
+#: templates/adoption_guide.html:82
+msgid "Karma Aşı 1 (gençlik hastalığı, hepatit, parvovirüs vb.)"
+msgstr "Vaccin Combiné 1 (maladie de Carré, hépatite, parvovirus, etc.)"
+
+#: templates/adoption_guide.html:86
+msgid "Karma Aşı 2 + İç/Dış Parazit Uygulaması"
+msgstr "Vaccin Combiné 2 + Traitement contre les parasites internes/externes"
+
+#: templates/adoption_guide.html:90
+msgid "Kuduz Aşısı + Karma Aşı 3 (gerekliyse)"
+msgstr "Vaccin antirabique + Vaccin Combiné 3 (si nécessaire)"
+
+#: templates/adoption_guide.html:93
+msgid "16. hafta ve sonrası"
+msgstr "À partir de la 16e semaine"
+
+#: templates/adoption_guide.html:94
+msgid "Bronşin (kennel cough), Lyme vb. isteğe bağlı aşılar"
+msgstr "Vaccins facultatifs : toux du chenil (bronchine), maladie de Lyme, etc."
+
+#: templates/adoption_guide.html:101
+msgid ""
+"Aşılar mutlaka veteriner kontrolünde ve düzenli takvimle yapılmalıdır. Aşı "
+"sonrası 1-2 gün dinlenme gerekebilir."
+msgstr ""
+"Les vaccins doivent être administrés sous contrôle vétérinaire et selon un calendrier précis. Un repos de 1 à 2 jours peut être nécessaire après la vaccination."
+
+#: templates/adoption_guide.html:105
+msgid "Ayrıntılı Aşı Takvimi"
+msgstr "Calendrier de Vaccination Détaillé"
+
+#: templates/adoption_guide.html:113
+msgid "Veteriner Kontrolleri"
+msgstr "Contrôles Vétérinaires"
+
+#: templates/adoption_guide.html:116
+msgid ""
+"Sahiplenilen her köpek, eve gelmeden önce veya geldikten en geç 1 hafta "
+"içinde veteriner hekim tarafından genel muayeneden geçirilmelidir."
+msgstr ""
+"Chaque chien adopté doit passer un examen vétérinaire général avant d'arriver à la maison ou dans la semaine suivant son arrivée."
+
+#: templates/adoption_guide.html:118
+msgid "Veteriner Takvimi Önerisi"
+msgstr "Calendrier Vétérinaire Recommandé"
+
+#: templates/adoption_guide.html:120
+msgid "İlk hafta"
+msgstr "Première semaine"
+
+#: templates/adoption_guide.html:120
+msgid ""
+"Genel sağlık kontrolü, iç/dış parazit uygulamaları, aşı takvimi planlaması"
+msgstr ""
+"Contrôle de santé général, traitements antiparasitaires internes/externes, planification du calendrier vaccinal"
+
+#: templates/adoption_guide.html:121
+msgid "İlk 6 ay"
+msgstr "Premiers 6 mois"
+
+#: templates/adoption_guide.html:121
+msgid "Gelişim takibi, gerekli aşıların tamamlanması"
+msgstr "Suivi du développement, complétion des vaccins nécessaires"
+
+#: templates/adoption_guide.html:122
+msgid "Yılda 1 kez"
+msgstr "Une fois par an"
+
+#: templates/adoption_guide.html:122
+msgid "Rutin kontrol, kuduz aşısı, diş ve tırnak kontrolü, kan tahlilleri"
+msgstr "Contrôle de routine, vaccin contre la rage, contrôle des dents et des griffes, analyses de sang"
+
+#: templates/adoption_guide.html:125
+msgid "Yapılabilecek Temel Testler"
+msgstr "Tests de base possibles"
+
+#: templates/adoption_guide.html:127
+msgid "Dışkı analizi"
+msgstr "Analyse des selles"
+
+#: templates/adoption_guide.html:127
+msgid "Parazit tespiti"
+msgstr "Détection des parasites"
+
+#: templates/adoption_guide.html:128
+msgid "Kan testleri"
+msgstr "Analyses de sang"
+
+#: templates/adoption_guide.html:128
+msgid "Organ fonksiyonlarının değerlendirilmesi"
+msgstr "Évaluation des fonctions des organes"
+
+#: templates/adoption_guide.html:129
+msgid "Kalp dinleme"
+msgstr "Auscultation cardiaque"
+
+#: templates/adoption_guide.html:129
+msgid "Irka bağlı kalp problemleri erken yakalanabilir"
+msgstr "Les problèmes cardiaques liés à la race peuvent être détectés tôt"
+
+#: templates/adoption_guide.html:133
+msgid "Unutma"
+msgstr "N'oubliez pas"
+
+#: templates/adoption_guide.html:133
+msgid ""
+"Sağlıklı görünen köpeklerin bile yılda en az 1 kez veterinere götürülmesi "
+"önerilir. Erken teşhis hayat kurtarır."
+msgstr ""
+"Il est recommandé d’emmener même les chiens en bonne santé chez le vétérinaire au moins une fois par an. Un diagnostic précoce peut sauver des vies."
+
+#: templates/adoption_guide.html:137
+msgid "Veteriner Bakım Rehberi"
+msgstr "Guide de Soins Vétérinaires"
+
+#: templates/adoption_guide.html:145
+msgid "İndirilebilir Rehber"
+msgstr "Guide Téléchargeable"
+
+#: templates/adoption_guide.html:148
+msgid ""
+"İlk kez köpek sahipleniyorsanız veya evcil dostunuzla yeni bir başlangıç "
+"yapıyorsanız, sizin için hazırladığımız PDF rehber tam size göre!"
+msgstr ""
+"Si vous adoptez un chien pour la première fois ou commencez une nouvelle aventure avec votre compagnon, notre guide PDF est fait pour vous !"
+
+#: templates/adoption_guide.html:151
+msgid "Sahiplenme başvurusu süreci adım adım"
+msgstr "Le processus de demande d’adoption étape par étape"
+
+#: templates/adoption_guide.html:152
+msgid "Beslenme ve günlük bakım ipuçları"
+msgstr "Conseils pour l’alimentation et les soins quotidiens"
+
+#: templates/adoption_guide.html:153
+msgid "Temel eğitim rehberi ve komutlar"
+msgstr "Guide de dressage de base et commandes"
+
+#: templates/adoption_guide.html:154
+msgid "Aşı takvimi ve veteriner önerileri"
+msgstr "Calendrier de vaccination et recommandations vétérinaires"
+
+#: templates/adoption_guide.html:155
+msgid "Takip edebileceğiniz mini bakım çizelgesi"
+msgstr "Un mini planning de soins que vous pouvez suivre"
+
+#: templates/adoption_guide.html:159
+msgid "Rehber, mobil ve masaüstü cihazlar için uygundur."
+msgstr "Le guide est compatible avec les appareils mobiles et de bureau."
+
+#: templates/adoption_guide.html:159
+msgid "Dosya boyutu: ~1.2 MB"
+msgstr "Taille du fichier : ~1,2 Mo"
+
+#: templates/adoption_guide.html:164
+msgid "PDF Rehberini İndir"
+msgstr "Télécharger le guide PDF"
+
+#: templates/adoption_guide.html:167
+msgid "Önizlemeyi Aç"
+msgstr "Ouvrir l'aperçu"
+
+#: templates/contact.html:6
+msgid "İletişim"
+msgstr "Contact"
+
+#: templates/contact.html:8
+msgid "Herhangi bir sorunuz ya da öneriniz varsa bizimle iletişime geçmekten çekinmeyin."
+msgstr "N'hésitez pas à nous contacter si vous avez des questions ou des suggestions."
+
+#: templates/contact.html:19
+msgid "Gönder"
+msgstr "Envoyer"
+
+#: templates/dashboard.html:8 templates/layout.html:89
+#: templates/registration/password_change_done.html:20
+msgid "Kontrol Paneli"
+msgstr "Panneau de contrôle"
+
+#: templates/dashboard.html:10
+msgid "Hoş geldiniz,"
+msgstr "Bienvenue,"
+
+#: templates/dashboard.html:12 templates/layout.html:90
+msgid "Yeni İlan Ekle"
+msgstr "Ajouter une nouvelle annonce"
+
+#: templates/dashboard.html:18
+msgid "İlanlarınız"
+msgstr "Vos annonces"
+
+#: templates/dashboard.html:23
+msgid "ID"
+msgstr "ID"
+
+#: templates/dashboard.html:24
+msgid "Başlık"
+msgstr "Titre"
+
+#: templates/dashboard.html:25
+msgid "Sahip"
+msgstr "Propriétaire"
+
+#: templates/dashboard.html:26
+msgid "Tarih"
+msgstr "Date"
+
+#: templates/dashboard.html:27 templates/update_post.html:11
+msgid "Güncelle"
+msgstr "Mettre à jour"
+
+#: templates/dashboard.html:28
+msgid "Sil"
+msgstr "Supprimer"
+
+#: templates/dashboard.html:56
+msgid "Henüz bir ilanınız bulunmuyor. İlk ilanınızı eklemeye ne dersiniz?"
+msgstr "Vous n'avez pas encore d'annonce. Que diriez-vous d'en ajouter une première ?"
+
+#: templates/favorites.html:9
+msgid "Favori İlanlarım"
+msgstr "Mes annonces favorites"
+
+#: templates/favorites.html:10
+msgid "Beğendiğiniz ilanlara buradan ulaşabilirsiniz."
+msgstr "Vous pouvez accéder ici aux annonces que vous avez aimées."
+
+#: templates/favorites.html:31
+msgid "Detayları Gör"
+msgstr "Voir les détails"
+
+#: templates/favorites.html:41
+msgid "Henüz favori ilanınız yok."
+msgstr "Vous n'avez pas encore d'annonces favorites."
+
+#: templates/favorites.html:42
+msgid "İlanlara göz atın!"
+msgstr "Parcourez les annonces !"
+
+#: templates/index.html:31
+msgid "Sadık dostlara sıcak yuvalar!"
+msgstr "Des foyers chaleureux pour des compagnons fidèles !"
+
+#: templates/index.html:34
+msgid "İlanlara Göz At "
+msgstr "Consulter les annonces"
+
+#: templates/index.html:44
+msgid " Giriş Yapılmış, Hoşgeldiniz"
+msgstr "Connecté, bienvenue"
+
+#: templates/index.html:46
+msgid "Giriş Yapılmamış."
+msgstr "Non connecté."
+
+#: templates/index.html:46
+msgid " Giriş yapın"
+msgstr "Connectez-vous"
+
+#: templates/index.html:46
+msgid "veya"
+msgstr "ou"
+
+#: templates/index.html:46
+msgid "kayıt olun"
+msgstr "inscrivez-vous"
+
+#: templates/index.html:46
+msgid " ve sahipsiz dostlarımız için bir fark yaratın! "
+msgstr " et faites la différence pour nos amis sans foyer !"
+
+#: templates/index.html:55
+msgid "Nasıl Çalışır?"
+msgstr "Comment ça marche ?"
+
+#: templates/index.html:56
+msgid "GetDogCo ile sahiplendirme süreci sadece 3 adımda!"
+msgstr "Avec GetDogCo, le processus d'adoption se fait en seulement 3 étapes !"
+
+#: templates/index.html:62
+msgid "İlan Oluştur"
+msgstr "Créer une annonce"
+
+#: templates/index.html:63
+msgid "Sadık dostlarınız için ilan oluşturun."
+msgstr "Créez une annonce pour vos fidèles compagnons."
+
+#: templates/index.html:69
+msgid "İlanları İncele"
+msgstr "Explorer les annonces"
+
+#: templates/index.html:70
+msgid "Diğer kullanıcıların ilanlarını inceleyin."
+msgstr "Consultez les annonces des autres utilisateurs."
+
+#: templates/index.html:76
+msgid " Yeni Bir Arkadaş Edinin "
+msgstr " Faites-vous un nouvel ami "
+
+#: templates/index.html:77
+msgid " Yeni bir dost edinin ve hayatınıza neşe katın! "
+msgstr " Accueillez un nouvel ami et ajoutez de la joie à votre vie !"
+
+#: templates/layout.html:13
+msgid "GetDogCo - Köpek Sahiplendirme"
+msgstr "GetDogCo - Adoption de chiens"
+
+#: templates/layout.html:38
+msgid "Menüyü Aç"
+msgstr "Ouvrir le menu"
+
+#: templates/layout.html:46
+msgid "Hakkımızda"
+msgstr "À propos"
+
+#: templates/layout.html:49
+msgid "İlanlar"
+msgstr "Annonces"
+
+#: templates/layout.html:58
+msgid "Ara..."
+msgstr "Rechercher..."
+
+#: templates/layout.html:58 templates/layout.html:59
+#: templates/list_posts.html:19
+msgid "Ara"
+msgstr "Rechercher"
+
+#: templates/layout.html:74
+msgid "Bildirimler"
+msgstr "Notifications"
+
+#: templates/layout.html:75
+msgid "Yeni mesajın var"
+msgstr "Vous avez un nouveau message"
+
+#: templates/layout.html:76
+msgid "Profiline biri göz attı"
+msgstr "Quelqu’un a consulté votre profil"
+
+#: templates/layout.html:77
+msgid "İlanın onaylandı"
+msgstr "Votre annonce a été approuvée"
+
+#: templates/layout.html:79
+msgid "Tüm Bildirimleri Gör"
+msgstr "Voir toutes les notifications"
+
+#: templates/layout.html:91
+msgid "Favorilerim"
+msgstr "Mes favoris"
+
+#: templates/layout.html:92
+msgid "Profil"
+msgstr "Profil"
+
+#: templates/layout.html:94
+msgid "Çıkış Yap"
+msgstr "Se déconnecter"
+
+#: templates/layout.html:99
+msgid "Giriş Yap"
+msgstr "Se connecter"
+
+#: templates/layout.html:102 templates/registration/register.html:15
+msgid "Kayıt Ol"
+msgstr "S’inscrire"
+
+#: templates/layout.html:109
+msgid "Tema"
+msgstr "Thème"
+
+#: templates/layout.html:131
+msgid "Tüm Hakları Saklıdır."
+msgstr "Tous droits réservés."
+
+#: templates/layout.html:132
+msgid "Gizlilik Politikası"
+msgstr "Politique de confidentialité"
+
+#: templates/layout.html:132
+msgid "Kullanım Şartları"
+msgstr "Conditions d'utilisation"
+
+#: templates/list_posts.html:8
+msgid "Köpek Sahiplendirme İlanları"
+msgstr "Annonces d'adoption de chiens"
+
+#: templates/list_posts.html:9
+msgid "Yeni bir dost edinmek ister misiniz? Aşağıdaki ilanlara göz atabilirsiniz."
+msgstr "Souhaitez-vous adopter un nouvel ami ? Consultez les annonces ci-dessous."
+
+#: templates/list_posts.html:17
+msgid "Köpek ara..."
+msgstr "Rechercher un chien..."
+
+#: templates/list_posts.html:41
+msgid "Yaş:"
+msgstr "Âge :"
+
+#: templates/list_posts.html:41
+msgid "yaşında"
+msgstr "ans"
+
+#: templates/list_posts.html:42
+msgid "Konum:"
+msgstr "Lieu :"
+
+#: templates/list_posts.html:43
+msgid "Irk:"
+msgstr "Race :"
+
+#: templates/list_posts.html:47
+msgid "İlanı Gör"
+msgstr "Voir l’annonce"
+
+#: templates/list_posts.html:58
+msgid "Henüz bir ilan bulunamadı."
+msgstr "Aucune annonce n’a été trouvée pour le moment."
+
+#: templates/post_detail.html:16
+msgid "Favorilerden Çıkar"
+msgstr "Retirer des favoris"
+
+#: templates/post_detail.html:21
+msgid "Favorilere Ekle"
+msgstr "Ajouter aux favoris"
+
+#: templates/post_detail.html:25
+msgid "Favorilere eklemek için giriş yapın."
+msgstr "Connectez-vous pour ajouter aux favoris."
+
+#: templates/post_detail.html:30
+msgid "tarafından yayınlandı"
+msgstr "publié par"
+
+#: templates/post_detail.html:42
+msgid "Köpek Fotoğrafı"
+msgstr "Photo du chien"
+
+#: templates/post_detail.html:54
+msgid "Yorumlar"
+msgstr "Commentaires"
+
+#: templates/post_detail.html:62
+msgid "Profil Resmi"
+msgstr "Photo de profil"
+
+#: templates/post_detail.html:73
+msgid "Bu ilana henüz yorum yazılmamış. İlk yorumu siz yapın!"
+msgstr "Aucun commentaire n’a été écrit pour cette annonce. Soyez le premier !"
+
+#: templates/post_detail.html:78
+msgid "Yorum Ekle:"
+msgstr "Ajouter un commentaire :"
+
+#: templates/post_detail.html:83
+msgid "İsim"
+msgstr "Nom"
+
+#: templates/post_detail.html:84
+msgid "İsminizi girin"
+msgstr "Entrez votre nom"
+
+#: templates/post_detail.html:87
+msgid "Yorum"
+msgstr "Commentaire"
+
+#: templates/post_detail.html:90
+msgid "Ekle"
+msgstr "Ajouter"
+
+#: templates/profile.html:16 templates/profile.html:39
+msgid "Profil Fotoğrafı"
+msgstr "Photo de profil"
+
+#: templates/profile.html:18
+msgid "Yeni fotoğraf yükleyerek değiştirebilirsin."
+msgstr "Vous pouvez la changer en téléchargeant une nouvelle photo."
+
+#: templates/profile.html:19
+msgid "Toplam"
+msgstr "Total"
+
+#: templates/profile.html:19
+msgid "ilan verdiniz."
+msgstr "annonces publiées."
+
+#: templates/profile.html:24
+msgid "Profil Bilgileri"
+msgstr "Informations du profil"
+
+#: templates/profile.html:29
+msgid "Kullanıcı Adı"
+msgstr "Nom d'utilisateur"
+
+#: templates/profile.html:34
+msgid "E-posta"
+msgstr "E-mail"
+
+#: templates/profile.html:44
+msgid "Kaydet"
+msgstr "Enregistrer"
+
+#: templates/profile.html:45 templates/registration/password_change_form.html:5
+msgid "Şifre Değiştir"
+msgstr "Changer le mot de passe"
+
+#: templates/registration/login.html:7 templates/registration/login.html:15
+msgid " Giriş Yap "
+msgstr " Se connecter "
+
+#: templates/registration/login.html:8
+msgid ""
+" GetDogCo'ya giriş yaparak köpek sahiplendirme ilanlarını görebilir ve yeni "
+"ilan oluşturabilirsiniz. "
+msgstr ""
+" Connectez-vous à GetDogCo pour voir les annonces d'adoption de chiens et "
+"créer une nouvelle annonce. "
+
+#: templates/registration/login.html:19
+msgid " Henüz bir hesabınız yok mu?"
+msgstr " Vous n'avez pas encore de compte ?"
+
+#: templates/registration/login.html:19
+msgid " Hemen kayıt olun! "
+msgstr " Inscrivez-vous maintenant ! "
+
+#: templates/registration/password_change_done.html:12
+msgid "Şifren Başarıyla Güncellendi"
+msgstr "Votre mot de passe a été mis à jour avec succès"
+
+#: templates/registration/password_change_done.html:13
+msgid "Yeni şifrenle artık güvenle giriş yapabilirsin. 🎉"
+msgstr "Vous pouvez maintenant vous connecter en toute sécurité avec votre nouveau mot de passe. 🎉"
+
+#: templates/registration/password_change_done.html:17
+msgid "Anasayfa"
+msgstr "Page d'accueil"
+
+#: templates/registration/password_change_form.html:11
+msgid "Şifremi Güncelle"
+msgstr "Mettre à jour mon mot de passe"
+
+#: templates/registration/register.html:8
+msgid "Hesap Oluştur"
+msgstr "Créer un compte"
+
+#: templates/registration/register.html:9
+msgid ""
+"GetDogCo'ya katılarak sahipsiz dostlarımıza sıcak bir yuva bulmalarına "
+"yardımcı olabilirsiniz!"
+msgstr ""
+"En rejoignant GetDogCo, vous pouvez aider nos amis sans abri à trouver un foyer chaleureux !"
+
+#: templates/registration/register.html:19
+msgid "Zaten bir hesabınız var mı?"
+msgstr "Vous avez déjà un compte ?"
+
+#: templates/registration/register.html:19
+msgid "Giriş yapın"
+msgstr "Connectez-vous"
+
+#: templates/update_post.html:6
+msgid "İlanı Güncelle"
+msgstr "Mettre à jour l'annonce"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/forms.py:6
+msgid "Search files"
+msgstr "Rechercher des fichiers"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
+msgid "Select an image to embed"
+msgstr "Sélectionnez une image à insérer"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr "Recherchez l'image souhaitée, puis cliquez sur 'Insérer l'image' pour continuer..."
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
+msgid "No images found. Upload images using the 'Image Button' dialog's 'Upload' tab."
+msgstr "Aucune image trouvée. Téléversez des images via l’onglet 'Téléverser' dans la boîte de dialogue 'Bouton d’image'."
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
+msgid "Images in: "
+msgstr "Images dans :"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:62
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:80
+msgid "Embed Image"
+msgstr "Insérer l'image"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:146
+msgid "Play Slideshow"
+msgstr "Lancer le diaporama"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
+msgid "Pause Slideshow"
+msgstr "Mettre le diaporama en pause"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr "&lsaquo; Photo précédente"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr "Photo suivante &rsaquo;"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
+msgid "Next &rsaquo;"
+msgstr "Suivant &rsaquo;"
+
+#: venv/lib/python3.11/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
+msgid "&lsaquo; Prev"
+msgstr "&lsaquo; Précédent"
+
+#: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr "Messages"
+
+#: venv/lib/python3.11/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr "Plans du site"
+
+#: venv/lib/python3.11/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr "Fichiers statiques"
+
+#: venv/lib/python3.11/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr "Syndication"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr "…"
+
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:32
+msgid "That page number is not an integer"
+msgstr "Ce numéro de page n'est pas un entier"
+
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:33
+msgid "That page number is less than 1"
+msgstr "Ce numéro de page est inférieur à 1"
+
+#: venv/lib/python3.11/site-packages/django/core/paginator.py:34
+msgid "That page contains no results"
+msgstr "Cette page ne contient aucun résultat"
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr "Entrez une valeur valide."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr "Entrez un nom de domaine valide."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:155
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:768
+msgid "Enter a valid URL."
+msgstr "Entrez une URL valide."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:216
+msgid "Enter a valid integer."
+msgstr "Entrez un entier valide."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:227
+msgid "Enter a valid email address."
+msgstr "Entrez une adresse e-mail valide."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:310
+msgid "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr "Entrez un « slug » valide composé de lettres, de chiffres, de tirets ou de soulignements."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:318
+msgid "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or hyphens."
+msgstr "Entrez un « slug » valide composé de lettres Unicode, de chiffres, de tirets ou de soulignements."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:330
+#: venv/lib/python3.11/site-packages/django/core/validators.py:339
+#: venv/lib/python3.11/site-packages/django/core/validators.py:353
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2215
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr "Entrez une adresse %(protocol)s valide."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:332
+msgid "IPv4"
+msgstr "IPv4"
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:341
+#: venv/lib/python3.11/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr "IPv6"
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:355
+msgid "IPv4 or IPv6"
+msgstr "IPv4 ou IPv6"
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:396
+msgid "Enter only digits separated by commas."
+msgstr "Entrez uniquement des chiffres séparés par des virgules."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:402
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr "Assurez-vous que cette valeur est %(limit_value)s (elle est %(show_value)s)."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:437
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr "Assurez-vous que cette valeur est inférieure ou égale à %(limit_value)s."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:446
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "Assurez-vous que cette valeur est supérieure ou égale à %(limit_value)s."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:455
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr "Assurez-vous que cette valeur est un multiple de %(limit_value)s."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:462
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s, starting from %(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr "Assurez-vous que cette valeur est un multiple de %(limit_value)s à partir de %(offset)s, par ex. %(offset)s, %(valid_value1)s, %(valid_value2)s, etc."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:494
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] "Assurez-vous que cette valeur comporte au moins %(limit_value)d caractère (elle en a %(show_value)d)."
+msgstr[1] "Assurez-vous que cette valeur comporte au moins %(limit_value)d caractères (elle en a %(show_value)d)."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:512
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] "Assurez-vous que cette valeur comporte au maximum %(limit_value)d caractère (elle en a %(show_value)d)."
+msgstr[1] "Assurez-vous que cette valeur comporte au maximum %(limit_value)d caractères (elle en a %(show_value)d)."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:535
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:359
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:398
+msgid "Enter a number."
+msgstr "Entrez un nombre."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:537
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] "Assurez-vous qu’il n’y a pas plus de %(max)s chiffre au total."
+msgstr[1] "Assurez-vous qu’il n’y a pas plus de %(max)s chiffres au total."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:542
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] "Assurez-vous qu’il n’y a pas plus de %(max)s chiffre après la virgule."
+msgstr[1] "Assurez-vous qu’il n’y a pas plus de %(max)s chiffres après la virgule."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:547
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] "Assurez-vous qu’il n’y a pas plus de %(max)s chiffre avant la virgule."
+msgstr[1] "Assurez-vous qu’il n’y a pas plus de %(max)s chiffres avant la virgule."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:618
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr "L’extension de fichier « %(extension)s » n’est pas autorisée. Extensions autorisées : %(allowed_extensions)s."
+
+#: venv/lib/python3.11/site-packages/django/core/validators.py:680
+msgid "Null characters are not allowed."
+msgstr "Les caractères nuls ne sont pas autorisés."
+
+#: venv/lib/python3.11/site-packages/django/db/models/base.py:1572
+#: venv/lib/python3.11/site-packages/django/forms/models.py:908
+msgid "and"
+msgstr "et"
+
+#: venv/lib/python3.11/site-packages/django/db/models/base.py:1574
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "Un(e) %(model_name)s avec ce %(field_labels)s existe déjà."
+
+#: venv/lib/python3.11/site-packages/django/db/models/constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr "La contrainte « %(name)s » est violée."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr "La valeur %(value)r n’est pas un choix valide."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr "Ce champ ne peut pas être nul."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr "Ce champ ne peut pas être vide."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "Un(e) %(model_name)s avec ce %(field_label)s existe déjà."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr "%(field_label)s doit être unique pour %(lookup_type)s de %(date_field_label)s."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "Champ de type : %(field_type)s"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1156
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr "La valeur « %(value)s » doit être True ou False."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1157
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "La valeur « %(value)s » doit être True, False ou None."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1159
+msgid "Boolean (Either True or False)"
+msgstr "Booléen (True ou False)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1209
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "Chaîne de caractères (jusqu’à %(max_length)s caractères)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1211
+msgid "String (unlimited)"
+msgstr "Chaîne de caractères (illimitée)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1320
+msgid "Comma-separated integers"
+msgstr "Entiers séparés par des virgules"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1421
+#, python-format
+msgid "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD format."
+msgstr "La valeur « %(value)s » a un format de date invalide. Le format doit être AAAA-MM-JJ."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1425
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1560
+#, python-format
+msgid "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid date."
+msgstr "La valeur « %(value)s » est au bon format (AAAA-MM-JJ) mais c’est une date invalide."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1429
+msgid "Date (without time)"
+msgstr "Date (sans heure)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1556
+#, python-format
+msgid "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr "La valeur « %(value)s » a un format invalide. Elle doit être au format AAAA-MM-JJ HH:MM[:ss[.uuuuuu]][TZ]."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1564
+#, python-format
+msgid "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr "La valeur « %(value)s » est au bon format (AAAA-MM-JJ HH:MM[:ss[.uuuuuu]][TZ]) mais c’est une date/heure invalide."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1569
+msgid "Date (with time)"
+msgstr "Date (avec heure)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1696
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr "La valeur « %(value)s » doit être un nombre décimal."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1698
+msgid "Decimal number"
+msgstr "Nombre décimal"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1859
+#, python-format
+msgid "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[.uuuuuu] format."
+msgstr "La valeur « %(value)s » a un format invalide. Elle doit être au format [JJ] [[HH:]MM:]ss[.uuuuuu]."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1863
+msgid "Duration"
+msgstr "Durée"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1915
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:1940
+msgid "File path"
+msgstr "Chemin du fichier" 
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2018
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr "La valeur « %(value)s » doit être un nombre à virgule flottante."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2020
+msgid "Floating point number"
+msgstr "Nombre à virgule flottante"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2060
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr "La valeur « %(value)s » doit être un entier."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2062
+msgid "Integer"
+msgstr "Entier"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2158
+msgid "Big (8 byte) integer"
+msgstr "Entier long (8 octets)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2175
+msgid "Small integer"
+msgstr "Petit entier"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2183
+msgid "IPv4 address"
+msgstr "Adresse IPv4"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2214
+msgid "IP address"
+msgstr "Adresse IP"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2305
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2306
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "La valeur « %(value)s » doit être None, True ou False."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2308
+msgid "Boolean (Either True, False or None)"
+msgstr "Booléen (True, False ou None)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2359
+msgid "Positive big integer"
+msgstr "Grand entier positif"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2374
+msgid "Positive integer"
+msgstr "Entier positif"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2389
+msgid "Positive small integer"
+msgstr "Petit entier positif"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2405
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "Identifiant (jusqu'à %(max_length)s caractères)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2441
+msgid "Text"
+msgstr "Texte"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2521
+#, python-format
+msgid "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] format."
+msgstr "La valeur « %(value)s » a un format invalide. Elle doit être au format HH:MM[:ss[.uuuuuu]]."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2525
+#, python-format
+msgid "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an invalid time."
+msgstr "La valeur « %(value)s » est au bon format (HH:MM[:ss[.uuuuuu]]) mais elle est invalide."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2529
+msgid "Time"
+msgstr "Heure"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2637
+msgid "URL"
+msgstr "URL"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2661
+msgid "Raw binary data"
+msgstr "Données binaires brutes"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2726
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr "« %(value)s » n’est pas un UUID valide."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2728
+msgid "Universally unique identifier"
+msgstr "Identifiant unique universel"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr "Fichier"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr "Image"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/json.py:24
+msgid "A JSON object"
+msgstr "Un objet JSON"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr "La valeur doit être un JSON valide."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:932
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr "L’instance %(model)s avec %(field)s %(value)r n’existe pas."
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:934
+msgid "Foreign Key (type determined by related field)"
+msgstr "Clé étrangère (type déterminé par le champ lié)"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1228
+msgid "One-to-one relationship"
+msgstr "Relation un-à-un"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1285
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr "Relation %(from)s-%(to)s"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1287
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr "Relations %(from)s-%(to)s"
+
+#: venv/lib/python3.11/site-packages/django/db/models/fields/related.py:1335
+msgid "Many-to-many relationship"
+msgstr "Relation plusieurs-à-plusieurs"
+
+#: venv/lib/python3.11/site-packages/django/forms/boundfield.py:185
+msgid ":?.!"
+msgstr ":?.!"
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:95
+msgid "This field is required."
+msgstr "Ce champ est obligatoire."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:308
+msgid "Enter a whole number."
+msgstr "Entrez un nombre entier."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:479
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1260
+msgid "Enter a valid date."
+msgstr "Entrez une date valide."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:502
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1261
+msgid "Enter a valid time."
+msgstr "Entrez une heure valide."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:529
+msgid "Enter a valid date/time."
+msgstr "Entrez une date/heure valide."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:563
+msgid "Enter a valid duration."
+msgstr "Entrez une durée valide."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:564
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr "Le nombre de jours doit être compris entre {min_days} et {max_days}."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:633
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "Aucun fichier n’a été soumis. Vérifiez le type d'encodage du formulaire."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:634
+msgid "No file was submitted."
+msgstr "Aucun fichier n’a été soumis."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:635
+msgid "The submitted file is empty."
+msgstr "Le fichier soumis est vide."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:637
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural "Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] "Assurez-vous que ce nom de fichier ne dépasse pas %(max)d caractère (il en a %(length)d)."
+msgstr[1] "Assurez-vous que ce nom de fichier ne dépasse pas %(max)d caractères (il en a %(length)d)."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:642
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr "Veuillez soit soumettre un fichier, soit cocher la case pour supprimer, mais pas les deux."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:710
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr "Téléversez une image valide. Le fichier que vous avez téléversé n’est pas une image ou est corrompu."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:882
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:968
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "Sélectionnez un choix valide. %(value)s ne fait pas partie des choix disponibles."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:970
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1089
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1590
+msgid "Enter a list of values."
+msgstr "Entrez une liste de valeurs."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1090
+msgid "Enter a complete value."
+msgstr "Entrez une valeur complète."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1332
+msgid "Enter a valid UUID."
+msgstr "Entrez un UUID valide."
+
+#: venv/lib/python3.11/site-packages/django/forms/fields.py:1362
+msgid "Enter a valid JSON."
+msgstr "Entrez un JSON valide."
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.11/site-packages/django/forms/forms.py:94
+msgid ":"
+msgstr ":"
+
+#: venv/lib/python3.11/site-packages/django/forms/forms.py:230
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(Champ caché %(name)s) %(error)s"
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+"Les données du ManagementForm sont manquantes ou ont été modifiées. Champs manquants : "
+"%(field_names)s. Vous devrez peut-être signaler un bug si le problème persiste."
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] "Veuillez soumettre au maximum %(num)d formulaire."
+msgstr[1] "Veuillez soumettre au maximum %(num)d formulaires."
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] "Veuillez soumettre au moins %(num)d formulaire."
+msgstr[1] "Veuillez soumettre au moins %(num)d formulaires."
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr "Ordre"
+
+#: venv/lib/python3.11/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr "Supprimer"
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Veuillez corriger les données en double pour %(field)s."
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr "Veuillez corriger les données en double pour %(field)s, qui doit être unique."
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:913
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"Veuillez corriger les données en double pour %(field_name)s qui doivent être uniques "
+"pour %(lookup)s dans %(date_field)s."
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:922
+msgid "Please correct the duplicate values below."
+msgstr "Veuillez corriger les valeurs en double ci-dessous."
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr "La valeur en ligne ne correspond pas à l’instance parente."
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1450
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "Sélectionnez un choix valide. Ce choix ne fait pas partie des options disponibles."
+
+#: venv/lib/python3.11/site-packages/django/forms/models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr "« %(pk)s » n’est pas une valeur valide."
+
+#: venv/lib/python3.11/site-packages/django/forms/utils.py:227
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+"%(datetime)s n’a pas pu être interprété dans le fuseau horaire %(current_timezone)s ; "
+"il peut être ambigu ou inexistant."
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:461
+msgid "Clear"
+msgstr "Effacer"
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:462
+msgid "Currently"
+msgstr "Actuellement"
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:463
+msgid "Change"
+msgstr "Changer"
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:800
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:801
+msgid "Yes"
+msgstr "Oui"
+
+#: venv/lib/python3.11/site-packages/django/forms/widgets.py:802
+msgid "No"
+msgstr "Non"
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr "oui,non,peut-être"
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:903
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] "%(size)d octet"
+msgstr[1] "%(size)d octets"
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr "%s Ko"
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr "%s Mo"
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr "%s Go"
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr "%s To"
+
+#: venv/lib/python3.11/site-packages/django/template/defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr "%s Po"
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr "après-midi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr "matin"
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr "PM"
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr "AM"
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr "minuit"
+
+#: venv/lib/python3.11/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr "midi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr "Lundi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr "Mardi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr "Jeudi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr "Vendredi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr "Samedi"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr "Dimanche"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr "Lun"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr "Mar"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr "Mer"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr "Jeu"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr "Ven"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr "Sam"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr "Dim"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr "Janvier"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr "Février"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr "Mars"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr "Avril"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr "Mai"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr "Juin"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr "Juillet"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr "Août"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr "Septembre"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr "Octobre"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr "Novembre"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr "Décembre"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr "janv."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr "févr."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr "mars"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr "avr."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr "mai"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr "juin"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr "juil."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr "août"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr "sept"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr "oct"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr "nov"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr "déc"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "janv."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "févr."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "mars"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "avr."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "mai"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "juin"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "juil."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "août"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "sept."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "oct."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "nov."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "déc."
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr "janvier"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr "février"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr "mars"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr "avril"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr "mai"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr "juin"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr "juillet"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr "août"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr "septembre"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr "octobre"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr "novembre"
+
+#: venv/lib/python3.11/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr "décembre"
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:11
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] "%(num)d jour"
+msgstr[1] "%(num)d jours"
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:12
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] "%(num)d heure"
+msgstr[1] "%(num)d heures"
+
+#: venv/lib/python3.11/site-packages/django/utils/timesince.py:13
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] "%(num)d minute"
+msgstr[1] "%(num)d minutes"
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr "Interdit"
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr "Échec de la vérification CSRF. Requête annulée."
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+"Ce message s'affiche car ce site HTTPS nécessite l'envoi d’un en-tête "
+"« Referer » par votre navigateur web, mais aucun n’a été envoyé. Cet en-tête "
+"est requis pour des raisons de sécurité, afin de s’assurer que votre "
+"navigateur n’est pas détourné par des tiers."
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+"Si vous avez configuré votre navigateur pour désactiver les en-têtes "
+"« Referer », veuillez les réactiver, au moins pour ce site, pour les connexions "
+"HTTPS, ou pour les requêtes de même origine."
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+"Si vous utilisez la balise <meta name=\"referrer\" content=\"no-referrer\"> ou "
+"incluez l’en-tête « Referrer-Policy: no-referrer », veuillez les supprimer. "
+"La protection CSRF nécessite l’en-tête « Referer » pour effectuer une vérification stricte. "
+"Si la confidentialité vous préoccupe, utilisez des alternatives comme "
+"<a rel=\"noreferrer\"> pour les liens vers des sites tiers."
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+"Ce message s'affiche car ce site nécessite un cookie CSRF lors de la soumission "
+"de formulaires. Ce cookie est requis pour des raisons de sécurité, afin de "
+"s’assurer que votre navigateur n’est pas détourné par des tiers."
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+"Si vous avez configuré votre navigateur pour désactiver les cookies, "
+"veuillez les réactiver, au moins pour ce site ou pour les requêtes de même origine."
+
+#: venv/lib/python3.11/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr "Plus d'informations sont disponibles avec DEBUG=True."
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr "Aucune année spécifiée"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr "Date hors plage"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr "Aucun mois spécifié"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr "Aucun jour spécifié"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr "Aucune semaine spécifiée"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:349
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr "Aucun(e) %(verbose_name_plural)s disponible"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+"%(verbose_name_plural)s futurs non disponibles car %(class_name)s."
+"allow_future est défini sur False."
+
+#: venv/lib/python3.11/site-packages/django/views/generic/dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Chaîne de date invalide « %(datestr)s » pour le format « %(format)s »"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "Aucun(e) %(verbose_name)s trouvé(e) correspondant à la requête"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "La page n’est pas « last » et ne peut pas être convertie en entier."
+
+#: venv/lib/python3.11/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Page invalide (%(page_number)s) : %(message)s"
+
+#: venv/lib/python3.11/site-packages/django/views/generic/list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Liste vide et « %(class_name)s.allow_empty » est défini sur False."
+
+#: venv/lib/python3.11/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr "Les index de répertoires ne sont pas autorisés ici."
+
+#: venv/lib/python3.11/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr "« %(path)s » n’existe pas"
+
+#: venv/lib/python3.11/site-packages/django/views/static.py:68
+#: venv/lib/python3.11/site-packages/django/views/templates/directory_index.html:8
+#: venv/lib/python3.11/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "Index de %(directory)s"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr "L'installation a réussi ! Félicitations !"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+"Consultez les <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">notes de version</a> de Django %(version)s"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+"Vous voyez cette page parce que <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> est défini dans votre fichier de configuration et que vous "
+"n'avez pas encore configuré d'URL."
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr "Documentation de Django"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Sujets, références et tutoriels"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr "Tutoriel : une application de sondage"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr "Commencer avec Django"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr "Communauté Django"
+
+#: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr "Échanger, obtenir de l'aide ou contribuer" 

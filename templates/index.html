@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% load static %} 
+{% load i18n %} 
 {% block body %}
 
 <!-- Tüm ekranı kaplayan hero -->
@@ -27,11 +28,10 @@
     <!-- İçerik -->
     <div class="container position-relative" style="z-index: 2; max-width: 100%;">
         <h1 class="display-3 font-weight-bold text-center">🐶 GetDogCo</h1>
-        <p class="lead mb-4 text-center" style="font-size: 1.5rem;">Sadık dostlara sıcak yuvalar!</p>
+        <p class="lead mb-4 text-center" style="font-size: 1.5rem;">{% trans "Sadık dostlara sıcak yuvalar!" %}</p> 
         <div class="text-center">
             <a href="{% url 'getdogco:list_posts' %}" class="btn btn-lg text-dark"
-               style="background-color: #ffe066; border-radius: 8px;">
-                İlanlara Göz At
+               style="background-color: #ffe066; border-radius: 8px;"> {% trans "İlanlara Göz At " %} 
             </a>
         </div>
     </div>
@@ -41,9 +41,9 @@
 <!-- Giriş durumu -->
 <p class="text-center mt-4">
     {% if request.user.is_authenticated %}
-        Giriş Yapılmış, Hoşgeldiniz <strong>{{ request.user.username }}</strong>! 🐶
+       {% trans " Giriş Yapılmış, Hoşgeldiniz" %} <strong>{{ request.user.username }}</strong>! 🐶
     {% else %}
-        Giriş Yapılmamış. <a href="{% url 'getdogco:login' %}">Giriş yapın</a> veya <a href="{% url 'getdogco:register' %}">kayıt olun</a> ve sahipsiz dostlarımız için bir fark yaratın!
+        {% trans "Giriş Yapılmamış." %} <a href="{% url 'getdogco:login' %}">{% trans " Giriş yapın" %} </a> {% trans "veya" %} <a href="{% url 'getdogco:register' %}"> {% trans "kayıt olun" %} </a> {% trans " ve sahipsiz dostlarımız için bir fark yaratın! " %} 
     {% endif %}
 </p>
 
@@ -52,29 +52,29 @@
 <!-- How it Works - İkonlu Stil -->
 <section class="how-it-works-alt py-5">
     <div class="container">
-      <h2 class="text-center font-weight-bold mb-4">Nasıl Çalışır?</h2>
-      <p class="text-center text-muted mb-5">GetDogCo ile sahiplendirme süreci sadece 3 adımda!</p>
+      <h2 class="text-center font-weight-bold mb-4">{% trans "Nasıl Çalışır?" %} </h2>
+      <p class="text-center text-muted mb-5"> {% trans "GetDogCo ile sahiplendirme süreci sadece 3 adımda!" %} </p>
   
       <div class="row text-center">
         <div class="col-md-4 mb-4">
           <div class="icon-box mx-auto">
             <div class="step-icon mb-3">📝</div>
-            <h5 class="font-weight-bold">İlan Oluştur</h5>
-            <p class="text-muted">Sadık dostlarınız için ilan oluşturun.</p>
+            <h5 class="font-weight-bold"> {% trans "İlan Oluştur" %} </h5>
+            <p class="text-muted"> {% trans "Sadık dostlarınız için ilan oluşturun." %} </p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="icon-box mx-auto">
             <div class="step-icon mb-3">📞</div>
-            <h5 class="font-weight-bold">İlanları İncele</h5>
-            <p class="text-muted">Diğer kullanıcıların ilanlarını inceleyin.</p>
+            <h5 class="font-weight-bold"> {% trans "İlanları İncele" %} </h5>
+            <p class="text-muted"> {% trans "Diğer kullanıcıların ilanlarını inceleyin." %} </p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
           <div class="icon-box mx-auto">
             <div class="step-icon mb-3">🏠</div>
-            <h5 class="font-weight-bold">Yeni Bir Arkadaş Edinin</h5>
-            <p class="text-muted">Yeni bir dost edinin ve hayatınıza neşe katın!</p>
+            <h5 class="font-weight-bold"> {% trans " Yeni Bir Arkadaş Edinin " %} </h5>
+            <p class="text-muted">{% trans " Yeni bir dost edinin ve hayatınıza neşe katın! " %} </p>
           </div>
         </div>
       </div>

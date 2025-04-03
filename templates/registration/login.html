@@ -1,22 +1,23 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% block body %}
 {% load crispy_forms_tags %}
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <h3>Giriş Yap</h3>
-        <p>GetDogCo'ya giriş yaparak köpek sahiplendirme ilanlarını görebilir ve yeni ilan oluşturabilirsiniz.</p>
+        <h3> {% trans " Giriş Yap " %}  </h3>
+        <p> {% trans " GetDogCo'ya giriş yaparak köpek sahiplendirme ilanlarını görebilir ve yeni ilan oluşturabilirsiniz. " %} </p>
         <hr>
         <form method="post">
             {% csrf_token %}
             
             {{ form|crispy }}
             <br>
-            <button type="submit" class="btn btn-success">Giriş Yap</button>
+            <button type="submit" class="btn btn-success"> {% trans " Giriş Yap " %} </button>
         </form>
 
         <hr>
-        <p>Henüz bir hesabınız yok mu? <a href="{% url 'register' %}">Hemen kayıt olun!</a></p>
+        <p> {% trans " Henüz bir hesabınız yok mu?" %}  <a href="{% url 'register' %}">{% trans " Hemen kayıt olun! " %} </a></p>
     </div>
 </div>
 
