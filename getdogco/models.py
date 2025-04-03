@@ -40,9 +40,6 @@ class Favorite(models.Model):
     class Meta:
         unique_together = ('user', 'post') 
 
-    
-
-
 # Yorum Modeli
 class AdoptionComment(models.Model):
     post = models.ForeignKey(DogAdoptionPost, on_delete=models.CASCADE, verbose_name="İlan", related_name="comments")
