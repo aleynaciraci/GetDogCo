@@ -56,3 +56,38 @@
     color: #1da1f2;
     border-color: #1da1f2;
 }
+
+/* How it Works */
+.how-it-works-alt {
+    background-color: #f8f9fa;
+  }
+  
+  .how-it-works-alt .icon-box {
+    max-width: 300px;
+  }
+  
+  .step-icon {
+    font-size: 50px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #ffe066;
+    color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .how-it-works-alt h5 {
+    color: #1a1a1a;
+  }
+  
+  @media (max-width: 768px) {
+    .how-it-works-alt .icon-box {
+      margin-bottom: 30px;
+    }
+  }
+
+  

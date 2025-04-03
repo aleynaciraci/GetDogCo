@@ -10,7 +10,9 @@
             height: 500px; 
             position: relative;
             border-radius: 12px;
-            width: 100%;">
+            width: 100%;
+            margin-top: 0;
+            padding-top: 0;">
 
     <!-- Overlay -->
     <div style="position: absolute; 
@@ -44,5 +46,40 @@
         Giriş Yapılmamış. <a href="{% url 'getdogco:login' %}">Giriş yapın</a> veya <a href="{% url 'getdogco:register' %}">kayıt olun</a> ve sahipsiz dostlarımız için bir fark yaratın!
     {% endif %}
 </p>
+
+<hr class="my-5">
+
+<!-- How it Works - İkonlu Stil -->
+<section class="how-it-works-alt py-5">
+    <div class="container">
+      <h2 class="text-center font-weight-bold mb-4">Nasıl Çalışır?</h2>
+      <p class="text-center text-muted mb-5">GetDogCo ile sahiplendirme süreci sadece 3 adımda!</p>
+  
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="icon-box mx-auto">
+            <div class="step-icon mb-3">📝</div>
+            <h5 class="font-weight-bold">İlan Oluştur</h5>
+            <p class="text-muted">Sadık dostlarınız için ilan oluşturun.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="icon-box mx-auto">
+            <div class="step-icon mb-3">📞</div>
+            <h5 class="font-weight-bold">İlanları İncele</h5>
+            <p class="text-muted">Diğer kullanıcıların ilanlarını inceleyin.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="icon-box mx-auto">
+            <div class="step-icon mb-3">🏠</div>
+            <h5 class="font-weight-bold">Yeni Bir Arkadaş Edinin</h5>
+            <p class="text-muted">Yeni bir dost edinin ve hayatınıza neşe katın!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+<!-- How it Works Bölümü Sonu -->
 
 {% endblock %}
