@@ -94,7 +94,7 @@
 /* Light backgrounds */
 .light-bg-blue { background-color: #d0ebff; }
 .light-bg-yellow { background-color: #fff3bf; }
-.light-bg-gray { background-color: #d0ebff; }
+.light-bg-gray { background-color: #f1f3f5; }
 
 /* Dark mode overrides */
 .dark-mode .dark-mode-bg {
@@ -103,13 +103,27 @@
   border-color: #3e4c59 !important;
 }
 
+/* Alt çizgili başlıklar */
 .value-title {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #1c7ed6; /* mavi çizgi */
-  }
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1c7ed6;
+}
+
+/* Sarı buton stil classı */
+.btn-yellow-custom {
+  background-color: #ffe066;
+  color: #1c1c1c;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-yellow-custom:hover {
+  background-color: #ffcc00;
+  color: #000;
+}
   
 
   

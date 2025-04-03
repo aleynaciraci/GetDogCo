@@ -57,13 +57,13 @@
           </li>
         </ul>
 
-        <!-- Arama Kutusu -->
-        <form method="GET" action="{% url 'getdogco:list_posts' %}" class="form-inline my-2 my-md-0 mr-md-3">
-          <input class="form-control form-control-sm mr-2" type="search" name="keyword" placeholder="Ara..." aria-label="Ara">
-          <button class="btn btn-sm text-dark" type="submit" style="background-color: #ffe066;">
-            Ara
-        </button>        
-        </form>
+      <!-- Arama Kutusu -->
+<form method="GET" action="{% url 'getdogco:list_posts' %}" class="form-inline my-2 my-md-0 mr-md-3">
+  <input class="form-control form-control-sm mr-2" type="search" name="keyword" placeholder="Ara..." aria-label="Ara">
+  <button class="btn btn-sm btn-yellow-custom" type="submit">
+    Ara
+  </button>
+</form> 
 
         <!-- Sağ Menü -->
         <ul class="navbar-nav">
@@ -109,11 +109,11 @@
           {% endif %}
 
           <!-- Tema Butonu -->
-          <li class="nav-item">
-            <button onclick="toggleDarkMode()" id="darkModeBtn" class="btn btn-sm ml-2 text-dark" style="background-color: #ffe066; margin-top: 4px;">
-              🌃 Tema
-            </button>
-          </li>
+<li class="nav-item">
+  <button onclick="toggleDarkMode()" id="darkModeBtn" class="btn btn-sm ml-2 btn-yellow-custom" style="margin-top: 4px;">
+    🌃 Tema
+  </button>
+</li>
         </ul>
       </div>
     </div>
