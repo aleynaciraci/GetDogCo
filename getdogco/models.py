@@ -87,3 +87,19 @@ class Profile(models.Model):
 
         except Exception as e:
             print("Fotoğraf düzenlenemedi:", e)
+
+# Başvuru Modeli 
+class Application(models.Model):
+    post = models.ForeignKey(DogAdoptionPost, on_delete=models.CASCADE, related_name="applications")
+    applicant = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    full_name = models.CharField(max_length=100)
+    contact_info = models.CharField(max_length=255)
+    location_info = models.CharField(max_length=255)
+    had_pets_before = models.CharField(max_length=10)
+    work_hours = models.CharField(max_length=100, blank=True)
+    has_allergy = models.CharField(max_length=10, blank=True)
+    motivation = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name} - {self.post.title}"

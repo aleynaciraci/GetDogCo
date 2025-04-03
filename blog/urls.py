@@ -42,7 +42,9 @@ urlpatterns += [
         path('profil/', views.profile_view, name='profile'),
         path('sifre-degistir/', auth_views.PasswordChangeView.as_view(template_name='registration/password_change_form.html'), name='password_change'),
         path('sifre-degistir/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), name='password_change_done'),
-    
+        path('ilanlar/', views.listPosts, name='list_posts'),
+        path('basvur/<int:post_id>/', views.apply_to_post, name='apply_to_post'),
+        
         # App urls
         path('', include('getdogco.urls', namespace='getdogco')),
     ]

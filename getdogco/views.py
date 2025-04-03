@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
 from .forms import DogAdoptionPostForm, ContactForm, ProfileUpdateForm, UserUpdateForm 
-from .models import DogAdoptionPost, AdoptionComment, Favorite 
+from .models import DogAdoptionPost, AdoptionComment, Favorite, Application
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -187,3 +187,34 @@ def profile_view(request):
     }
 
     return render(request, 'profile.html', context) 
+
+# Başvuru yapma fonksiyonu 
+def apply_to_post(request, post_id):
+    if request.method == "POST":
+        post = get_object_or_404(DogAdoptionPost, id=post_id)
+
+        full_name = request.POST.get("full_name")
+        contact_info = request.POST.get("contact_info")
+        location_info = request.POST.get("location_info")
+        had_pets_before = request.POST.get("had_pets_before")
+        work_hours = request.POST.get("work_hours")
+        has_allergy = request.POST.get("has_allergy")
+        motivation = request.POST.get("motivation")
+
+        Application.objects.create(
+            post=post,
+            applicant=request.user if request.user.is_authenticated else None,
+            full_name=full_name,
+            contact_info=contact_info,
+            location_info=location_info,
+            had_pets_before=had_pets_before,
+            work_hours=work_hours,
+            has_allergy=has_allergy,
+            motivation=motivation
+        )
+
+        messages.success(request, "Başvurunuz başarıyla iletildi. Teşekkür ederiz!")
+        return redirect("getdogco:list_posts")  # İstersen post_detail'e yönlendirebilirsin
+    else:
+        messages.error(request, "Geçersiz işlem.")
+        return redirect("getdogco:list_posts")
