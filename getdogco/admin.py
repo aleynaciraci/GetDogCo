@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.models import User 
 from .models import DogAdoptionPost, AdoptionComment, ContactMessage, Favorite # Models'dan ilgili sınıfları import ettim
 
 # Yorumları admin paneline kaydetme
@@ -7,6 +8,11 @@ admin.site.register(AdoptionComment)
 # İletişim mesajlarını admin paneline kaydetme
 admin.site.register(ContactMessage)
 
+# Kullanıcı profili için admin paneli kaydı
+from .models import Profile
+admin.site.register(Profile)
+from django.contrib.auth.models import User 
+ 
 # Favorilere Ekleme Modeli
 @admin.register(Favorite)
 class FavoriteAdmin(admin.ModelAdmin):

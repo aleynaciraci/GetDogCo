@@ -51,23 +51,26 @@
     <hr>
 
     <h4>Yorumlar</h4>
-     <hr>
-     {% if comments %}
-       {% for comment in comments %}
-         <div class="media mb-4">
-          <img class="rounded-circle img-fluid mr-3" style="max-width: 50px;" src="http://placehold.it/50x50" alt="">
-           <div class="media-body">
-             <h5 class="mt-0">{{ comment.comment_author }}</h5>
-             {{ comment.comment_date }} <br>
-             {{ comment.comment_content }}
-           </div>
-         </div>
-       {% endfor %}
-       {% else %}
-       <div class="alert alert-warning">
-        Bu ilana henüz yorum yazılmamış. İlk yorumu siz yapın!
+<hr>
+{% if comments %}
+  {% for comment in comments %}
+    <div class="media mb-4">
+      <img class="rounded-circle img-fluid mr-3" style="max-width: 50px;"
+           src="{% if comment.user.profile.image %}{{ comment.user.profile.image.url }}{% else %}/media/profile_pics/default.jpg{% endif %}"
+           alt="Profil Resmi"
+           onerror="this.onerror=null;this.src='/media/profile_pics/default.jpg';">
+      <div class="media-body">
+        <h5 class="mt-0">{{ comment.comment_author }}</h5>
+        <small class="text-muted">{{ comment.comment_date }}</small><br>
+        {{ comment.comment_content }}
       </div>
-      {% endif %}
+    </div>
+  {% endfor %}
+{% else %}
+  <div class="alert alert-warning">
+    Bu ilana henüz yorum yazılmamış. İlk yorumu siz yapın!
+  </div>
+{% endif %}
  
      <div class="card my-4">
        <h5 class="card-header">Yorum Ekle:</h5>

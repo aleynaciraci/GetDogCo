@@ -1,5 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
+from PIL import Image  # Opsiyonel: resimleri yeniden boyutlandırmak için 
 
 # Köpek İlanı Modeli
 class DogAdoptionPost(models.Model):
@@ -43,12 +45,31 @@ class Favorite(models.Model):
 # Yorum Modeli
 class AdoptionComment(models.Model):
     post = models.ForeignKey(DogAdoptionPost, on_delete=models.CASCADE, verbose_name="İlan", related_name="comments")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Yorum Sahibi", null=True, blank=True)
     comment_author = models.CharField(max_length=50, verbose_name="Yorum Sahibi")
     comment_content = models.TextField(verbose_name="Yorum")
     comment_date = models.DateTimeField(auto_now_add=True, verbose_name="Yorum Tarihi")
 
     def __str__(self):
-        return f"{self.comment_author}: {self.comment_content[:30]}..."  # İlk 30 karakteri göster
+        return f"{self.comment_author}: {self.comment_content[:30]}..."
 
     class Meta:
         ordering = ['-comment_date']
+
+# Kullanıcı Profili Modeli
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics/')
+
+    def __str__(self):
+        return f'{self.user.username} Profili'
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
