@@ -37,6 +37,7 @@ urlpatterns = [
     path('favorites/remove/<int:post_id>/', views.remove_favorite, name='remove_favorite'), # Favorilerden kaldırma
     path('my-favorites/', views.my_favorites, name='my_favorites'), # Favorilerim
     path('guide/', views.adoption_guide, name='adoption_guide'), # Sahiplendirme rehberi
+    path('profil/', views.profile_view, name='profile'), # Kullanıcı profili 
     path('user/register/', views.register_view, name="register"),  # Kullanıcı kayıt
     path('user/login/', views.login_view, name="login"),  # Kullanıcı girişi
     path('user/logout/', views.logout_view, name="logout"),  # Kullanıcı çıkışı

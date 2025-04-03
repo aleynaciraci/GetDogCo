@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
-from .forms import DogAdoptionPostForm, ContactForm 
+from .forms import DogAdoptionPostForm, ContactForm, ProfileUpdateForm, UserUpdateForm 
 from .models import DogAdoptionPost, AdoptionComment, Favorite 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -162,3 +162,28 @@ def addComment(request, id):
         newComment.post = post
         newComment.save()
     return redirect(reverse("getdogco:post_detail", kwargs={"id": id}))
+
+# Kullanıcı profilini güncelleme 
+@login_required
+def profile_view(request):
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            return redirect('getdogco:profile')
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    user_posts = DogAdoptionPost.objects.filter(owner=request.user)
+
+    context = {
+        'u_form': u_form,
+        'p_form': p_form,
+        'post_count': user_posts.count(),
+    }
+
+    return render(request, 'profile.html', context) 

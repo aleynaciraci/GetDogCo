@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container mt-5">
+  <h2 class="mb-4">Profilim</h2>
+
+  <div class="row">
+    <!-- Sol: Profil fotoğrafı -->
+    <div class="col-md-4 text-center mb-4">
+      <img src="{{ request.user.profile.image.url }}" class="rounded-circle img-fluid mb-2" width="150" height="150" alt="Profil Fotoğrafı">
+      <p class="text-muted">Toplam <strong>{{ post_count }}</strong> ilan verdiniz.</p>
+    </div>
+
+    <!-- Sağ: Formlar -->
+    <div class="col-md-8">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+          <label>Kullanıcı Adı</label>
+          {{ u_form.username }}
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          {{ u_form.email }}
+        </div>
+        <div class="form-group">
+          <label>Profil Fotoğrafı</label>
+          {{ p_form.image }}
+        </div>
+        <button type="submit" class="btn text-dark" style="background-color: #ffe066;">Kaydet</button>
+        <a href="{% url 'password_change' %}" class="btn btn-outline-secondary ml-2">🔐 Şifre Değiştir</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
