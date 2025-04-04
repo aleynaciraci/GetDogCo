@@ -1,11 +1,12 @@
-from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404 
 from .forms import DogAdoptionPostForm, ContactForm, ProfileUpdateForm, UserUpdateForm 
-from .models import DogAdoptionPost, AdoptionComment, Favorite, Application, Message 
+from .models import DogAdoptionPost, AdoptionComment, Favorite, Application, Message, Notification 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.urls import reverse 
 
 # Tüm köpek sahiplendirme ilanlarını listeleme
 def listPosts(request):
@@ -252,7 +253,10 @@ def start_conversation(request, user_id):
     receiver = get_object_or_404(User, id=user_id)
     return redirect("getdogco:messages_with_user", user_id=receiver.id)
 
-# İki kullanıcı arasında mesajlaşma
+
+from getdogco.utils import create_notification  # 📌 burada önemli!
+
+# Mesajlaşma sayfası
 @login_required
 def messages_with_user(request, user_id):
     other_user = get_object_or_404(User, id=user_id)
@@ -267,13 +271,23 @@ def messages_with_user(request, user_id):
     if request.method == "POST":
         text = request.POST.get("text")
         if text:
+            # Mesajı kaydet
             Message.objects.create(sender=request.user, receiver=other_user, text=text)
+            url = reverse("getdogco:messages_with_user", args=[other_user.id]) 
+            # 🔔 Bildirimi oluştur
+            create_notification(
+                user=other_user,
+                message=f"📩 {request.user.username} size yeni bir mesaj gönderdi!",
+                url = url 
+            )
+
             return redirect("getdogco:messages_with_user", user_id=other_user.id)
 
     return render(request, "getdogco/messages_with_user.html", {
         "other_user": other_user,
         "messages": messages_qs
     })
+
 
 # Kullanıcının yaptığı başvurular
 @login_required
@@ -282,3 +296,29 @@ def my_send_applications(request):
     return render(request, "getdogco/my_send_applications.html", {
         "applications": applications
     })
+
+# Bildirim oluşturma fonksiyonu  
+def create_notification(user, message, url=None):
+    Notification.objects.create(user=user, message=message, url=url)
+
+# Bildirimleri görüntüleme 
+def mark_notification_read(request, notification_id):
+    notification = get_object_or_404(Notification, id=notification_id, user=request.user)
+    notification.is_read = True
+    notification.save()
+    next_url = request.GET.get('next', '/')
+    return redirect(next_url)
+
+# Tüm bildirimleri görüntüleme 
+@login_required
+def all_notifications(request):
+    notifications = request.user.notifications.all()
+    return render(request, 'notifications/all_notifications.html', {'notifications': notifications})
+
+from getdogco.models import Notification  # ya da notification modelin nerede ise
+
+def index(request):
+    context = {}
+    if request.user.is_authenticated:
+        context['unread_notification_count'] = Notification.objects.filter(user=request.user, is_read=False).count()
+    return render(request, "index.html", context) 

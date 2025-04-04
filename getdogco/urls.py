@@ -41,11 +41,14 @@ urlpatterns = [
     path('ilanlar/', views.listPosts, name='list_posts'),
     path('basvur/<int:post_id>/', views.apply_to_post, name='apply_to_post'), # İlan başvuru 
     path("basvurularim/", views.my_post_applications, name="my_applications"),
-    path('basvurularim/', views.my_send_applications, name='my_send_applications'), 
     path("basvurularim/yaptiklarim/", views.my_send_applications, name="my_send_applications"),
     path("basvuru/<int:app_id>/guncelle/", views.update_application_status, name="update_application_status"),
+    path('mesajlar/<int:user_id>/', views.messages_with_user, name='messages_with_user_alt'),
     path("mesajlasma/baslat/<int:user_id>/", views.start_conversation, name="start_conversation"),
     path("mesajlasma/<int:user_id>/", views.messages_with_user, name="messages_with_user"),
+    path('bildirim/<int:notification_id>/okundu/', views.mark_notification_read, name='mark_notification_read'),
+    path('bildirimler/', views.all_notifications, name='all_notifications'),  # bu adımı aşağıda anlatacağım
+
 
     path('user/register/', views.register_view, name="register"),  # Kullanıcı kayıt
     path('user/login/', views.login_view, name="login"),  # Kullanıcı girişi

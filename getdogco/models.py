@@ -121,4 +121,20 @@ class Message(models.Model):
 
     def __str__(self):
         return f"{self.sender.username} → {self.receiver.username} ({self.sent_at})" 
+    
+
+# Mesajlaşma Konuşması Modeli 
+class Notification(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notifications')
+    message = models.CharField(max_length=255)
+    url = models.URLField(blank=True, null=True)  # tıklanınca gidilecek adres
+    is_read = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.user.username} - {self.message}"
+
 

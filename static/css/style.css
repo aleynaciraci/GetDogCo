@@ -184,6 +184,15 @@ main.flex-fill {
   flex: 1;
 }
 
+.badge {
+  font-size: 0.7rem;
+  padding: 0.3em 0.6em;
+}
+
+.dropdown-menu a.font-weight-bold {
+  font-weight: bold;
+  background-color: #fff9db;
+}
 
 
 
