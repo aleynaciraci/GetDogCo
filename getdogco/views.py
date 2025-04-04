@@ -277,8 +277,8 @@ def messages_with_user(request, user_id):
 
 # Kullanıcının yaptığı başvurular
 @login_required
-def my_sent_applications(request):
+def my_send_applications(request):
     applications = Application.objects.filter(applicant=request.user).order_by('-created_at')
-    return render(request, "getdogco/my_sent_applications.html", {
+    return render(request, "getdogco/my_send_applications.html", {
         "applications": applications
     })
