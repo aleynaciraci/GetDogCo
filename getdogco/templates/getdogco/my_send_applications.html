@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="container mt-4">
+  <h3 class="mb-4">{% trans "Yaptığım Başvurular" %}</h3>
+
+  {% for app in applications %}
+    <div class="card mb-3 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">
+          🐶 {{ app.post.title }}
+        </h5>
+        <p class="card-text text-muted">
+          {% trans "Başvuru Tarihi" %}: {{ app.created_at|date:"d M Y H:i" }}
+        </p>
+        <p>
+          <strong>{% trans "Durum:" %}</strong>
+          {% if app.status == "pending" %}
+            <span class="badge badge-warning">{% trans "Beklemede" %}</span>
+          {% elif app.status == "accepted" %}
+            <span class="badge badge-success">{% trans "Kabul Edildi" %}</span>
+          {% elif app.status == "rejected" %}
+            <span class="badge badge-danger">{% trans "Reddedildi" %}</span>
+          {% endif %}
+        </p>
+
+        <a href="{% url 'getdogco:post_detail' app.post.id %}" class="btn btn-outline-primary btn-sm">
+          {% trans "İlanı Gör" %}
+        </a>
+
+        {% if app.status == "accepted" %}
+          <a href="{% url 'getdogco:start_conversation' app.post.owner.id %}" class="btn btn-outline-success btn-sm">
+            {% trans "Mesajlaşmaya Başla" %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% empty %}
+    <div class="alert alert-info">
+      {% trans "Henüz bir başvuru yapmamışsınız." %}
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -44,7 +44,12 @@ urlpatterns += [
         path('sifre-degistir/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), name='password_change_done'),
         path('ilanlar/', views.listPosts, name='list_posts'),
         path('basvur/<int:post_id>/', views.apply_to_post, name='apply_to_post'),
-        
+        path("basvurularim/", views.my_post_applications, name="my_applications"),
+        path("basvurularim/yaptiklarim/", views.my_sent_applications, name="my_sent_applications"),
+        path("basvuru/<int:app_id>/guncelle/", views.update_application_status, name="update_application_status"),
+        path("mesajlasma/baslat/<int:user_id>/", views.start_conversation, name="start_conversation"),
+        path("mesajlasma/<int:user_id>/", views.messages_with_user, name="messages_with_user"),
+
         # App urls
         path('', include('getdogco.urls', namespace='getdogco')),
     ]

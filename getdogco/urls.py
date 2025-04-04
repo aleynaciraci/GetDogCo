@@ -40,6 +40,11 @@ urlpatterns = [
     path('profil/', views.profile_view, name='profile'), # Kullanıcı profili 
     path('ilanlar/', views.listPosts, name='list_posts'),
     path('basvur/<int:post_id>/', views.apply_to_post, name='apply_to_post'), # İlan başvuru 
+    path("basvurularim/", views.my_post_applications, name="my_applications"),
+    path("basvurularim/yaptiklarim/", views.my_sent_applications, name="my_sent_applications"),
+    path("basvuru/<int:app_id>/guncelle/", views.update_application_status, name="update_application_status"),
+    path("mesajlasma/baslat/<int:user_id>/", views.start_conversation, name="start_conversation"),
+    path("mesajlasma/<int:user_id>/", views.messages_with_user, name="messages_with_user"),
 
     path('user/register/', views.register_view, name="register"),  # Kullanıcı kayıt
     path('user/login/', views.login_view, name="login"),  # Kullanıcı girişi

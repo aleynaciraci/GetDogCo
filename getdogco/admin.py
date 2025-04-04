@@ -1,6 +1,15 @@
 from django.contrib import admin
 from django.contrib.auth.models import User 
-from .models import DogAdoptionPost, AdoptionComment, ContactMessage, Favorite # Models'dan ilgili sınıfları import ettim
+from .models import DogAdoptionPost, AdoptionComment, ContactMessage, Favorite, Application # Models'dan ilgili sınıfları import ettim
+
+
+# Başvuru modelini admin paneline kaydetme 
+@admin.register(Application)
+class ApplicationAdmin(admin.ModelAdmin):
+    list_display = ('post', 'full_name', 'status', 'created_at')
+    list_filter = ('status',)
+    search_fields = ('full_name', 'post__title', 'applicant__username')
+
 
 # Yorumları admin paneline kaydetme
 admin.site.register(AdoptionComment)

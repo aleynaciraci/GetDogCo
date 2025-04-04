@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="mb-4">{% trans "Gelen Başvurular" %}</h2>
+
+    {% for app in applications %}
+    <!-- Kısa bilgi (şimdiki gibi) -->
+<h5 class="card-title">{{ app.full_name }}</h5>
+<p class="card-text">{{ app.motivation }}</p>
+
+<!-- Detayları Gör Butonu -->
+<button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#appDetailModal{{ app.id }}">
+  {% trans "Detayları Gör" %}
+</button>
+
+<!-- Başvuru Detay Modalı -->
+<div class="modal fade" id="appDetailModal{{ app.id }}" tabindex="-1" role="dialog" aria-labelledby="appDetailModalLabel{{ app.id }}" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appDetailModalLabel{{ app.id }}">
+          {% trans "Başvuru Detayları" %}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Kapat' %}">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>{% trans "Ad Soyad:" %}</strong> {{ app.full_name }}</li>
+          <li class="list-group-item"><strong>{% trans "İletişim:" %}</strong> {{ app.contact_info }}</li>
+          <li class="list-group-item"><strong>{% trans "Konum ve Konut Tipi:" %}</strong> {{ app.location_info }}</li>
+          <li class="list-group-item"><strong>{% trans "Daha önce sahiplenme:" %}</strong> {{ app.had_pets_before }}</li>
+          <li class="list-group-item"><strong>{% trans "Çalışma Saatleri:" %}</strong> {{ app.work_hours }}</li>
+          <li class="list-group-item"><strong>{% trans "Alerji Durumu:" %}</strong> {{ app.has_allergy }}</li>
+          <li class="list-group-item"><strong>{% trans "Sahiplenme Nedeni:" %}</strong> {{ app.motivation }}</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Kapat" %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ app.full_name }}</h5>
+                <p class="card-text">{{ app.motivation }}</p>
+                <p class="card-text">
+                    <strong>{% trans "Durum:" %}</strong> {{ app.get_status_display }}
+                </p>
+
+                {% if app.status == "pending" %}
+                    <form method="post" action="{% url 'getdogco:update_application_status' app.id %}">
+                        {% csrf_token %}
+                        <button name="action" value="accept" class="btn btn-success btn-sm">{% trans "İletişime Geç" %}</button>
+                        <button name="action" value="reject" class="btn btn-danger btn-sm">{% trans "Reddet" %}</button>
+                    </form>
+                {% elif app.status == "accepted" %}
+                    <span class="badge badge-success">{% trans "İletişim Kuruldu" %}</span>
+                    <!-- Mesajlaşmaya başla linki -->
+                    <a href="{% url 'getdogco:start_conversation' app.applicant.id %}" class="btn btn-outline-primary btn-sm mt-2">
+                        {% trans "Mesajlaşmaya Başla" %}
+                    </a>
+                {% else %}
+                    <span class="badge badge-danger">{% trans "Reddedildi" %}</span>
+                {% endif %}
+            </div>
+        </div>
+    {% empty %}
+        <div class="alert alert-info">{% trans "Henüz başvuru yapılmamış." %}</div>
+    {% endfor %}
+</div>
+{% endblock %}

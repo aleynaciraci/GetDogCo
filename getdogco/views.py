@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
 from .forms import DogAdoptionPostForm, ContactForm, ProfileUpdateForm, UserUpdateForm 
-from .models import DogAdoptionPost, AdoptionComment, Favorite, Application
+from .models import DogAdoptionPost, AdoptionComment, Favorite, Application, Message 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -218,3 +218,67 @@ def apply_to_post(request, post_id):
     else:
         messages.error(request, "Geçersiz işlem.")
         return redirect("getdogco:list_posts")
+    
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from django.contrib.auth.models import User
+from .models import Application, DogAdoptionPost, Message
+
+# Kullanıcının sahip olduğu ilanlara gelen başvurular
+@login_required
+def my_post_applications(request):
+    user_posts = DogAdoptionPost.objects.filter(owner=request.user)
+    applications = Application.objects.filter(post__in=user_posts).order_by('-created_at')
+    return render(request, "getdogco/my_applications.html", {"applications": applications})
+
+# Başvuru durumu güncelleme (kabul/ret)
+@login_required
+def update_application_status(request, app_id):
+    application = get_object_or_404(Application, id=app_id, post__owner=request.user)
+    if request.method == "POST":
+        action = request.POST.get("action")
+        if action == "accept":
+            application.status = "accepted"
+        elif action == "reject":
+            application.status = "rejected"
+        application.save()
+        messages.success(request, "Başvuru durumu güncellendi.")
+    return redirect("getdogco:my_applications")
+
+# Mesajlaşmayı başlatan view (başka kullanıcıya yönlendirir)
+@login_required
+def start_conversation(request, user_id):
+    receiver = get_object_or_404(User, id=user_id)
+    return redirect("getdogco:messages_with_user", user_id=receiver.id)
+
+# İki kullanıcı arasında mesajlaşma
+@login_required
+def messages_with_user(request, user_id):
+    other_user = get_object_or_404(User, id=user_id)
+
+    # Tüm mesajlar (her iki yönde)
+    messages_qs = Message.objects.filter(
+        sender__in=[request.user, other_user],
+        receiver__in=[request.user, other_user]
+    ).order_by("sent_at")
+
+    # Yeni mesaj gönderimi
+    if request.method == "POST":
+        text = request.POST.get("text")
+        if text:
+            Message.objects.create(sender=request.user, receiver=other_user, text=text)
+            return redirect("getdogco:messages_with_user", user_id=other_user.id)
+
+    return render(request, "getdogco/messages_with_user.html", {
+        "other_user": other_user,
+        "messages": messages_qs
+    })
+
+# Kullanıcının yaptığı başvurular
+@login_required
+def my_sent_applications(request):
+    applications = Application.objects.filter(applicant=request.user).order_by('-created_at')
+    return render(request, "getdogco/my_sent_applications.html", {
+        "applications": applications
+    })
