@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static i18n %}
+{% load static i18n %} 
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="UTF-8">
@@ -8,17 +8,17 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2.0">
 
   <title>{% trans "GetDogCo - Köpek Sahiplendirme" %}</title>
 </head>
-<body>
+
+<body class="d-flex flex-column min-vh-100">
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-md navbar-dark" style="background-color:rgb(28, 96, 214) !important;">
     <div class="container">
       <a class="navbar-brand font-weight-bold" href="/">🐾 GetDogCo</a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="{% trans 'Menüyü Aç' %}">
         <span class="navbar-toggler-icon"></span>
@@ -27,15 +27,9 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <!-- Sol Menü -->
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/about">{% trans "Hakkımızda" %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:list_posts' %}">{% trans "İlanlar" %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">{% trans "Sahiplenme Rehberi" %}</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/about">{% trans "Hakkımızda" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'getdogco:list_posts' %}">{% trans "İlanlar" %}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'getdogco:adoption_guide' %}">{% trans "Sahiplenme Rehberi" %}</a></li>
         </ul>
 
         <!-- Arama Kutusu -->
@@ -47,46 +41,39 @@
         <!-- Sağ Menü -->
         <ul class="navbar-nav">
           {% if request.user.is_authenticated %}
-          <!-- Bildirim Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle position-relative" href="#" id="notificationDropdown"
-              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              🛎️
-              <span class="badge badge-danger position-absolute" style="top: 5px; right: 5px; font-size: 0.6rem;">2</span>
-            </a>
+            <!-- Bildirimler -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle position-relative" href="#" id="notificationDropdown" role="button" data-toggle="dropdown">
+                🔔 <span class="badge badge-danger position-absolute" style="top: 5px; right: 5px; font-size: 0.6rem;">2</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown" style="width: 300px; max-height: 300px; overflow-y: auto;">
+                <h6 class="dropdown-header">{% trans "Bildirimler" %}</h6>
+                <a class="dropdown-item" href="#">{% trans "Yeni mesajın var" %}</a>
+                <a class="dropdown-item" href="#">{% trans "Profiline biri göz attı" %}</a>
+                <a class="dropdown-item" href="#">{% trans "İlanın onaylandı" %}</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-center text-primary" href="#">{% trans "Tüm Bildirimleri Gör" %}</a>
+              </div>
+            </li>
 
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown" style="width: 300px; max-height: 300px; overflow-y: auto;">
-              <h6 class="dropdown-header">{% trans "Bildirimler" %}</h6>
-              <a class="dropdown-item" href="#">{% trans "Yeni mesajın var" %}</a>
-              <a class="dropdown-item" href="#">{% trans "Profiline biri göz attı" %}</a>
-              <a class="dropdown-item" href="#">{% trans "İlanın onaylandı" %}</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-center text-primary" href="#">{% trans "Tüm Bildirimleri Gör" %}</a>
-            </div>
-          </li>
-
-          <!-- Kullanıcı Dropdown Menüsü -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
-              👤 {{ request.user.username }}
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="{% url 'getdogco:dashboard' %}">{% trans "Kontrol Paneli" %}</a>
-              <a class="dropdown-item" href="{% url 'getdogco:add_post' %}">{% trans "Yeni İlan Ekle" %}</a>
-              <a class="dropdown-item" href="{% url 'getdogco:my_favorites' %}">{% trans "Favorilerim" %}</a>
-              <a class="dropdown-item" href="{% url 'getdogco:profile' %}">{% trans "Profil" %}</a>
-              <a class="dropdown-item" href="{% url 'getdogco:my_applications' %}">{% trans "Başvurular" %}</a> 
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger" href="{% url 'getdogco:logout' %}">{% trans "Çıkış Yap" %}</a>
-            </div>
-          </li>
+            <!-- Kullanıcı Menüsü -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                👤 {{ request.user.username }}
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="{% url 'getdogco:dashboard' %}">{% trans "Kontrol Paneli" %}</a>
+                <a class="dropdown-item" href="{% url 'getdogco:add_post' %}">{% trans "Yeni İlan Ekle" %}</a>
+                <a class="dropdown-item" href="{% url 'getdogco:my_favorites' %}">{% trans "Favorilerim" %}</a>
+                <a class="dropdown-item" href="{% url 'getdogco:profile' %}">{% trans "Profil" %}</a>
+                <a class="dropdown-item" href="{% url 'getdogco:my_applications' %}">{% trans "Başvurular" %}</a> 
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger" href="{% url 'getdogco:logout' %}">{% trans "Çıkış Yap" %}</a>
+              </div>
+            </li>
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:login' %}">{% trans "Giriş Yap" %}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'getdogco:register' %}">{% trans "Kayıt Ol" %}</a>
-          </li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'getdogco:login' %}">{% trans "Giriş Yap" %}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'getdogco:register' %}">{% trans "Kayıt Ol" %}</a></li>
           {% endif %}
 
           <!-- Tema Butonu -->
@@ -96,7 +83,7 @@
             </button>
           </li>
 
-          <!-- Dil Değiştir -->
+          <!-- Dil Seçici -->
           <li class="nav-item ml-2" style="margin-top: 3px;">
             <form action="{% url 'set_language' %}" method="post">
               {% csrf_token %}
@@ -111,20 +98,22 @@
     </div>
   </nav>
 
-  <!-- İçerik Alanı -->
-  <div class="container mt-3 pt-5 mb-5 content-wrapper"> 
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-      {% endfor %}
-    {% endif %}
+  <!-- Ana İçerik Alanı -->
+  <main class="flex-fill">
+    <div class="container mt-3 pt-5 mb-5">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
 
-    {% block body %}
-    {% endblock body %}
-  </div>
+      {% block body %}
+      {% endblock body %}
+    </div>
+  </main>
 
-  <!-- Sticky Footer -->
-  <footer style="background-color: #ffffff; color: #212529;" class="text-center py-3">
+  <!-- Footer -->
+  <footer class="text-center py-3" style="background-color: #ffffff; color: #212529;">
     <p class="mb-0 font-weight-bold">© 2025 GetDogCo. {% trans "Tüm Hakları Saklıdır." %}</p>
     <p class="mb-0">{% trans "Gizlilik Politikası" %} | {% trans "Kullanım Şartları" %}</p>
   </footer>
@@ -148,4 +137,4 @@
   </script>
 
 </body>
-</html> 
+</html>

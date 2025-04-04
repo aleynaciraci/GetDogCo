@@ -1,100 +1,108 @@
+/* Dark mode styles */
 .dark-mode {
-    background-color: #15202b;
-    color: #e1e8ed;
+  background-color: #15202b;
+  color: #e1e8ed;
 }
 
 .dark-mode .navbar {
-    background-color: #192734 !important;
+  background-color: #192734 !important;
 }
 
 .dark-mode .card {
-    background-color: #192734;
-    color: #e1e8ed;
-    border: none;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  background-color: #192734;
+  color: #e1e8ed;
+  border: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
 }
 
 .dark-mode .btn {
-    border-color: #1da1f2;
-    color: #e1e8ed;
-    background-color: transparent;
+  border-color: #1da1f2;
+  color: #e1e8ed;
+  background-color: transparent;
 }
 
 .dark-mode .btn:hover {
-    background-color: #1a91da;
-    color: white;
+  background-color: #1a91da;
+  color: white;
 }
 
 .dark-mode .table {
-    background-color: #192734;
-    color: #e1e8ed;
+  background-color: #192734;
+  color: #e1e8ed;
 }
 
 .dark-mode a {
-    color: #1da1f2;
+  color: #1da1f2;
 }
 
 .dark-mode .form-control {
-    background-color: #253341;
-    color: #e1e8ed;
-    border: 1px solid #3e4c59;
+  background-color: #253341;
+  color: #e1e8ed;
+  border: 1px solid #3e4c59;
 }
 
 .dark-mode input::placeholder,
 .dark-mode textarea::placeholder {
-    color: #8899a6;
+  color: #8899a6;
 }
 
 .dark-mode .alert {
-    background-color: #253341;
-    color: #e1e8ed;
-    border-color: #3e4c59;
+  background-color: #253341;
+  color: #e1e8ed;
+  border-color: #3e4c59;
 }
 
 .dark-mode .alert-success {
-    background-color: #253341;
-    color: #1da1f2;
-    border-color: #1da1f2;
+  background-color: #253341;
+  color: #1da1f2;
+  border-color: #1da1f2;
 }
 
 /* How it Works */
 .how-it-works-alt {
-    background-color: #f8f9fa;
-  }
-  
-  .how-it-works-alt .icon-box {
-    max-width: 300px;
-  }
-  
-  .step-icon {
-    font-size: 50px;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    margin: 0 auto;
-    border-radius: 50%;
-    background-color: #ffe066;
-    color: #1c1c1c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .how-it-works-alt h5 {
-    color: #1a1a1a;
-  }
-  
-  @media (max-width: 768px) {
-    .how-it-works-alt .icon-box {
-      margin-bottom: 30px;
-    }
-  }
+  background-color: #f8f9fa;
+}
 
+.how-it-works-alt .icon-box {
+  max-width: 300px;
+}
+
+.step-icon {
+  font-size: 50px;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #ffe066;
+  color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-it-works-alt h5 {
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .how-it-works-alt .icon-box {
+    margin-bottom: 30px;
+  }
+}
 
 /* Light backgrounds */
-.light-bg-blue { background-color: #d0ebff; }
-.light-bg-yellow { background-color: #fff3bf; }
-.light-bg-gray { background-color: #f1f3f5; }
+.light-bg-blue {
+  background-color: #d0ebff;
+}
+
+.light-bg-yellow {
+  background-color: #fff3bf;
+}
+
+.light-bg-gray {
+  background-color: #f1f3f5;
+}
 
 /* Dark mode overrides */
 .dark-mode .dark-mode-bg {
@@ -124,17 +132,29 @@
   background-color: #ffcc00;
   color: #000;
 }
-  
+
+.dark-mode .btn-yellow-custom {
+  background-color: #ffd43b;
+  color: #1c1c1c;
+}
+
+.dark-mode .btn-yellow-custom:hover {
+  background-color: #fab005;
+  color: #000;
+}
+
+/* Kart görseli */
 .card-img-top {
-  height: 160px;
-  object-fit: cover;
-  object-position: top center; /* Görselin üst kısmını göster, genelde yüz orada */
-  border-top-left-radius: 0.25rem;
+  height: 400px;
+  object-fit: cover;                 /* Görsel kutuya taşmadan sığsın, kırpılabilir */
+  object-position: top center;       /* Köpeğin yüzünü daha çok göster (üstten ortala) */
+  background-color: #f7f7f7;         /* Kırpma sonrası oluşabilecek boşluklara arka plan */
+  border-top-left-radius: 0.25rem;   /* Köşeleri yumuşat */
   border-top-right-radius: 0.25rem;
 }
 
 .card.h-100 {
-  max-height: 550px;
+  max-height: 800px;
   display: flex;
   flex-direction: column;
 }
@@ -144,32 +164,25 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;  /* 3 satırda kes */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
-.card-img-top {
-  height: 200px;
-  object-fit: cover;                 /* Görsel kutuya taşmadan sığsın, kırpılabilir */
-  object-position: top center;       /* Köpeğin yüzünü daha çok göster (üstten ortala) */
-  background-color: #f7f7f7;         /* Kırpma sonrası oluşabilecek boşluklara arka plan */
-  border-top-left-radius: 0.25rem;   /* Köşeleri yumuşat */
-  border-top-right-radius: 0.25rem;
-}
-
+/* Sayfa yapısı */
 html, body {
   height: 100%;
   margin: 0;
 }
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.content-wrapper {
+
+main.flex-fill {
   flex: 1;
 }
-
 
 
 
