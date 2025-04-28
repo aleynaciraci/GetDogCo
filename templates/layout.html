@@ -112,15 +112,18 @@
   <main class="flex-fill">
     <div class="container mt-3 pt-5 mb-5">
       {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% for msg in messages %}
+          {% if msg.tags == "success" or msg.tags == "error" %}
+            <div class="alert alert-{{ msg.tags }}">{{ msg }}</div>
+          {% endif %}
         {% endfor %}
       {% endif %}
-
+      
       {% block body %}
       {% endblock body %}
     </div>
   </main>
+
 
   <!-- Footer -->
   <footer class="text-center py-3" style="background-color: #ffffff; color: #212529;">
