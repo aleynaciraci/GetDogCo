@@ -46,8 +46,9 @@ urlpatterns = [
     path('mesajlar/<int:user_id>/', views.messages_with_user, name='messages_with_user_alt'),
     path("mesajlasma/baslat/<int:user_id>/", views.start_conversation, name="start_conversation"),
     path("mesajlasma/<int:user_id>/", views.messages_with_user, name="messages_with_user"),
-    path('bildirim/<int:notification_id>/okundu/', views.mark_notification_read, name='mark_notification_read'),
-    path('bildirimler/', views.all_notifications, name='all_notifications'),  # bu adımı aşağıda anlatacağım
+
+    path('notifications/', views.all_notifications, name='all_notifications'),
+    path('notifications/read/<int:notification_id>/', views.mark_notification_read, name='mark_notification_read'), 
 
 
     path('user/register/', views.register_view, name="register"),  # Kullanıcı kayıt

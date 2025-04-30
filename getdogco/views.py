@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect, get_object_or_404 
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, redirect 
 from .forms import DogAdoptionPostForm, ContactForm, ProfileUpdateForm, UserUpdateForm 
 from .models import DogAdoptionPost, AdoptionComment, Favorite, Application, Message, Notification 
 from django.contrib import messages
@@ -220,11 +220,6 @@ def apply_to_post(request, post_id):
         messages.error(request, "Geçersiz işlem.")
         return redirect("getdogco:list_posts")
     
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib import messages
-from django.contrib.auth.models import User
-from .models import Application, DogAdoptionPost, Message
 
 # Kullanıcının sahip olduğu ilanlara gelen başvurular
 @login_required
@@ -299,7 +294,7 @@ def my_send_applications(request):
 
 # Bildirim oluşturma fonksiyonu  
 def create_notification(user, message, url=None):
-    Notification.objects.create(user=user, message=message, url=url)
+    Notification.objects.create(user=user, message=message, url=url, is_read=False)
 
 # Bildirimleri görüntüleme 
 def mark_notification_read(request, notification_id):
@@ -312,7 +307,7 @@ def mark_notification_read(request, notification_id):
 # Tüm bildirimleri görüntüleme 
 @login_required
 def all_notifications(request):
-    notifications = request.user.notifications.all()
+    notifications = Notification.objects.filter(user=request.user) 
     return render(request, 'notifications/all_notifications.html', {'notifications': notifications})
 
 from getdogco.models import Notification  # ya da notification modelin nerede ise

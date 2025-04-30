@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n', 
-                'getdogco.context_processors.notification_context',
+                'getdogco.context_processors.notification_context', # Bildirimleri almak için 
             ],
         },
     },
