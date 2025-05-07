@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User 
-from .models import DogAdoptionPost, AdoptionComment, ContactMessage, Favorite, Application # Models'dan ilgili sınıfları import ettim
-
+from .models import DogAdoptionPost, AdoptionComment, ContactMessage, Favorite, Application, Conversation, Message  # Models'dan ilgili sınıfları import ettim
 
 # Başvuru modelini admin paneline kaydetme 
 @admin.register(Application)
@@ -40,3 +39,7 @@ class DogAdoptionPostAdmin(admin.ModelAdmin):
 
     class Meta:
         model = DogAdoptionPost
+
+
+admin.site.register(Conversation)
+admin.site.register(Message)

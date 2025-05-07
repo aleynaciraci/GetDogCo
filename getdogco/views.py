@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, redirect 
-from .forms import DogAdoptionPostForm, ContactForm, ProfileUpdateForm, UserUpdateForm 
-from .models import DogAdoptionPost, AdoptionComment, Favorite, Application, Message, Notification 
+from .forms import DogAdoptionPostForm, ContactForm, ProfileUpdateForm, UserUpdateForm, MessageForm
+from .models import DogAdoptionPost, AdoptionComment, Favorite, Application, Message, Notification, Conversation 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -242,47 +242,77 @@ def update_application_status(request, app_id):
         messages.success(request, "Başvuru durumu güncellendi.")
     return redirect("getdogco:my_applications")
 
-# Mesajlaşmayı başlatan view (başka kullanıcıya yönlendirir)
+
+# 🔁 Sohbet listesi
 @login_required
-def start_conversation(request, user_id):
-    receiver = get_object_or_404(User, id=user_id)
-    return redirect("getdogco:messages_with_user", user_id=receiver.id)
+def conversation_list(request):
+    conversations = Conversation.objects.filter(participants=request.user)
+    return render(request, 'messaging/conversation_list.html', {'conversations': conversations})
 
 
-from getdogco.utils import create_notification  # 📌 burada önemli!
-
-# Mesajlaşma sayfası
+# 🗨️ Belirli bir sohbet içerisindeki mesajları gösterir ve yeni mesaj gönderimini yapar
 @login_required
-def messages_with_user(request, user_id):
-    other_user = get_object_or_404(User, id=user_id)
+def messages_with_conversation(request, conversation_id):
+    conversation = get_object_or_404(Conversation, id=conversation_id)
 
-    # Tüm mesajlar (her iki yönde)
-    messages_qs = Message.objects.filter(
-        sender__in=[request.user, other_user],
-        receiver__in=[request.user, other_user]
-    ).order_by("sent_at")
+    # Eğer kullanıcı bu konuşmanın bir parçası değilse, sohbet listesine yönlendir
+    if request.user not in conversation.participants.all():
+        return redirect('conversation_list')
 
-    # Yeni mesaj gönderimi
-    if request.method == "POST":
-        text = request.POST.get("text")
-        if text:
-            # Mesajı kaydet
-            Message.objects.create(sender=request.user, receiver=other_user, text=text)
-            url = reverse("getdogco:messages_with_user", args=[other_user.id]) 
-            # 🔔 Bildirimi oluştur
-            create_notification(
-                user=other_user,
-                message=f"📩 {request.user.username} size yeni bir mesaj gönderdi!",
-                url = url 
-            )
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            msg = form.save(commit=False)
+            msg.conversation = conversation
+            msg.sender = request.user
+            msg.save()
 
-            return redirect("getdogco:messages_with_user", user_id=other_user.id)
+            # 🔔 Bildirim oluştur: diğer katılımcıyı bul
+            other_user = conversation.participants.exclude(id=request.user.id).first()
+            if other_user:
+                url = reverse("messages_with_conversation", args=[conversation.id])
+                create_notification(
+                    user=other_user,
+                    message=f"📩 {request.user.username} size yeni bir mesaj gönderdi!",
+                    url=url
+                )
 
-    return render(request, "getdogco/messages_with_user.html", {
-        "other_user": other_user,
-        "messages": messages_qs
+            # Sayfayı yenilemek için redirect et
+            return redirect('messages_with_conversation', conversation_id=conversation.id)
+    else:
+        form = MessageForm()
+
+    # Mesajları zamana göre sırala (eski → yeni)
+    messages = conversation.messages.order_by('timestamp')
+
+    return render(request, 'messaging/messages.html', {
+        'conversation': conversation,
+        'messages': messages,
+        'form': form
     })
 
+
+# ✉️ Yeni bir konuşma başlat (ya da var olanı bul)
+@login_required
+def start_conversation(request, user_id):
+    other_user = get_object_or_404(User, id=user_id)
+
+    # Bu iki kişi arasında daha önce konuşma var mı?
+    conversation = Conversation.objects.filter(participants=request.user).filter(participants=other_user).first()
+
+    # Yoksa oluştur
+    if not conversation:
+        conversation = Conversation.objects.create()
+        conversation.participants.add(request.user, other_user)
+
+    return redirect('messages_with_conversation', conversation_id=conversation.id) 
+
+def get_or_create_conversation(user1, user2):
+    conversation = Conversation.objects.filter(participants=user1).filter(participants=user2).first()
+    if not conversation:
+        conversation = Conversation.objects.create()
+        conversation.participants.set([user1, user2])
+    return conversation
 
 # Kullanıcının yaptığı başvurular
 @login_required

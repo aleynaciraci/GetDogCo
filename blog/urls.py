@@ -47,9 +47,11 @@ urlpatterns += [
         path("basvurularim/", views.my_post_applications, name="my_applications"),
         path("basvurularim/yaptiklarim/", views.my_send_applications, name="my_send_applications"),
         path("basvuru/<int:app_id>/guncelle/", views.update_application_status, name="update_application_status"),
-        path('mesajlar/<int:user_id>/', views.messages_with_user, name='messages_with_user_alt'),
-        path("mesajlasma/baslat/<int:user_id>/", views.start_conversation, name="start_conversation"),
-        path("mesajlasma/<int:user_id>/", views.messages_with_user, name="messages_with_user"),
+
+        path('mesajlasma/', views.conversation_list, name='conversation_list'),
+        path('mesajlasma/<int:conversation_id>/', views.messages_with_conversation, name='messages_with_conversation'),
+        path('mesajlasma/baslat/<int:user_id>/', views.start_conversation, name='start_conversation'),
+        
         path('bildirim/<int:notification_id>/okundu/', views.mark_notification_read, name='mark_notification_read'),
         path('bildirimler/', views.all_notifications, name='all_notifications'),  
 

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h2>Tüm Sohbetler</h2>
+  {% if conversations %}
+    <ul>
+      {% for conversation in conversations %}
+        <li>
+          <a href="{% url 'messages_with_conversation' conversation.id %}">
+            Konuşma #{{ conversation.id }}
+          </a> - Katılımcılar: 
+          {% for user in conversation.participants.all %}
+            {{ user.username }}{% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Hiç konuşmanız yok.</p>
+  {% endif %}
+{% endblock %}
+

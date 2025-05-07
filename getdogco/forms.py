@@ -1,6 +1,7 @@
 from django import forms 
-from .models import DogAdoptionPost, ContactMessage, Profile
+from .models import DogAdoptionPost, ContactMessage, Profile, Message
 from django.contrib.auth.models import User 
+
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -38,3 +39,16 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile 
         fields = ['image']   # Profil resmi alanını güncellemek için 
+
+
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={
+                'class': 'form-control mb-2',
+                'placeholder': 'Mesajınızı yazın...',
+                'rows': 3,
+            })
+        }

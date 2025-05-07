@@ -1,7 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
-from django.contrib.auth.models import User 
-from PIL import Image, ExifTags  # Pillow kütüphanesini kullanarak resim işleme yapabilmek için gerekli
+from PIL import Image, ExifTags, ImageOps 
+
 
 # Köpek İlanı Modeli
 class DogAdoptionPost(models.Model):
@@ -58,10 +59,6 @@ class AdoptionComment(models.Model):
 
 # Kullanıcı Profili Modeli 
 
-from django.db import models
-from django.contrib.auth.models import User
-from PIL import Image, ImageOps
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics/')
@@ -112,15 +109,22 @@ class Application(models.Model):
     def __str__(self):
         return f"{self.full_name} - {self.post.title}"
 
-# Mesajlaşma Modeli 
-class Message(models.Model):
-    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name="sent_messages")
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name="received_messages")
-    text = models.TextField()
-    sent_at = models.DateTimeField(auto_now_add=True)
+
+class Conversation(models.Model):
+    participants = models.ManyToManyField(User)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.sender.username} → {self.receiver.username} ({self.sent_at})" 
+        return f"Conversation {self.id}"
+
+class Message(models.Model):
+    conversation = models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='messages', null=True )
+    sender = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.sender.username}: {self.content[:30]}"
     
 
 
