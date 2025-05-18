@@ -80,10 +80,6 @@
         <form method="post" action="{% url 'getdogco:add_comment' post.id %}">
           {% csrf_token %}
           <div class="form-group">
-            <label for="formGroupExampleInput">{% trans "İsim" %}</label>
-            <input name="comment_author" type="text" class="form-control" id="formGroupExampleInput" placeholder="{% trans 'İsminizi girin' %}">
-          </div>
-          <div class="form-group">
             <label for="formGroupExampleInput">{% trans "Yorum" %}</label>
             <textarea name="comment_content" class="form-control" rows="3"></textarea>
           </div>
