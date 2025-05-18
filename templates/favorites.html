@@ -26,11 +26,15 @@
                 👤 {{ fav.post.owner.username }} | 🗓️ {{ fav.post.created_date|date:"d.m.Y" }}
               </p>
               <p class="card-text">{{ fav.post.description|truncatewords:25 }}</p>
-              <div class="mt-auto text-right">
-                <a href="{% url 'getdogco:post_detail' fav.post.id %}" class="btn btn-yellow-custom btn-sm">
-                  {% trans "Detayları Gör" %}
-                </a>                
-              </div>
+
+              <!-- Favori ekleme butonunu sadece başkalarının ilanları için göster -->
+              {% if fav.post.owner != request.user %}
+                <div class="mt-auto text-right">
+                  <a href="{% url 'getdogco:add_favorite' fav.post.id %}" class="btn btn-yellow-custom btn-sm">
+                    {% trans "Favorilere Ekle" %}
+                  </a>
+                </div>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -44,5 +48,6 @@
   {% endif %}
 
 </div>
-{% endblock %} 
+{% endblock %}
+
 

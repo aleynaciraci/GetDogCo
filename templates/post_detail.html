@@ -9,7 +9,7 @@
     <h3 class="mt-4">{{ post.title }}</h3>
 
     <!-- Favori Butonu -->
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated and post.owner != user %}
       {% if is_favorited %}
         <form method="POST" action="{% url 'getdogco:remove_favorite' post.id %}">
           {% csrf_token %}
@@ -21,9 +21,10 @@
           <button type="submit" class="btn btn-outline-danger mb-3">🤍 {% trans "Favorilere Ekle" %}</button>
         </form>
       {% endif %}
-    {% else %}
+    {% elif not user.is_authenticated %}
       <p><a href="{% url 'login' %}">{% trans "Favorilere eklemek için giriş yapın." %}</a></p>
     {% endif %}
+
 
     <!-- Sahip -->
     <p class="lead">

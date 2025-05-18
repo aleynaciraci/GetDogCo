@@ -72,10 +72,13 @@ def logout_view(request):
     messages.success(request, 'Başarıyla çıkış yaptınız.')
     return redirect('/user/login/')
 
-# Favorilere ekleme ve çıkarma
+
 @login_required
 def add_favorite(request, post_id):
     post = get_object_or_404(DogAdoptionPost, id=post_id)
+    if post.owner == request.user:
+        return redirect('post_detail', id=post.id)
+
     Favorite.objects.get_or_create(user=request.user, post=post)
     return redirect('post_detail', id=post.id)
 
@@ -89,6 +92,7 @@ def remove_favorite(request, post_id):
 def my_favorites(request):
     favorites = Favorite.objects.filter(user=request.user).select_related('post')
     return render(request, 'favorites.html', {'favorites': favorites})
+
 
 def post_detail(request, post_id):
     post = get_object_or_404(DogAdoptionPost, id=post_id)
