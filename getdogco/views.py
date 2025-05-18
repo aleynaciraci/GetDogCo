@@ -157,15 +157,25 @@ def deletePost(request, id):
     messages.success(request, "İlan başarıyla silindi")
     return redirect("getdogco:dashboard")
 
-# Yoruma ekleme fonksiyonu
+@login_required(login_url="getdogco:login")
 def addComment(request, id):
     post = get_object_or_404(DogAdoptionPost, id=id)
+    
+    # Yalnızca POST isteği geldiğinde yorum ekle
     if request.method == "POST":
-        comment_author = request.POST.get("comment_author")
+        # Oturum açmış kullanıcının kullanıcı adıyla comment_author'ı ayarla
+        comment_author = request.user.username  # Oturum açmış kullanıcının kullanıcı adı
         comment_content = request.POST.get("comment_content")
-        newComment = AdoptionComment(comment_author=comment_author, comment_content=comment_content)
-        newComment.post = post
-        newComment.save()
+        
+        # Yeni yorum nesnesini oluştur
+        newComment = AdoptionComment(
+            comment_author=comment_author,
+            comment_content=comment_content
+        )
+        newComment.post = post  # Yorumun hangi post'a ait olduğunu belirt
+        newComment.save()  # Yorum kaydedilsin
+    
+    # Yorum ekledikten sonra, ilgili post sayfasına yönlendir
     return redirect(reverse("getdogco:post_detail", kwargs={"id": id}))
 
 # Kullanıcı profilini güncelleme 

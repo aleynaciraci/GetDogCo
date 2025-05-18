@@ -59,9 +59,9 @@
       {% for comment in comments %}
         <div class="media mb-4">
           <img class="rounded-circle img-fluid mr-3" style="max-width: 50px;"
-               src="{% if comment.user.profile.image %}{{ comment.user.profile.image.url }}{% else %}/media/profile_pics/default.jpg{% endif %}"
-               alt="{% trans 'Profil Resmi' %}"
-               onerror="this.onerror=null;this.src='/media/profile_pics/default.jpg';">
+              src="{% if comment.user.profile.image %}{{ comment.user.profile.image.url }}{% else %}/media/profile_pics/default.jpg{% endif %}"
+              alt="{% trans 'Profil Resmi' %}"
+              onerror="this.onerror=null;this.src='/media/profile_pics/default.jpg';">
           <div class="media-body">
             <h5 class="mt-0">{{ comment.comment_author }}</h5>
             <small class="text-muted">{{ comment.comment_date }}</small><br>
@@ -75,6 +75,14 @@
       </div>
     {% endif %}
 
+    <!-- Eğer kullanıcı giriş yapmamışsa uyarı mesajını göster -->
+    {% if not user.is_authenticated %}
+      <div class="alert alert-warning">
+        {% trans "Yorum yapabilmek için lütfen giriş yapın." %}
+      </div>
+    {% endif %}
+
+    <!-- Yorum Ekleme Formu -->
     <div class="card my-4">
       <h5 class="card-header">{% trans "Yorum Ekle:" %}</h5>
       <div class="card-body">
