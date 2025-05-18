@@ -27,8 +27,8 @@
               </p>
               <p class="card-text">{{ fav.post.description|truncatewords:25 }}</p>
 
-              <!-- Favori ekleme butonunu sadece başkalarının ilanları için göster -->
-              {% if fav.post.owner != request.user %}
+              <!-- Favori ekleme butonunu sadece favorilere eklenmemiş ilanlar için göster -->
+              {% if fav not in request.user.favorites.all %}
                 <div class="mt-auto text-right">
                   <a href="{% url 'getdogco:add_favorite' fav.post.id %}" class="btn btn-yellow-custom btn-sm">
                     {% trans "Favorilere Ekle" %}
@@ -46,6 +46,7 @@
       <a href="{% url 'getdogco:list_posts' %}" class="alert-link">{% trans "İlanlara göz atın!" %}</a>
     </div>
   {% endif %}
+
 
 </div>
 {% endblock %}
