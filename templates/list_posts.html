@@ -47,71 +47,85 @@
                             {% trans "İlanı Gör" %}
                         </a>                                                
                     </div> 
-                        <!-- Başvur Butonu -->
-<button type="button" class="btn btn-sm btn-yellow-custom" data-toggle="modal" data-target="#applicationModal{{ post.id }}">
-    {% trans "Başvur" %}
-</button>
+{% if post.owner != request.user %}
+    <!-- Başvur Butonu -->
+    <button type="button" class="btn btn-sm btn-yellow-custom" data-toggle="modal" data-target="#applicationModal{{ post.id }}">
+        {% trans "Başvur" %}
+    </button>
 
-<!-- Başvuru Modalı -->
-<div class="modal fade" id="applicationModal{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="applicationModalLabel{{ post.id }}" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <form method="post" action="{% url 'getdogco:apply_to_post' post.id %}">
-        {% csrf_token %}
-        <div class="modal-header">
-          <h5 class="modal-title" id="applicationModalLabel{{ post.id }}">{% trans "Başvuru Formu" %}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Kapat' %}">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- Başvuru Modalı -->
+    <div class="modal fade" id="applicationModal{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="applicationModalLabel{{ post.id }}" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <form method="post" action="{% url 'getdogco:apply_to_post' post.id %}">
+            {% csrf_token %}
+            <div class="modal-header">
+              <h5 class="modal-title" id="applicationModalLabel{{ post.id }}">{% trans "Başvuru Formu" %}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Kapat' %}">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Form Alanları -->
+
+              <!-- Telefon ve E-posta Alanı -->
+              <div class="form-group">
+                <label>{% trans "Telefon" %}</label>
+                <input type="text" name="contact_phone" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>{% trans "E-posta" %}</label>
+                <input type="email" name="contact_email" class="form-control" required>
+              </div>
+
+              <!-- Şehir ve Konut Tipi Alanı -->
+              <div class="form-group">
+                <label>{% trans "Şehir ve Konut Tipi" %}</label>
+                <input type="text" name="location_info" class="form-control" required>
+              </div>
+
+              <!-- Daha önce hayvan sahiplenip sahiplenmediğiniz -->
+              <div class="form-group">
+                <label>{% trans "Daha önce hayvan sahiplenip sahiplenmediğiniz" %}</label>
+                <select name="had_pets_before" class="form-control" required>
+                  <option value="">{% trans "Seçiniz" %}</option>
+                  <option value="yes">{% trans "Evet" %}</option>
+                  <option value="no">{% trans "Hayır" %}</option>
+                </select>
+              </div>
+
+              <!-- Günlük çalışma saatleriniz -->
+              <div class="form-group">
+                <label>{% trans "Günlük çalışma saatleriniz" %}</label>
+                <input type="text" name="work_hours" class="form-control">
+              </div>
+
+              <!-- Ailenizde alerjisi olan biri var mı? -->
+              <div class="form-group">
+                <label>{% trans "Ailenizde alerjisi olan biri var mı?" %}</label>
+                <select name="has_allergy" class="form-control">
+                  <option value="">{% trans "Seçiniz" %}</option>
+                  <option value="yes">{% trans "Evet" %}</option>
+                  <option value="no">{% trans "Hayır" %}</option>
+                </select>
+              </div>
+
+              <!-- Neden bu köpeği sahiplenmek istiyorsunuz? -->
+              <div class="form-group">
+                <label>{% trans "Neden bu köpeği sahiplenmek istiyorsunuz?" %}</label>
+                <textarea name="motivation" class="form-control" rows="3" required></textarea>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "İptal" %}</button>
+              <button type="submit" class="btn btn-yellow-custom">{% trans "Başvuruyu Gönder" %}</button>
+            </div>
+          </form>
         </div>
-        <div class="modal-body">
-          <!-- Form Alanları -->
-          <div class="form-group">
-            <label>{% trans "Ad Soyad" %}</label>
-            <input type="text" name="full_name" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label>{% trans "Telefon veya E-posta" %}</label>
-            <input type="text" name="contact_info" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label>{% trans "Şehir ve Konut Tipi" %}</label>
-            <input type="text" name="location_info" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label>{% trans "Daha önce hayvan sahiplenip sahiplenmediğiniz" %}</label>
-            <select name="had_pets_before" class="form-control" required>
-              <option value="">{% trans "Seçiniz" %}</option>
-              <option value="yes">{% trans "Evet" %}</option>
-              <option value="no">{% trans "Hayır" %}</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>{% trans "Günlük çalışma saatleriniz" %}</label>
-            <input type="text" name="work_hours" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>{% trans "Ailenizde alerjisi olan biri var mı?" %}</label>
-            <select name="has_allergy" class="form-control">
-              <option value="">{% trans "Seçiniz" %}</option>
-              <option value="yes">{% trans "Evet" %}</option>
-              <option value="no">{% trans "Hayır" %}</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>{% trans "Neden bu köpeği sahiplenmek istiyorsunuz?" %}</label>
-            <textarea name="motivation" class="form-control" rows="3" required></textarea>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "İptal" %}</button>
-          <button type="submit" class="btn btn-yellow-custom">{% trans "Başvuruyu Gönder" %}</button>
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
-                 
+{% endif %}                              
                 </div>
             </div>
             {% endfor %}
