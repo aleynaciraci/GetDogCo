@@ -105,7 +105,6 @@ LANGUAGE_CODE = 'tr'
 
 LANGUAGES = [
     ('tr', 'Türkçe'),
-    ('fr', 'Français'),
 ]
 
 USE_I18N = True
